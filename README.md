@@ -2,7 +2,7 @@
 
 Academic and research portfolio of **Muhammad Hassan Askari**, a Computer Science graduate focused on Computer Vision, Robust Machine Learning, Domain Adaptation, Few-Shot Learning, and Multimodal AI.
 
-* **Production URL:** [https://research.askarisyed.com](https://research.askarisyed.com)  
+* **Production URL:** [https://research-with-askari.vercel.app](https://research-with-askari.vercel.app)  
 * **Academic Background:** BS in Computer Science, COMSATS University Islamabad, Wah Campus  
 * **Degree Period:** 2022–2026 (133 Credits Completed) · CGPA: 3.65 / 4.00 · IELTS Academic: 7.0 (CEFR C1)
 
@@ -284,7 +284,7 @@ npm run build
 Computer Science Graduate · AI & Computer Vision Researcher  
 *Research Interests:* Computer Vision · Robust ML · Domain Adaptation · Few-Shot Learning · Multimodal AI
 
-* **Website:** [https://research.askarisyed.com](https://research.askarisyed.com)  
+* **Website:** [https://research-with-askari.vercel.app](https://research-with-askari.vercel.app)  
 * **GitHub:** [https://github.com/AskariSyed](https://github.com/AskariSyed)  
 * **LinkedIn:** [https://www.linkedin.com/in/syed-hassan-askari/](https://www.linkedin.com/in/syed-hassan-askari/)  
 * **Email:** [askari.syed04@gmail.com](mailto:askari.syed04@gmail.com)
