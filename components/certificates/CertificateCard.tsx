@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Image from "next/image";
 import { Certificate } from "@/data/certificates";
 import { Eye, Award } from "lucide-react";
 
@@ -64,14 +65,16 @@ export default function CertificateCard({
           <div className="absolute inset-0 frame-glass-glare opacity-40 group-hover:opacity-10 transition-opacity" />
 
           {/* Certificate Miniature Preview */}
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-xs border border-slate-200/80 bg-white shadow-2xs flex items-center justify-center">
+          <div className="relative aspect-4/3 w-full overflow-hidden rounded-xs border border-slate-200/80 bg-slate-100 shadow-2xs flex items-center justify-center">
             {certificate.type === "image" ? (
-              /* eslint-disable-next-line @next/next/no-img-element */
-              <img
-                src={certificate.file}
+              <Image
+                src={certificate.thumbnail || certificate.file}
                 alt={certificate.title}
-                className="w-full h-full object-contain bg-white select-none"
+                fill
+                sizes="(max-width: 640px) 280px, (max-width: 1024px) 300px, 320px"
+                className="object-contain bg-white select-none transition-transform duration-300 group-hover:scale-[1.02]"
                 loading="lazy"
+                quality={85}
               />
             ) : (
               <div className="flex flex-col items-center justify-center p-4 text-center">

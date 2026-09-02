@@ -13,7 +13,9 @@ export interface Certificate {
   issuer: string;
   year: string;
   category: CertificateCategory;
-  file: string; // Preview image path (.png or .svg)
+  file: string; // High-resolution preview image path for modal/lightbox (.webp)
+  thumbnail: string; // Lightweight optimized thumbnail for wall/grid cards (.webp)
+  originalFile?: string; // Original full-resolution image
   pdfUrl?: string; // Direct original PDF link
   verificationUrl?: string; // Online verification link if available
   type: CertificateType;
@@ -42,7 +44,9 @@ export const CERTIFICATES: Certificate[] = [
     issuer: "COMSATS University Islamabad, Wah Campus",
     year: "2026",
     category: "Academic",
-    file: "/data/certificates/merit-certificate.png",
+    file: "/data/certificates/preview/merit-certificate.webp",
+    thumbnail: "/data/certificates/thumbnails/merit-certificate.webp",
+    originalFile: "/data/certificates/merit-certificate.png",
     pdfUrl: "/data/certificates/Merit Certificate.pdf",
     type: "image",
     description:
@@ -61,7 +65,9 @@ export const CERTIFICATES: Certificate[] = [
     issuer: "COMSATS University Islamabad (IEEE / ACM / ASME)",
     year: "2025",
     category: "Competitions",
-    file: "/data/certificates/visio-spark-participation.png",
+    file: "/data/certificates/preview/visio-spark-participation.webp",
+    thumbnail: "/data/certificates/thumbnails/visio-spark-participation.webp",
+    originalFile: "/data/certificates/visio-spark-participation.png",
     pdfUrl: "/data/certificates/Visio Spark Participation.pdf",
     type: "image",
     description:
@@ -80,7 +86,9 @@ export const CERTIFICATES: Certificate[] = [
     issuer: "COMSATS University Islamabad, Directorate of Student Affairs",
     year: "2025",
     category: "Professional Development",
-    file: "/data/certificates/student-week-organizer.png",
+    file: "/data/certificates/preview/student-week-organizer.webp",
+    thumbnail: "/data/certificates/thumbnails/student-week-organizer.webp",
+    originalFile: "/data/certificates/student-week-organizer.png",
     pdfUrl: "/data/certificates/Student Week Organizer Certificate.pdf",
     type: "image",
     description:
@@ -99,7 +107,9 @@ export const CERTIFICATES: Certificate[] = [
     issuer: "Google / Coursera",
     year: "2023",
     category: "Professional Development",
-    file: "/data/certificates/google-cybersecurity-coursera.png",
+    file: "/data/certificates/preview/google-cybersecurity-coursera.webp",
+    thumbnail: "/data/certificates/thumbnails/google-cybersecurity-coursera.webp",
+    originalFile: "/data/certificates/google-cybersecurity-coursera.png",
     pdfUrl: "/data/certificates/CYber Coursera PXQV5TNBQ5WK.pdf",
     verificationUrl: "https://coursera.org/verify/professional-cert/PXQV5TNBQ5WK",
     type: "image",
@@ -119,7 +129,9 @@ export const CERTIFICATES: Certificate[] = [
     issuer: "Coursera / Industry Experts",
     year: "2026",
     category: "Software Engineering",
-    file: "/data/certificates/sqa-automation-coursera.png",
+    file: "/data/certificates/preview/sqa-automation-coursera.webp",
+    thumbnail: "/data/certificates/thumbnails/sqa-automation-coursera.webp",
+    originalFile: "/data/certificates/sqa-automation-coursera.png",
     pdfUrl: "/data/certificates/SQA Coursera 8803BXRLBAE1.pdf",
     verificationUrl: "https://coursera.org/verify/specialization/8803BXRLBAE1",
     type: "image",
@@ -139,7 +151,9 @@ export const CERTIFICATES: Certificate[] = [
     issuer: "COMSATS University Islamabad, Wah Campus",
     year: "2026",
     category: "Professional Development",
-    file: "/data/certificates/ssbs-experience.png",
+    file: "/data/certificates/preview/ssbs-experience.webp",
+    thumbnail: "/data/certificates/thumbnails/ssbs-experience.webp",
+    originalFile: "/data/certificates/ssbs-experience.png",
     pdfUrl: "/data/certificates/SSBS EXPERIENCE_Hassan.pdf",
     type: "image",
     description:
@@ -158,7 +172,9 @@ export const CERTIFICATES: Certificate[] = [
     issuer: "COMSATS University Islamabad, Wah Campus",
     year: "2026",
     category: "Academic",
-    file: "/data/certificates/openhouse-certificate.png",
+    file: "/data/certificates/preview/openhouse-certificate.webp",
+    thumbnail: "/data/certificates/thumbnails/openhouse-certificate.webp",
+    originalFile: "/data/certificates/openhouse-certificate.png",
     pdfUrl: "/data/certificates/OpenHouse Certificate.pdf",
     type: "image",
     description:

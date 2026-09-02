@@ -166,19 +166,12 @@ export default function AcademicBackground() {
                     key={`${course.title}-${idx}`}
                     className="p-3 rounded-lg bg-slate-50/70 border border-slate-200/80 hover:bg-white hover:border-slate-300 transition-colors flex items-center justify-between gap-2"
                   >
-                    <div className="min-w-0">
-                      <span className="text-xs font-semibold text-slate-900 block truncate">
-                        {course.title}
-                      </span>
-                      {course.code && (
-                        <span className="text-[11px] font-mono text-slate-500 block">
-                          {course.code}
-                        </span>
-                      )}
-                    </div>
-                    {course.credits && (
+                    <span className="text-xs font-semibold text-slate-900 truncate">
+                      {course.title}
+                    </span>
+                    {course.code && (
                       <span className="text-[10px] font-mono font-medium px-2 py-0.5 rounded bg-white text-slate-600 border border-slate-200 shrink-0">
-                        {course.credits} Cr.
+                        {course.code}
                       </span>
                     )}
                   </div>

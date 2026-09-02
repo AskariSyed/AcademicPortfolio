@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useEffect } from "react";
+import Image from "next/image";
 import { Certificate } from "@/data/certificates";
 import { X, ExternalLink, Award, Calendar, Building2, Tag, ShieldCheck } from "lucide-react";
 
@@ -87,13 +88,16 @@ export default function CertificateModal({
                 </a>
               </div>
             ) : (
-              <div className="w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-sm border border-slate-200">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
+              <div className="w-full max-w-3xl overflow-hidden rounded-lg bg-white shadow-sm border border-slate-200 min-h-[320px] flex items-center justify-center relative">
+                <Image
                   src={certificate.file}
                   alt={certificate.title}
+                  width={1600}
+                  height={1200}
+                  sizes="(max-width: 768px) 95vw, (max-width: 1200px) 85vw, 1000px"
                   className="w-full h-auto object-contain max-h-[60vh] select-none"
-                  loading="lazy"
+                  priority
+                  quality={92}
                 />
               </div>
             )}
