@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 import Image from "next/image";
 import { Certificate } from "@/data/certificates";
 import { Eye, Award } from "lucide-react";
@@ -16,7 +16,6 @@ export default function CertificateCard({
   onSelect,
   index,
 }: CertificateCardProps) {
-  const [isLoaded, setIsLoaded] = useState(false);
   const rotation = certificate.frameStyle?.rotationDeg ?? ((index % 5) - 2) * 1.1;
   const isPriority = index < 4;
 
@@ -67,27 +66,17 @@ export default function CertificateCard({
           <div className="absolute inset-0 frame-glass-glare opacity-40 group-hover:opacity-10 transition-opacity" />
 
           {/* Certificate Miniature Preview */}
-          <div className="relative aspect-4/3 w-full overflow-hidden rounded-xs border border-slate-200/80 bg-slate-100 shadow-2xs flex items-center justify-center">
-            {/* Subtle neutral placeholder skeleton while loading */}
-            {!isLoaded && certificate.type === "image" && (
-              <div className="absolute inset-0 bg-slate-100 flex items-center justify-center">
-                <div className="w-5 h-5 rounded-full border-2 border-slate-300 border-t-blue-900/60 animate-spin" />
-              </div>
-            )}
-
+          <div className="relative aspect-[4/3] min-h-[190px] w-full overflow-hidden rounded-sm border border-slate-200/80 bg-white shadow-2xs flex items-center justify-center">
             {certificate.type === "image" ? (
               <Image
                 src={certificate.thumbnail || certificate.file}
                 alt={certificate.title}
                 fill
                 sizes="(max-width: 640px) 280px, 320px"
-                className={`object-contain bg-white select-none transition-all duration-300 group-hover:scale-[1.02] ${
-                  isLoaded ? "opacity-100" : "opacity-0"
-                }`}
+                className="object-contain bg-white select-none transition-transform duration-300 group-hover:scale-[1.02]"
                 priority={isPriority}
                 loading={isPriority ? "eager" : "lazy"}
                 quality={85}
-                onLoad={() => setIsLoaded(true)}
               />
             ) : (
               <div className="flex flex-col items-center justify-center p-4 text-center">
