@@ -21,6 +21,20 @@ export interface LanguageProficiency {
   };
 }
 
+export interface AcademicCourse {
+  semester?: string;
+  code?: string;
+  title: string;
+  credits?: number;
+  category: string;
+}
+
+export interface CourseGroup {
+  category: string;
+  description: string;
+  courses: AcademicCourse[];
+}
+
 export interface TeachingExperience {
   role: string;
   course: string;
@@ -38,7 +52,8 @@ export const EDUCATION: EducationRecord = {
   cgpa: "3.65",
   totalCgpa: "4.00",
   credits: 133,
-  highlight: "Strong academic standing with focused concentration in Artificial Intelligence, Machine Learning, and Computer Vision.",
+  highlight:
+    "Rigorous undergraduate training across artificial intelligence, algorithms, software engineering, and systems architectures.",
 };
 
 export const IELTS_RECORD: LanguageProficiency = {
@@ -50,15 +65,97 @@ export const IELTS_RECORD: LanguageProficiency = {
   },
 };
 
-export const SELECTED_COURSEWORK = [
-  { code: "CS-411", name: "Artificial Intelligence", category: "Core AI", description: "Search algorithms, probabilistic reasoning, reinforcement learning fundamentals." },
-  { code: "CS-422", name: "Machine Learning", category: "Core AI", description: "Supervised & unsupervised learning, kernel methods, neural architectures." },
-  { code: "CS-483", name: "Computer Vision", category: "Specialization", description: "Image filtering, feature descriptors, segmentation, deep visual recognition backbones." },
-  { code: "CS-201", name: "Data Structures & Algorithms", category: "Foundations", description: "Asymptotic analysis, trees, graphs, dynamic programming, algorithmic complexity." },
-  { code: "CS-315", name: "Software Engineering", category: "Engineering", description: "System architecture, design patterns, lifecycle models, verification." },
-  { code: "CS-334", name: "Compiler Construction", category: "Systems", description: "Lexical analysis, parsing algorithms, intermediate representations, code generation." },
-  { code: "CS-362", name: "Information Security", category: "Security", description: "Cryptographic primitives, network protocols, threat modeling, integrity verification." },
-  { code: "CS-328", name: "Web Technologies", category: "Systems", description: "Client-server architecture, modern web frameworks, asynchronous networking." },
+export const COURSE_GROUPS: CourseGroup[] = [
+  {
+    category: "Computing Foundations",
+    description:
+      "Core paradigms of computer science, programming architectures, and low-level digital logic.",
+    courses: [
+      { code: "CSC101", title: "Introduction to ICT", credits: 3, category: "Computing Foundations" },
+      { code: "CSC103", title: "Programming Fundamentals", credits: 4, category: "Computing Foundations" },
+      { code: "CSC270", title: "Object Oriented Programming", credits: 4, category: "Computing Foundations" },
+      { code: "CSC102", title: "Discrete Structures", credits: 3, category: "Computing Foundations" },
+      { code: "EEE241", title: "Digital Logic Design", credits: 3, category: "Computing Foundations" },
+      { code: "CSC325", title: "Computer Organization & Assembly Language", credits: 3, category: "Computing Foundations" },
+    ],
+  },
+  {
+    category: "Algorithms & AI",
+    description:
+      "Algorithmic complexity, formal language theory, and foundational artificial intelligence principles.",
+    courses: [
+      { code: "CSC211", title: "Data Structures and Algorithms", credits: 4, category: "Algorithms & AI" },
+      { code: "CSC301", title: "Design and Analysis of Algorithms", credits: 3, category: "Algorithms & AI" },
+      { code: "CSC462", title: "Artificial Intelligence", credits: 4, category: "Algorithms & AI" },
+      { code: "CSC312", title: "Theory of Automata", credits: 3, category: "Algorithms & AI" },
+      { code: "CSC441", title: "Theory of Programming Languages", credits: 4, category: "Algorithms & AI" },
+    ],
+  },
+  {
+    category: "Software & Systems",
+    description:
+      "Enterprise software design, database engines, distributed processing, networking, security, and compilers.",
+    courses: [
+      { code: "CSC315", title: "Software Engineering Concepts", credits: 4, category: "Software & Systems" },
+      { code: "CSC350", title: "Database Systems", credits: 4, category: "Software & Systems" },
+      { code: "CSC340", title: "Computer Networks", credits: 3, category: "Software & Systems" },
+      { title: "Principles of Operating Systems", category: "Software & Systems" },
+      { code: "CSC499", title: "Compiler Construction", credits: 4, category: "Software & Systems" },
+      { code: "CSC334", title: "Parallel and Distributed Computing", credits: 3, category: "Software & Systems" },
+      { code: "CSC336", title: "Web Technologies", credits: 3, category: "Software & Systems" },
+      { code: "CSC303", title: "Mobile Application Development", credits: 3, category: "Software & Systems" },
+      { code: "CSC432", title: "Information Security", credits: 3, category: "Software & Systems" },
+      { title: "DevOps for Cloud Computing", credits: 3, category: "Software & Systems" },
+    ],
+  },
+  {
+    category: "Mathematics & Quantitative Foundations",
+    description:
+      "Calculus, linear algebra, probability, and physics providing mathematical rigor for computational modeling.",
+    courses: [
+      { code: "CSC410", title: "Calculus and Analytic Geometry", credits: 3, category: "Mathematics & Quantitative Foundations" },
+      { code: "MTH105", title: "Multivariable Calculus", credits: 3, category: "Mathematics & Quantitative Foundations" },
+      { code: "CSC412", title: "Linear Algebra", credits: 3, category: "Mathematics & Quantitative Foundations" },
+      { code: "MTH375", title: "Statistics and Probability Theory", credits: 3, category: "Mathematics & Quantitative Foundations" },
+      { code: "PHY121", title: "Applied Physics for Engineers", credits: 4, category: "Mathematics & Quantitative Foundations" },
+    ],
+  },
+  {
+    category: "Professional & Supporting Studies",
+    description:
+      "Technical reporting, communication, ethics, management, and capstone senior design projects.",
+    courses: [
+      { code: "CSC498", title: "Professional Practices", credits: 3, category: "Professional & Supporting Studies" },
+      { title: "Senior Design Project I", category: "Professional & Supporting Studies" },
+      { title: "Senior Design Project II", credits: 4, category: "Professional & Supporting Studies" },
+      { code: "CSC418", title: "Topics in Computer Science I", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "HUM103", title: "Communication Skills", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "HUM102", title: "Report Writing Skills", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "MGT101", title: "Introduction to Management", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "MGT350", title: "Human Resource Management", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "CSC323", title: "Financial Accounting", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "HUM430", title: "French", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "HUM100", title: "English Comprehension and Composition", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "HUM110", title: "Islamic Studies", credits: 3, category: "Professional & Supporting Studies" },
+      { code: "HUM111", title: "Pakistan Studies", credits: 3, category: "Professional & Supporting Studies" },
+    ],
+  },
+];
+
+export const SELECTED_COURSEWORK: AcademicCourse[] = COURSE_GROUPS.flatMap(
+  (group) => group.courses
+);
+
+export const RESEARCH_INTERESTS: string[] = [
+  "Computer Vision",
+  "Robust Machine Learning",
+  "Deep Learning",
+  "Domain Adaptation",
+  "Domain Generalization",
+  "Few-Shot Learning",
+  "Multimodal AI",
+  "Vision-Language Models",
+  "Visual Reliability & Uncertainty Modeling",
 ];
 
 export const TEACHING_EXPERIENCE: TeachingExperience[] = [
@@ -128,6 +225,9 @@ export const RESEARCH_TOOLKIT = {
     "React",
     "TypeScript",
     "FastAPI",
+    "SQL Server",
     "PostgreSQL",
+    "Docker",
+    "Flutter",
   ],
 };
