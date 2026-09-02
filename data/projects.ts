@@ -116,12 +116,12 @@ export interface Project {
   shortTitle?: string;
   subtitle?: string;
   category:
-    | "Primary Research"
-    | "Research Project"
-    | "Research"
-    | "Algorithms & Optimization"
-    | "Applied Systems"
-    | "Computer Vision · Robust Recognition";
+  | "Primary Research"
+  | "Research Project"
+  | "Research"
+  | "Algorithms & Optimization"
+  | "Applied Systems"
+  | "Computer Vision · Robust Recognition";
   isResearch: boolean;
   status?: string;
   year?: number;
@@ -626,31 +626,6 @@ export const PROJECTS: Project[] = [
     },
   },
   {
-    slug: "ai-email-copilot",
-    title: "AI Email Copilot",
-    shortTitle: "Email-Copilot",
-    category: "Research Project",
-    isResearch: true,
-    status: "Completed Prototype",
-    year: 2025,
-    date: "2024–2025",
-    tags: ["RAG", "LLMs", "Information Retrieval", "FastAPI", "PostgreSQL", "pgvector"],
-    summary:
-      "An AI email assistant exploring retrieval-augmented generation for grounding language-model responses in user-specific information.",
-    description:
-      "Investigates the mechanics of information grounding in large language models via dense semantic retrieval. The system pairs contextual vector indexing with structured relational memory to synthesize grounded, verifiable draft responses without parametric hallucination.",
-    keyContributions: [
-      "Dense vector indexing using pgvector over personal communication archives",
-      "Prompt orchestration and retrieval-augmented context injection pipeline",
-      "Robust asynchronous backend architecture with FastAPI and PostgreSQL",
-    ],
-    technologies: ["FastAPI", "PostgreSQL", "pgvector", "Python", "LangChain/LlamaIndex", "TypeScript"],
-    repositoryVisibility: "public",
-    repositoryUrl: "https://github.com/AskariSyed/AI-Email-Copilot",
-    githubUrl: "https://github.com/AskariSyed/AI-Email-Copilot",
-    featured: true,
-  },
-  {
     slug: "decentralized-greedy-interview-scheduling",
     title: "Decentralized Greedy Scheduling for Interview Allocation at Job Fairs",
     shortTitle: "Greedy Interview Scheduling",
@@ -924,6 +899,31 @@ export const PROJECTS: Project[] = [
         "Formal mathematical proofs of approximation ratios under two-sided buffer constraints remain an open inquiry.",
       ],
     },
+  },
+  {
+    slug: "ai-email-copilot",
+    title: "AI Email Copilot",
+    shortTitle: "Email-Copilot",
+    category: "Research Project",
+    isResearch: true,
+    status: "Completed Prototype",
+    year: 2025,
+    date: "2024–2025",
+    tags: ["RAG", "LLMs", "Information Retrieval", "FastAPI", "PostgreSQL", "pgvector"],
+    summary:
+      "An AI email assistant exploring retrieval-augmented generation for grounding language-model responses in user-specific information.",
+    description:
+      "Investigates the mechanics of information grounding in large language models via dense semantic retrieval. The system pairs contextual vector indexing with structured relational memory to synthesize grounded, verifiable draft responses without parametric hallucination.",
+    keyContributions: [
+      "Dense vector indexing using pgvector over personal communication archives",
+      "Prompt orchestration and retrieval-augmented context injection pipeline",
+      "Robust asynchronous backend architecture with FastAPI and PostgreSQL",
+    ],
+    technologies: ["FastAPI", "PostgreSQL", "pgvector", "Python", "LangChain/LlamaIndex", "TypeScript"],
+    repositoryVisibility: "public",
+    repositoryUrl: "https://github.com/AskariSyed/AI-Email-Copilot",
+    githubUrl: "https://github.com/AskariSyed/AI-Email-Copilot",
+    featured: true,
   },
   {
     slug: "cui-wah-job-fair-portal",
