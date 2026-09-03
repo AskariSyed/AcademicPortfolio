@@ -113,14 +113,16 @@ export default function ExperienceCard({
               </span>
             ))}
           {experience.technologies &&
-            experience.technologies.map((tech) => (
-              <span
-                key={tech}
-                className="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200"
-              >
-                {tech}
-              </span>
-            ))}
+            experience.technologies
+              .filter((tech) => !experience.courses?.includes(tech))
+              .map((tech) => (
+                <span
+                  key={tech}
+                  className="text-xs font-mono bg-slate-100 text-slate-700 px-2 py-0.5 rounded border border-slate-200"
+                >
+                  {tech}
+                </span>
+              ))}
         </div>
 
         {/* Progressive Disclosure: Responsibilities */}

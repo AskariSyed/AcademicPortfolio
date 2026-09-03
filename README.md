@@ -79,7 +79,7 @@ The portfolio focuses on developing reliable intelligent systems when visual evi
   * **Data Structures & Algorithms** (3 Semesters, Spring 2025 – Spring 2026)
   * **Pattern Recognition** (2 Semesters, Spring 2025 – Spring 2026)
   * **Compiler Construction** (1 Semester, Spring 2025 – Spring 2026)
-  * **Artificial Intelligence / CSC462** (1 Semester, Spring 2026)
+  * **Artificial Intelligence** (1 Semester, Spring 2026)
 * **Officially Verified Responsibilities:**
   * Assisted instructors with the preparation, administration, evaluation, and marking of quizzes, assignments, and examinations.
   * Conducted and assisted with student viva examinations.
@@ -208,7 +208,7 @@ The portfolio is driven by a schema-backed TypeScript data layer under `data/`:
 
 ## Technology Stack
 
-* **Framework:** Next.js 15.1 (App Router, React Server Components, Static Site Generation)
+* **Framework:** Next.js 15.5.1 (App Router, React Server Components, Static Site Generation)
 * **Library:** React 19.0
 * **Language:** TypeScript 5.7
 * **Styling:** Tailwind CSS 3.4

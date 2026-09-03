@@ -44,12 +44,6 @@ export const EXPERIENCES: Experience[] = [
       "Data Structures & Algorithms",
       "Pattern Recognition",
       "Compiler Construction",
-      "Artificial Intelligence (CSC462)",
-    ],
-    technologies: [
-      "Data Structures & Algorithms",
-      "Pattern Recognition",
-      "Compiler Construction",
       "Artificial Intelligence",
     ],
     bullets: [

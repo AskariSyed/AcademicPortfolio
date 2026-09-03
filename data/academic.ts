@@ -161,12 +161,12 @@ export const RESEARCH_INTERESTS: string[] = [
 export const TEACHING_EXPERIENCE: TeachingExperience[] = [
   {
     role: "Teaching Assistant",
-    course: "Artificial Intelligence (CSC462)",
+    course: "Artificial Intelligence",
     duration: "Spring 2026",
     semestersCount: 1,
     institution: "COMSATS University Islamabad — Wah Campus",
     description:
-      "Served as a Teaching Assistant for Artificial Intelligence (CSC462) during Spring 2026, supporting assessment activities, student viva examinations, academic queries, and maintenance of assessment records.",
+      "Served as a Teaching Assistant for Artificial Intelligence during Spring 2026, supporting assessment activities, student viva examinations, academic queries, and maintenance of assessment records.",
   },
   {
     role: "Teaching Assistant",
