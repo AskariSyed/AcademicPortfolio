@@ -73,21 +73,21 @@ export default function ResearchJourney() {
             const nodeStyle = isConvergence
               ? "bg-indigo-950 border-indigo-900 text-white shadow-indigo-950/20"
               : isRejection
-              ? "bg-amber-50 border-amber-300 text-amber-900"
-              : isEmpiricalSuccess
-              ? "bg-emerald-50 border-emerald-300 text-emerald-900"
-              : isFacultyStep
-              ? "bg-blue-50 border-blue-300 text-blue-900"
-              : "bg-white border-slate-300 text-slate-800";
+                ? "bg-amber-50 border-amber-300 text-amber-900"
+                : isEmpiricalSuccess
+                  ? "bg-emerald-50 border-emerald-300 text-emerald-900"
+                  : isFacultyStep
+                    ? "bg-blue-50 border-blue-300 text-blue-900"
+                    : "bg-white border-slate-300 text-slate-800";
 
             // Card border styling
             const cardStyle = isConvergence
               ? "bg-white border-indigo-200 ring-1 ring-indigo-900/10 shadow-sm"
               : isRejection
-              ? "bg-white border-amber-200/90 shadow-2xs"
-              : isEmpiricalSuccess
-              ? "bg-white border-emerald-200/90 shadow-2xs"
-              : "bg-white border-slate-200/90 hover:border-slate-300 shadow-2xs";
+                ? "bg-white border-amber-200/90 shadow-2xs"
+                : isEmpiricalSuccess
+                  ? "bg-white border-emerald-200/90 shadow-2xs"
+                  : "bg-white border-slate-200/90 hover:border-slate-300 shadow-2xs";
 
             return (
               <div

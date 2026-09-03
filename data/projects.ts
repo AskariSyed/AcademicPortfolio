@@ -262,7 +262,7 @@ export const PROJECTS: Project[] = [
     featured: true,
     trafficSignCaseStudy: {
       shortTitle: "Task-Aware Traffic Sign Classification",
-      authors: ["Muhammad Hassan Askari", "Muhammad Shareef"],
+      authors: ["Muhammad Hassan Askari", "Muhammad Shareef", "Marwa Khanam"],
       institution: "COMSATS University Islamabad",
       manuscriptStatusStatement:
         "The manuscript is currently being refined, including methodological and experimental analysis. The work is intended for future submission to MDPI Sensors.",

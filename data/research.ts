@@ -104,7 +104,7 @@ export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
     tag: "Engineering Roots",
     badgeVariant: "neutral",
     narrative:
-      "When I began my Bachelor of Science in Computer Science at COMSATS University Islamabad, my ambition was firmly set on becoming a software developer. I enjoyed building full-stack applications, exploring new technologies, and turning ideas into working systems. Academic research was not part of my plan—I perceived it as an intimidating, highly abstract domain and lacked confidence that I possessed the theoretical foundation or skills to become a researcher.",
+      "When I began my Bachelor of Science in Computer Science at COMSATS University Islamabad, my ambition was firmly set on becoming a software developer. I enjoyed building full-stack applications, exploring new technologies, and turning ideas into working systems. Academic research was not part of my plan, I perceived it as an intimidating, highly abstract domain and lacked confidence that I possessed the theoretical foundation or skills to become a researcher.",
     bridge:
       "Building software provided strong engineering discipline, but my trajectory soon encountered an unexpected catalyst.",
     description:
@@ -217,7 +217,7 @@ export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
     tag: "Foundational Convergence",
     badgeVariant: "indigo",
     narrative:
-      "My trajectory from computer vision to language models revealed a singular underlying intellectual problem: How should an intelligent system behave when the evidence it receives cannot be completely trusted? In the traffic sign project, visual evidence was physically degraded by heavy snow. In RAG systems, textual evidence is vulnerable to malicious manipulation or noise. These are distinct technical domains, but they share the exact same core challenge. Today, my research direction is dedicated to Reliable and Trustworthy AI—encompassing distribution shift, domain adaptation, few-shot learning, visual uncertainty, and adversarial robustness.",
+      "My trajectory from computer vision to language models revealed a singular underlying intellectual problem: How should an intelligent system behave when the evidence it receives cannot be completely trusted? In the traffic sign project, visual evidence was physically degraded by heavy snow. In RAG systems, textual evidence is vulnerable to malicious manipulation or noise. These are distinct technical domains, but they share the exact same core challenge. Today, my research direction is dedicated to Reliable and Trustworthy AI encompassing distribution shift, domain adaptation, few-shot learning, visual uncertainty, and adversarial robustness.",
     bridge:
       "This unified focus drives my ongoing academic preparation and graduate research outlook.",
     description:

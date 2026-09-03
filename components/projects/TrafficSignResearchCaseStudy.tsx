@@ -65,7 +65,7 @@ export default function TrafficSignResearchCaseStudy({
             <Users className="w-4 h-4 text-blue-900" />
             <span>
               <strong>Authors:</strong>{" "}
-              {data.authors ? data.authors.join(", ") : "Muhammad Hassan Askari, Muhammad Shareef"}
+              {data.authors ? data.authors.join(", ") : "Muhammad Hassan Askari, Muhammad Shareef, Marwa Khanam"}
             </span>
           </div>
           <div className="flex items-center gap-1.5 text-xs text-slate-600">

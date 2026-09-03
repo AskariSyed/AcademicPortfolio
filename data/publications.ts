@@ -23,7 +23,7 @@ export const PUBLICATIONS: Publication[] = [
     slug: "traffic-sign-classification-snow-degraded",
     title: "Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions",
     year: 2026,
-    authors: ["Muhammad Hassan Askari", "Muhammad Shareef"],
+    authors: ["Muhammad Hassan Askari", "Muhammad Shareef", "Marwa Khanam"],
     status: "Manuscript in Preparation",
     researchAreas: [
       "Computer Vision",
