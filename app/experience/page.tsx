@@ -7,13 +7,17 @@ import ResearchProgression from "@/components/experience/ResearchProgression";
 import { Download, FileText, ArrowRight } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Experience | Muhammad Hassan Askari",
+  title: "Experience & Academic Appointments",
   description:
-    "Academic and professional experience of Muhammad Hassan Askari, including teaching assistant experience at COMSATS University Islamabad and internships in ICT and software quality assurance.",
+    "Academic and professional experience of Muhammad Hassan Askari, including teaching assistant appointments at COMSATS University Islamabad and software engineering internships.",
+  alternates: {
+    canonical: "https://research-with-askari.vercel.app/experience",
+  },
   openGraph: {
-    title: "Experience | Muhammad Hassan Askari",
+    title: "Experience & Academic Appointments | Muhammad Hassan Askari",
     description:
-      "Academic and professional experience of Muhammad Hassan Askari, including teaching assistant experience at COMSATS University Islamabad and internships in ICT and software quality assurance.",
+      "Academic and professional experience of Muhammad Hassan Askari, including teaching assistant appointments at COMSATS University Islamabad and software engineering internships.",
+    url: "https://research-with-askari.vercel.app/experience",
   },
 };
 

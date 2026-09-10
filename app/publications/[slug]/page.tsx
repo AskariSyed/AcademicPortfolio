@@ -41,10 +41,14 @@ export async function generateMetadata({
 
   return {
     title: `${paper.title}`,
-    description: paper.problem,
+    description: paper.description || paper.problem,
+    alternates: {
+      canonical: `https://research-with-askari.vercel.app/publications/${paper.slug}`,
+    },
     openGraph: {
-      title: paper.title,
-      description: paper.problem,
+      title: `${paper.title} | Muhammad Hassan Askari`,
+      description: paper.description || paper.problem,
+      url: `https://research-with-askari.vercel.app/publications/${paper.slug}`,
       type: "article",
     },
   };

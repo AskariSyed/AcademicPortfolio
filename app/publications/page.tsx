@@ -10,6 +10,15 @@ export const metadata: Metadata = {
   title: "Research Manuscripts & Publications",
   description:
     "Submitted research manuscripts and manuscripts in preparation by Muhammad Hassan Askari in algorithmic scheduling and robust visual perception.",
+  alternates: {
+    canonical: "https://research-with-askari.vercel.app/publications",
+  },
+  openGraph: {
+    title: "Research Manuscripts & Publications | Muhammad Hassan Askari",
+    description:
+      "Submitted research manuscripts and manuscripts in preparation by Muhammad Hassan Askari in algorithmic scheduling and robust visual perception.",
+    url: "https://research-with-askari.vercel.app/publications",
+  },
 };
 
 export default function PublicationsPage() {

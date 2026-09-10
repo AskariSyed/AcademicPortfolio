@@ -37,16 +37,26 @@ export default function HeroSection() {
           {/* Left Column (Headline, statements, CTAs) */}
           <div className="lg:col-span-7 flex flex-col space-y-6">
             <div className="space-y-4">
-              <div className="text-xs font-mono font-bold tracking-widest text-blue-900 uppercase">
-                {RESEARCH_IDENTITY.name} · Research Agenda
+              <div>
+                <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
+                  {RESEARCH_IDENTITY.name}
+                </h1>
+                <p className="mt-1.5 text-base sm:text-lg font-semibold text-blue-950">
+                  Computer Science Graduate | AI/ML &amp; Trustworthy AI
+                </p>
               </div>
-              
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.12]">
-                Reliable Visual Intelligence <br />
-                <span className="text-blue-900 font-serif italic font-normal">
-                  Under Environmental Domain Shift
-                </span>
-              </h1>
+
+              <div className="pt-2">
+                <div className="text-xs font-mono font-bold tracking-widest text-blue-900 uppercase mb-1">
+                  Primary Research Agenda
+                </div>
+                <h2 className="text-2xl sm:text-3xl lg:text-3xl font-bold tracking-tight text-slate-900 leading-[1.18]">
+                  Reliable Visual Intelligence <br />
+                  <span className="text-blue-900 font-serif italic font-normal">
+                    Under Environmental Domain Shift
+                  </span>
+                </h2>
+              </div>
             </div>
 
             <p className="text-lg sm:text-xl text-slate-800 font-normal leading-relaxed border-l-3 border-blue-900 pl-4 py-1 bg-blue-50/30 rounded-r-md">

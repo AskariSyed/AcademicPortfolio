@@ -58,7 +58,7 @@ export const RESEARCH_IDENTITY = {
   email: "askari.syed04@gmail.com",
   github: "https://github.com/AskariSyed",
   linkedin: "https://www.linkedin.com/in/syed-hassan-askari/",
-  preferredDomain: "https://research.askarisyed.com",
+  preferredDomain: "https://research-with-askari.vercel.app",
 };
 
 export const RESEARCH_FOCUS_CARDS: ResearchFocusCard[] = [

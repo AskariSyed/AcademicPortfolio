@@ -249,7 +249,7 @@ The portfolio is pre-rendered as a static bundle through Next.js SSG:
 npm run build
 ```
 
-* **Target Production Domain:** `https://research.askarisyed.com`
+* **Production Domain:** `https://research-with-askari.vercel.app`
 * **Hosting:** Compatible with Vercel, Cloudflare Pages, AWS Amplify, or any standard Node.js/static edge environment.
 * **Environment Variables:** No environment variables are required for the current public portfolio configuration.
 

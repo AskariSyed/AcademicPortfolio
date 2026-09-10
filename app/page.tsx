@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import HeroSection from "@/components/hero/HeroSection";
 import ResearchFocus from "@/components/research/ResearchFocus";
@@ -17,7 +18,31 @@ import HomeExperiencePreview from "@/components/experience/HomeExperiencePreview
 import SectionContainer from "@/components/layout/SectionContainer";
 import { PUBLICATIONS } from "@/data/publications";
 import { PROJECTS } from "@/data/projects";
-import { ArrowRight, BookOpen, Layers } from "lucide-react";
+import { ArrowRight, BookOpen, Layers, GraduationCap } from "lucide-react";
+
+export const metadata: Metadata = {
+  title: "Muhammad Hassan Askari | Computer Science Graduate | AI/ML",
+  description:
+    "Muhammad Hassan Askari is a Computer Science graduate from COMSATS University Islamabad working on AI/ML, trustworthy AI, robust machine learning, computer vision, LLM-based systems, and RAG.",
+  alternates: {
+    canonical: "https://research-with-askari.vercel.app/",
+  },
+  openGraph: {
+    title: "Muhammad Hassan Askari | Computer Science Graduate | AI/ML",
+    description:
+      "Muhammad Hassan Askari is a Computer Science graduate from COMSATS University Islamabad working on AI/ML, trustworthy AI, robust machine learning, computer vision, LLM-based systems, and RAG.",
+    url: "https://research-with-askari.vercel.app/",
+    siteName: "Muhammad Hassan Askari Portfolio",
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Muhammad Hassan Askari | Computer Science Graduate | AI/ML",
+    description:
+      "Muhammad Hassan Askari is a Computer Science graduate from COMSATS University Islamabad working on AI/ML, trustworthy AI, robust machine learning, computer vision, LLM-based systems, and RAG.",
+  },
+};
 
 export default function HomePage() {
   const featuredProjects = PROJECTS.filter((p) => p.isResearch).slice(0, 3);
@@ -104,6 +129,17 @@ export default function HomePage() {
 
       {/* 11. Teaching Experience */}
       <TeachingExperience />
+
+      <div className="py-6 flex justify-center bg-slate-50/50 border-b border-slate-100">
+        <Link
+          href="/about"
+          className="inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-xs font-semibold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 transition-colors shadow-2xs"
+        >
+          <GraduationCap className="w-4 h-4 text-blue-900" />
+          <span>View Full Academic Profile, Coursework &amp; Teaching History</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
+      </div>
 
       {/* Toolkit (Research-dominant) */}
       <ResearchToolkit />

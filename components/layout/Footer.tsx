@@ -87,9 +87,6 @@ export default function Footer() {
           <div>
             © {new Date().getFullYear()} {RESEARCH_IDENTITY.name}. Built with Next.js App Router.
           </div>
-          <div className="font-mono text-[11px]">
-            Target Domain: research.askarisyed.com
-          </div>
         </div>
       </div>
     </footer>

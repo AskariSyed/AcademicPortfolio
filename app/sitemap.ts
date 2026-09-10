@@ -3,7 +3,7 @@ import { PROJECTS } from "@/data/projects";
 import { PUBLICATIONS } from "@/data/publications";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = "https://research.askarisyed.com";
+  const baseUrl = "https://research-with-askari.vercel.app";
 
   const staticRoutes: MetadataRoute.Sitemap = [
     "",

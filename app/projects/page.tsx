@@ -8,7 +8,16 @@ import { Layers, Terminal, Sparkles } from "lucide-react";
 export const metadata: Metadata = {
   title: "Research & Technical Projects",
   description:
-    "Empirical implementations and computer vision systems developed by Muhammad Hassan Askari, focusing on domain adaptation, robustness, and visual reliability.",
+    "Empirical machine learning and computer vision implementations by Muhammad Hassan Askari, focusing on domain adaptation, robustness, and visual reliability.",
+  alternates: {
+    canonical: "https://research-with-askari.vercel.app/projects",
+  },
+  openGraph: {
+    title: "Research & Technical Projects | Muhammad Hassan Askari",
+    description:
+      "Empirical machine learning and computer vision implementations by Muhammad Hassan Askari, focusing on domain adaptation, robustness, and visual reliability.",
+    url: "https://research-with-askari.vercel.app/projects",
+  },
 };
 
 export default function ProjectsPage() {

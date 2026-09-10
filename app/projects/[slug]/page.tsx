@@ -38,13 +38,17 @@ export async function generateMetadata({
   const resolvedParams = await params;
   if (resolvedParams.slug === "snow-degraded-traffic-signs" || resolvedParams.slug === "task-aware-traffic-sign-classification") {
     return {
-      title: "Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions | Muhammad H. Askari",
+      title: "Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions",
       description:
         "Research manuscript in preparation by Muhammad Hassan Askari on robust traffic sign classification under snow-degraded visual conditions, with future submission planned for MDPI Sensors.",
+      alternates: {
+        canonical: "https://research-with-askari.vercel.app/projects/task-aware-traffic-sign-classification",
+      },
       openGraph: {
-        title: "Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions | Muhammad H. Askari",
+        title: "Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions | Muhammad Hassan Askari",
         description:
           "Research manuscript in preparation by Muhammad Hassan Askari on robust traffic sign classification under snow-degraded visual conditions, with future submission planned for MDPI Sensors.",
+        url: "https://research-with-askari.vercel.app/projects/task-aware-traffic-sign-classification",
       },
     };
   }
@@ -57,11 +61,15 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${project.title} | Muhammad H. Askari`,
+    title: project.title,
     description: project.summary,
+    alternates: {
+      canonical: `https://research-with-askari.vercel.app/projects/${project.slug}`,
+    },
     openGraph: {
-      title: project.title,
+      title: `${project.title} | Muhammad Hassan Askari`,
       description: project.summary,
+      url: `https://research-with-askari.vercel.app/projects/${project.slug}`,
     },
   };
 }

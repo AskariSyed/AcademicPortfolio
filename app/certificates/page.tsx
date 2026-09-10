@@ -6,7 +6,16 @@ import { Award, ShieldCheck } from "lucide-react";
 export const metadata: Metadata = {
   title: "Certificates & Academic Milestones",
   description:
-    "Interactive physical-feel certificate wall exhibiting verified academic distinction, machine learning specializations, and engineering credentials of Muhammad Hassan Askari.",
+    "Interactive certificate wall exhibiting verified academic distinctions, machine learning specializations, and engineering credentials of Muhammad Hassan Askari.",
+  alternates: {
+    canonical: "https://research-with-askari.vercel.app/certificates",
+  },
+  openGraph: {
+    title: "Certificates & Academic Milestones | Muhammad Hassan Askari",
+    description:
+      "Interactive certificate wall exhibiting verified academic distinctions, machine learning specializations, and engineering credentials of Muhammad Hassan Askari.",
+    url: "https://research-with-askari.vercel.app/certificates",
+  },
 };
 
 export default function CertificatesPage() {

@@ -7,9 +7,18 @@ import { GraduationCap, FileText, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 export const metadata: Metadata = {
-  title: "Academic Background & Experience",
+  title: "Academic Background & Education",
   description:
-    "Formal academic education at COMSATS University Islamabad, 3.65 CGPA, IELTS 7.0 (C1), teaching assistant appointments, and technical competencies of Muhammad Hassan Askari.",
+    "Formal academic background of Muhammad Hassan Askari: BS in Computer Science from COMSATS University Islamabad, academic record, teaching assistantships, and technical competencies.",
+  alternates: {
+    canonical: "https://research-with-askari.vercel.app/about",
+  },
+  openGraph: {
+    title: "Academic Background & Education | Muhammad Hassan Askari",
+    description:
+      "Formal academic background of Muhammad Hassan Askari: BS in Computer Science from COMSATS University Islamabad, academic record, teaching assistantships, and technical competencies.",
+    url: "https://research-with-askari.vercel.app/about",
+  },
 };
 
 export default function AboutPage() {

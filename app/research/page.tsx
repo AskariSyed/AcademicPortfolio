@@ -12,6 +12,15 @@ export const metadata: Metadata = {
   title: "Research Agenda & Directions",
   description:
     "Theoretical investigations in reliable visual intelligence, environmental domain shift, visual uncertainty, and multimodal perception by Muhammad Hassan Askari.",
+  alternates: {
+    canonical: "https://research-with-askari.vercel.app/research",
+  },
+  openGraph: {
+    title: "Research Agenda & Directions | Muhammad Hassan Askari",
+    description:
+      "Theoretical investigations in reliable visual intelligence, environmental domain shift, visual uncertainty, and multimodal perception by Muhammad Hassan Askari.",
+    url: "https://research-with-askari.vercel.app/research",
+  },
 };
 
 export default function ResearchPage() {

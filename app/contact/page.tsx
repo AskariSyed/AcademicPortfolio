@@ -7,7 +7,16 @@ import { RESEARCH_IDENTITY } from "@/data/research";
 export const metadata: Metadata = {
   title: "Contact & Research Inquiries",
   description:
-    "Direct academic contact details for Muhammad Hassan Askari. Inquiries regarding graduate study opportunities, research collaborations, and academic projects.",
+    "Direct academic contact details for Muhammad Hassan Askari. Inquiries regarding graduate study opportunities, research collaborations, and academic discussions.",
+  alternates: {
+    canonical: "https://research-with-askari.vercel.app/contact",
+  },
+  openGraph: {
+    title: "Contact & Research Inquiries | Muhammad Hassan Askari",
+    description:
+      "Direct academic contact details for Muhammad Hassan Askari. Inquiries regarding graduate study opportunities, research collaborations, and academic discussions.",
+    url: "https://research-with-askari.vercel.app/contact",
+  },
 };
 
 export default function ContactPage() {
