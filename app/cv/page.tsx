@@ -117,19 +117,37 @@ export default function CVPage() {
               </div>
             </div>
 
-            {/* Current Manuscript Card */}
-            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-2xs space-y-3">
+            {/* Current Manuscripts Card */}
+            <div className="rounded-xl border border-slate-200 bg-white p-6 shadow-2xs space-y-4">
               <h3 className="text-xs font-mono font-bold uppercase tracking-wider text-slate-400">
-                Active Research Manuscript
+                Research Manuscripts
               </h3>
-              <h4 className="text-sm font-bold text-slate-900 leading-snug">
-                {PUBLICATIONS[0].title}
-              </h4>
-              <p className="text-xs text-slate-600">
-                Authors: {PUBLICATIONS[0].authors.join(", ")}
-              </p>
-              <div className="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-900 border border-amber-200">
-                {PUBLICATIONS[0].status}
+              <div className="space-y-4 divide-y divide-slate-100">
+                {PUBLICATIONS.map((pub, idx) => (
+                  <div key={pub.slug} className={idx > 0 ? "pt-4 space-y-1.5" : "space-y-1.5"}>
+                    <h4 className="text-sm font-bold text-slate-900 leading-snug">
+                      {pub.title}
+                    </h4>
+                    <p className="text-xs text-slate-600">
+                      Authors: {pub.authors.join(", ")}
+                    </p>
+                    <div className="flex flex-wrap items-center gap-1.5 pt-1">
+                      <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-semibold bg-amber-50 text-amber-900 border border-amber-200">
+                        {pub.status}
+                      </span>
+                      {pub.venue && (
+                        <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-semibold bg-blue-50 text-blue-900 border border-blue-200">
+                          {pub.venue}
+                        </span>
+                      )}
+                      {pub.targetVenue && (
+                        <span className="inline-block px-2.5 py-0.5 rounded text-[11px] font-mono text-slate-600 bg-slate-100 border border-slate-200">
+                          Target: {pub.targetVenue}
+                        </span>
+                      )}
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
 

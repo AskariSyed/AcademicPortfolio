@@ -175,7 +175,7 @@ export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
     badgeVariant: "emerald",
     highlightMetric: "EfficientNet-B2: 68.02% → 87.34%",
     narrative:
-      "The work evolved into “Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions”. I expanded dataset preparation, introduced task-aware stage disentanglement, and conducted extensive ablation studies. Top-1 classification accuracy on EfficientNet-B2 improved from 68.02% to 87.34% under severe snow conditions. The revised manuscript is now in its final stages before submission to MDPI Sensors. Far beyond the numerical gain, persisting through critique and revision made me realize that I genuinely enjoy the scientific research process.",
+      "The work evolved into “Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions”. I expanded dataset preparation, introduced task-aware stage disentanglement, and conducted extensive ablation studies. Top-1 classification accuracy on EfficientNet-B2 improved from 68.02% to 87.34% under severe snow conditions. The revised manuscript is now being refined with future submission planned for MDPI Sensors. Far beyond the numerical gain, persisting through critique and revision made me realize that I genuinely enjoy the scientific research process.",
     bridge:
       "Having tackled physical sensory corruption in vision, my curiosity broadened toward language and retrieval architectures.",
     description:

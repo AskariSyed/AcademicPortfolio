@@ -83,6 +83,17 @@ export default async function PublicationDetailPage({
             <Clock className="w-3 h-3 text-amber-700" />
             <span>{paper.status}</span>
           </span>
+          {paper.venue && (
+            <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded text-xs font-semibold bg-blue-50 text-blue-900 border border-blue-200">
+              <FileCheck2 className="w-3.5 h-3.5 text-blue-700" />
+              <span>Submitted to {paper.venue}</span>
+            </span>
+          )}
+          {paper.targetVenue && (
+            <span className="inline-flex items-center gap-1 px-3 py-0.5 rounded text-xs font-medium text-slate-700 bg-slate-100 border border-slate-200">
+              <span>Target Venue: {paper.targetVenue}</span>
+            </span>
+          )}
         </div>
 
         <h1 className="text-2xl sm:text-3xl md:text-4xl font-extrabold tracking-tight text-slate-900 leading-tight">
@@ -113,18 +124,18 @@ export default async function PublicationDetailPage({
           </div>
         </div>
 
-        {/* High-Level Research Overview (Abstract protected) */}
+        {/* High-Level Research Overview */}
         <div className="mt-8 p-6 rounded-xl bg-slate-50 border border-slate-200/90 space-y-2">
           <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
             <FileText className="w-3.5 h-3.5 text-blue-900" />
             <span>High-Level Research Overview</span>
           </div>
           <p className="text-sm sm:text-base text-slate-700 font-serif italic leading-relaxed">
-            &ldquo;An ongoing study of robust traffic sign classification under snow-degraded visual conditions. The research investigates a task-aware multi-stage framework that combines image enhancement and deep-learning-based classification to improve recognition when snow obscures or degrades visual information.&rdquo;
+            &ldquo;{paper.description || paper.problem}&rdquo;
           </p>
           <div className="pt-2">
             <Link
-              href="/projects/task-aware-traffic-sign-classification"
+              href={`/projects/${paper.projectSlug || paper.slug}`}
               className="inline-flex items-center gap-1.5 text-xs font-semibold text-blue-900 hover:text-blue-950 font-mono"
             >
               <span>Explore Dedicated Project Case Study →</span>
@@ -137,7 +148,7 @@ export default async function PublicationDetailPage({
           <div className="flex items-center justify-between mb-3 border-b border-slate-200 pb-2">
             <h3 className="text-sm font-bold uppercase tracking-wider text-slate-800 flex items-center gap-2">
               <Layers className="w-4 h-4 text-blue-900" />
-              <span>Multi-Stage Methodological Framework</span>
+              <span>{paper.slug === "decentralized-greedy-interview-scheduling" ? "Scheduling Heuristic Pipeline" : "Multi-Stage Methodological Framework"}</span>
             </h3>
             <span className="text-xs font-mono text-slate-400">Pipeline Flow</span>
           </div>

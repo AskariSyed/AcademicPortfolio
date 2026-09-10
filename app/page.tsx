@@ -46,8 +46,8 @@ export default function HomePage() {
       <SectionContainer
         id="publications"
         tag="Scholarly Output"
-        title="Selected Publications &amp; Manuscripts"
-        subtitle="Current peer-reviewed manuscripts and technical investigations in environmental domain shift."
+        title="Selected Research Manuscripts"
+        subtitle="Research manuscripts submitted for academic conference review and ongoing investigations under active preparation."
         className="bg-slate-50/50"
       >
         <div className="space-y-6 max-w-4xl mx-auto">

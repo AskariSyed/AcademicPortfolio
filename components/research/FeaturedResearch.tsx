@@ -5,7 +5,7 @@ import { Users, FileCheck2, HelpCircle, AlertTriangle, Cpu, Layers } from "lucid
 import Link from "next/link";
 
 export default function FeaturedResearch() {
-  const paper = PUBLICATIONS[0];
+  const paper = PUBLICATIONS.find((p) => p.slug === "traffic-sign-classification-snow-degraded") || PUBLICATIONS[0];
 
   return (
     <SectionContainer

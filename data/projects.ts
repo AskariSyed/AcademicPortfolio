@@ -1,70 +1,31 @@
 export interface SchedulingCaseStudy {
   subtitle: string;
+  authors?: string[];
   researchStatusStatement: string;
+  submissionVenue?: string;
+  submissionStatus?: string;
+  venue?: string;
   researchQuestion: string;
-  twoSidedConstraints: {
-    title: string;
-    description: string;
-  }[];
+  problemSummary: string;
   motivation: string;
-  greedyAlgorithm: {
-    overview: string;
-    pipelineSteps: {
-      step: string;
-      title: string;
-      description: string;
-    }[];
-    priorityRuleNote: string;
-    conflictJumpingNote: string;
-  };
-  formalModel: {
-    definitions: { symbol: string; meaning: string }[];
-    constraints: { id: string; name: string; formula: string; explanation: string }[];
-  };
-  complexityAnalysis: {
-    sorting: string;
-    conflictChecking: string;
-    searchBound: string;
-    worstCaseBound: string;
-    empiricalFit: string;
-    distinctionNote: string;
-  };
-  empiricalEvaluation: {
-    overview: string;
-    scenarioType: "Synthetic Scheduling Scenarios";
-    testedRequestRange: string;
-    observedLogLogExponent: string;
-    investigatedFactors: string[];
-    preliminaryNotice: string;
-  };
-  bufferExperiment: {
-    baselineBuffer: string;
-    testedRange: string;
-    observations: { bufferSeconds: number; successRate: number }[];
-    analysis: string;
-  };
-  fairnessAnalysis: {
-    currentRuleDescription: string;
-    observations: string[];
-    futurePolicies: string[];
-  };
-  concurrencyModel: {
-    problemStatement: string;
-    pipeline: string[];
-    mechanism: string;
-    guaranteeNote: string;
-  };
-  walkInSupport: {
-    description: string;
-    prerequisites: string[];
-  };
-  realWorldConnection: {
-    narrative: string;
-    originSystem: string;
-    evolutionSteps: string[];
-  };
+  approachSummary: string;
+  approachStages: string[];
+  priorityPolicyNote: string;
+  searchStrategyNote: string;
+  formalModelingStatement: string;
+  formalModelingNotice: string;
+  algorithmicAnalysisStatement: string;
+  evaluationStatement: string;
+  evaluationStages: string[];
+  fairnessStatement: string;
+  concurrencyStatement: string;
+  operationalStatement: string;
+  realWorldNarrative: string;
+  originSystem: string;
+  evolutionSteps: string[];
+  scopeStatement: string;
   futureDirections: string[];
-  limitations: string[];
+  graduateAlignmentStatement: string;
 }
 
 export interface TrafficSignCaseStudy {
@@ -115,6 +76,7 @@ export interface Project {
   title: string;
   shortTitle?: string;
   subtitle?: string;
+  authors?: string[];
   category:
   | "Primary Research"
   | "Research Project"
@@ -124,6 +86,9 @@ export interface Project {
   | "Computer Vision · Robust Recognition";
   isResearch: boolean;
   status?: string;
+  submissionVenue?: string;
+  submissionStatus?: string;
+  venue?: string;
   year?: number;
   date: string;
   tags: string[];
@@ -233,6 +198,7 @@ export const PROJECTS: Project[] = [
     title: "Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions",
     shortTitle: "Task-Aware Traffic Sign Classification",
     subtitle: "Robust Perception Under Adverse Weather & Environmental Domain Shift",
+    authors: ["Muhammad Hassan Askari", "Muhammad Shareef", "Marwa Khanam"],
     category: "Computer Vision · Robust Recognition",
     isResearch: true,
     status: "Manuscript in Preparation",
@@ -265,7 +231,7 @@ export const PROJECTS: Project[] = [
       authors: ["Muhammad Hassan Askari", "Muhammad Shareef", "Marwa Khanam"],
       institution: "COMSATS University Islamabad",
       manuscriptStatusStatement:
-        "The manuscript is currently being refined, including methodological and experimental analysis. The work is intended for future submission to MDPI Sensors.",
+        "The manuscript is currently being refined, including methodological and experimental analysis, with future submission planned for MDPI Sensors.",
       intendedVenue: "MDPI Sensors (In Preparation)",
       publicDescription:
         "An ongoing study of robust traffic sign classification under snow-degraded visual conditions. The research investigates a task-aware multi-stage approach that combines controlled environmental degradation, image restoration, and deep-learning-based classification to study how recognition performance changes when visual evidence becomes partially obscured or degraded.",
@@ -335,7 +301,7 @@ export const PROJECTS: Project[] = [
         statement:
           "Early experimental evaluation indicates that the proposed multi-stage approach can substantially improve traffic-sign recognition under snow-degraded conditions. The experimental analysis is still being refined as part of the manuscript preparation process.",
         refinementNote:
-          "Exact quantitative benchmark tables, confusion matrices, and ablation statistics will be disclosed upon formal peer-reviewed publication in MDPI Sensors.",
+          "Exact quantitative benchmark tables, confusion matrices, and ablation statistics will be disclosed upon formal peer-reviewed publication.",
       },
       researchEvolution: {
         steps: [
@@ -348,7 +314,7 @@ export const PROJECTS: Project[] = [
           "Manuscript Preparation",
         ],
         narrative:
-          "The research originated as an initial study submitted to FIT 2025. Following constructive reviewer feedback, the investigation underwent systematic methodological revision—transitioning from a basic two-step pipeline to a task-aware formulation with expanded experimental validation, currently being finalized for submission to MDPI Sensors.",
+          "The research originated as an initial study submitted to FIT 2025. Following constructive reviewer feedback, the investigation underwent systematic methodological revision—transitioning from a basic two-step pipeline to a task-aware formulation with expanded experimental validation, with future submission planned for MDPI Sensors.",
       },
       researchQuestions: [
         "How does snow-induced visual degradation affect traffic-sign classification?",
@@ -630,16 +596,27 @@ export const PROJECTS: Project[] = [
     title: "Decentralized Greedy Scheduling for Interview Allocation at Job Fairs",
     shortTitle: "Greedy Interview Scheduling",
     subtitle: "Algorithm Design, Complexity, and Empirical Evaluation",
+    authors: [
+      "Muhammad Hassan Askari",
+      "Sulimana Huma",
+      "Shumaim Zafar",
+      "Ashfaq Ahmed",
+      "Dr. Khalid Iqbal",
+      "Dr. Muhammad Bilal",
+    ],
     year: 2026,
     date: "2026",
     category: "Algorithms & Optimization",
     isResearch: true,
-    status: "Initial Research Phase",
+    status: "Submitted Manuscript",
+    submissionVenue: "HITE 2026",
+    submissionStatus: "Submitted",
+    venue: "HITE 2026",
     repositoryVisibility: "private",
     repositoryUrl: undefined,
     featured: true,
     tags: [
-      "Algorithms",
+      "Algorithm Design",
       "Scheduling",
       "Optimization",
       "Greedy Algorithms",
@@ -648,256 +625,86 @@ export const PROJECTS: Project[] = [
       "Software Systems",
     ],
     summary:
-      "An ongoing study of greedy scheduling, conflict-aware temporal allocation, fairness, and transactional revalidation for interview assignment in job fairs.",
+      "A research manuscript submitted to HITE 2026 investigating interview scheduling as a constrained two-sided allocation problem. The study explores greedy scheduling, temporal constraints, fairness considerations, and concurrency-aware validation in the context of high-throughput job-fair interview allocation.",
     description:
-      "Interview allocation at a large-scale job fair presents a complex two-sided scheduling challenge where multiple companies and students share constrained temporal resources. This research models the problem under coupled availability, non-overlapping intervals, lunch restrictions, and mandatory buffers, investigating an efficient conflict-jumping greedy heuristic paired with database-level transactional revalidation.",
+      "A research manuscript submitted to HITE 2026 investigating interview scheduling as a constrained two-sided allocation problem. The study explores greedy scheduling, temporal constraints, fairness considerations, and concurrency-aware validation in the context of high-throughput job-fair interview allocation.",
     keyContributions: [
-      "Two-sided scheduling formalization with joint temporal and buffer constraints",
-      "Conflict-jumping heuristic preventing fine-grained minute-by-minute search stalls",
-      "Empirical evaluation of buffer duration impact on overall allocation fraction",
-      "Transaction-based optimistic revalidation mitigating concurrent scheduling races",
+      "Two-sided temporal scheduling formulation under coupled resource constraints",
+      "Greedy allocation strategies with search-reduction mechanisms for temporal conflicts",
+      "Investigation into scheduling priority policies and candidate fairness",
+      "Database-level concurrency validation for reliable high-throughput allocation",
     ],
-    technologies: ["C# / .NET", "Algorithm Design", "Synthetic Simulation", "Complexity Analysis", "Relational Concurrency"],
+    technologies: ["Algorithm Design", "Discrete Optimization", "Scheduling Systems", "Relational Concurrency"],
     schedulingCaseStudy: {
       subtitle: "Algorithm Design, Complexity, and Empirical Evaluation",
+      authors: [
+        "Muhammad Hassan Askari",
+        "Sulimana Huma",
+        "Shumaim Zafar",
+        "Ashfaq Ahmed",
+        "Dr. Khalid Iqbal",
+        "Dr. Muhammad Bilal",
+      ],
+      submissionVenue: "HITE 2026",
+      submissionStatus: "Submitted",
+      venue: "HITE 2026",
       researchStatusStatement:
-        "This project is currently in the early stages of research and empirical validation. The scheduling formulation, greedy heuristic, complexity analysis, simulation methodology, and evaluation framework are being refined.",
+        "Because this work has been submitted for review, the public portfolio intentionally provides only a high-level overview. Detailed algorithmic formulations, implementation mechanics, experimental configurations, numerical results, and manuscript-specific analyses are withheld until an appropriate publication stage.",
       researchQuestion:
         "How can interview requests be efficiently allocated across shared student and company resources while respecting temporal constraints, fairness considerations, and concurrent scheduling requests?",
-      twoSidedConstraints: [
-        {
-          title: "Two-Sided Assignment",
-          description: "Companies need to interview multiple students, and students may be accepted by multiple companies.",
-        },
-        {
-          title: "Simultaneous Exclusion",
-          description: "Neither a student nor a company can participate in more than one interview simultaneously.",
-        },
-        {
-          title: "Fixed Durations & Boundaries",
-          description: "Interviews possess fixed durations and must fit strictly within declared operating hours.",
-        },
-        {
-          title: "Mandatory Breaks",
-          description: "Interviews cannot overlap designated shared event lunch breaks.",
-        },
-        {
-          title: "Temporal Buffers",
-          description: "A non-zero temporal buffer is required between consecutive interviews for transition and setup.",
-        },
-        {
-          title: "Concurrent Dispatch",
-          description: "Multiple company representatives may trigger automated scheduling concurrently in a decentralized system.",
-        },
-      ],
+      problemSummary:
+        "The investigation considers coupled resource availability, temporal conflicts, transition requirements, and concurrent scheduling requests within a high-throughput recruitment setting.",
       motivation:
-        "Interview scheduling at a job fair is fundamentally distinct from ordinary single-resource slot assignment. Every scheduling decision simultaneously ties up two distinct entities: a specific student and a company recruitment team. Because in-demand students receive multiple interview acceptances and companies maintain long queues of candidates, scheduling decisions exert cascading ripple effects. The scheduler must continuously balance student availability, company availability, hard temporal boundaries, and candidate processing order.",
-      greedyAlgorithm: {
-        overview:
-          "The core scheduler employs a decentralized first-fit greedy heuristic augmented with conflict-jumping to rapidly determine earliest feasible time slots without fine-grained time-stepped scanning.",
-        pipelineSteps: [
-          {
-            step: "01",
-            title: "Accepted Requests Ingestion",
-            description: "Collects pending accepted interview requests waiting to be scheduled for the calling company.",
-          },
-          {
-            step: "02",
-            title: "Priority Ordering",
-            description: "Sorts candidate requests using a heuristic priority rule based on the candidate student's existing interview commitments.",
-          },
-          {
-            step: "03",
-            title: "First-Fit Search",
-            description: "Iterates sequentially from the configured event start time to locate the earliest mutually open slot.",
-          },
-          {
-            step: "04",
-            title: "Conflict Detection",
-            description: "Checks whether candidate intervals clash with company bookings, student bookings, lunch windows, or boundary limits.",
-          },
-          {
-            step: "05",
-            title: "Conflict Jumping",
-            description: "When an overlap occurs, the search pointer jumps directly to the conclusion of the blocking interview plus required buffer.",
-          },
-          {
-            step: "06",
-            title: "Candidate Assignment",
-            description: "Constructs an in-memory provisional schedule reservation for the current request.",
-          },
-          {
-            step: "07",
-            title: "Local Busy-List Update",
-            description: "Immediately updates in-memory availability structures to prevent subsequent requests within the batch from self-conflicting.",
-          },
-          {
-            step: "08",
-            title: "Database Revalidation",
-            description: "Opens an isolated database transaction, queries the latest persisted state, and verifies zero inter-company collision.",
-          },
-          {
-            step: "09",
-            title: "Commit / Rollback",
-            description: "Commits allocations if all constraints remain unviolated; otherwise triggers transactional rollback and retry.",
-          },
-        ],
-        priorityRuleNote:
-          "Requests are ordered according to the number of interviews already scheduled for each student (students with more existing commitments processed first). This serves as an empirical heuristic priority rule rather than an optimality guarantee.",
-        conflictJumpingNote:
-          "Rather than advancing minute-by-minute through occupied periods, the search pointer advances directly to max(end_time + buffer) of detected conflicts. This eliminates thousands of redundant validity evaluations.",
-      },
-      formalModel: {
-        definitions: [
-          { symbol: "C", meaning: "Set of participating companies: {c_1, c_2, ..., c_m}" },
-          { symbol: "S", meaning: "Set of eligible students: {s_1, s_2, ..., s_n}" },
-          { symbol: "(c, s)", meaning: "Accepted interview request between company c and student s" },
-          { symbol: "d_c", meaning: "Fixed interview duration configured for company c" },
-          { symbol: "t_{c,s}", meaning: "Assigned starting timestamp for interview (c, s)" },
-          { symbol: "β", meaning: "Mandatory transition buffer duration between consecutive interviews" },
-          { symbol: "I_{c,s}", meaning: "Occupied temporal interval: [t_{c,s}, t_{c,s} + d_c)" },
-          { symbol: "[T_{start}, T_{end}]", meaning: "Permissible daily operating window for interview sessions" },
-          { symbol: "[T_{L,start}, T_{L,end}]", meaning: "Restricted mid-day lunch break window" },
-        ],
-        constraints: [
-          {
-            id: "F1",
-            name: "Temporal Operating Feasibility",
-            formula: "T_{start} \\le t_{c,s} \\quad \\wedge \\quad t_{c,s} + d_c \\le T_{end} \\quad \\wedge \\quad I_{c,s} \\cap [T_{L,start}, T_{L,end}] = \\emptyset",
-            explanation: "Every scheduled session must execute entirely within operating hours and strictly avoid the lunch hiatus.",
-          },
-          {
-            id: "F2",
-            name: "Company Non-Overlap Constraint",
-            formula: "\\forall s' \\ne s: \\quad [t_{c,s}, t_{c,s} + d_c + \\beta) \\cap [t_{c,s'}, t_{c,s'} + d_c + \\beta) = \\emptyset",
-            explanation: "A single company recruitment team cannot conduct concurrent sessions, with buffer β enforced between bookings.",
-          },
-          {
-            id: "F3",
-            name: "Student Non-Overlap Constraint",
-            formula: "\\forall c' \\ne c: \\quad [t_{c,s}, t_{c,s} + d_c + \\beta) \\cap [t_{c',s}, t_{c',s} + d_{c'} + \\beta) = \\emptyset",
-            explanation: "A student cannot participate in multiple simultaneous interviews across distinct company recruitment teams.",
-          },
-        ],
-      },
-      complexityAnalysis: {
-        sorting: "O(R \\log R) where R represents the count of candidate requests in the scheduling batch.",
-        conflictChecking: "O(k_c + k_s) per evaluation step, where k_c and k_s are relevant company and student reservations.",
-        searchBound: "Constant upper bound of 5,000 search iterations per candidate request enforced in the software implementation.",
-        worstCaseBound: "O(R \\log R + 5000R(k_c + k_s)) under enforced iteration bounds.",
-        empiricalFit: "Empirical log-log regression across simulated workloads yields a scaling exponent of approximately 1.08.",
-        distinctionNote:
-          "Important methodological note: The empirical scaling exponent near 1.08 observed in synthetic testing is an empirical observation of typical performance, not a mathematical proof of near-linear theoretical worst-case complexity.",
-      },
-      empiricalEvaluation: {
-        overview:
-          "Because operational job-fair scheduling execution logs are not publicly standardized or available, the current empirical evaluation relies on parametric synthetic scheduling scenarios.",
-        scenarioType: "Synthetic Scheduling Scenarios",
-        testedRequestRange: "32 to 1,454 synthetic requests across diverse student acceptance distributions",
-        observedLogLogExponent: "1.08",
-        investigatedFactors: [
-          "Request volume scaling and computational throughput",
-          "Scheduling contention and two-sided bottleneck emergence",
-          "Company invocation order sensitivity",
-          "Buffer duration variation (0 to 600 seconds)",
-          "Priority ordering effects on throughput vs. fairness",
-          "Overall scheduling success fraction under peak loads",
-        ],
-        preliminaryNotice:
-          "All quantitative outcomes represent preliminary simulation findings from ongoing doctoral preparation research and are subject to expanded benchmark verification.",
-      },
-      bufferExperiment: {
-        baselineBuffer: "90 seconds (system default transition allowance)",
-        testedRange: "0 seconds to 600 seconds (10-minute maximum)",
-        observations: [
-          { bufferSeconds: 0, successRate: 76.0 },
-          { bufferSeconds: 90, successRate: 71.4 },
-          { bufferSeconds: 180, successRate: 66.8 },
-          { bufferSeconds: 300, successRate: 61.2 },
-          { bufferSeconds: 600, successRate: 53.8 },
-        ],
-        analysis:
-          "Increasing the inter-interview buffer β noticeably contracts total scheduling capacity, reducing scheduling fraction from ~76.0% (β=0s) to ~53.8% (β=600s). The 90-second configuration represents an operational compromise between student physical movement across booths and aggregate scheduling density.",
-      },
-      fairnessAnalysis: {
-        currentRuleDescription:
-          "The current priority heuristic prioritizes requests for students who already possess higher scheduled interview counts, attempting to pack dense schedules efficiently.",
-        observations: [
-          "Preliminary simulations indicate the heuristic does not necessarily increase aggregate event-wide scheduling capacity.",
-          "Processing order shifts significantly, often consolidating slots among already in-demand candidates.",
-          "Early observations suggest the current rule may inadvertently reduce fairness for candidates with fewer total interview invitations.",
-        ],
-        futurePolicies: [
-          "Students with fewer existing opportunities processed first (max-min equity)",
-          "Guaranteed minimum interview quota allocation",
-          "Fairness-aware multi-criteria ranking functions",
-          "Dynamic opportunity-weighted priority queues",
-          "Fairness-capacity Pareto frontier analysis",
-        ],
-      },
-      concurrencyModel: {
-        problemStatement:
-          "In a decentralized event where multiple company booth managers click 'Generate Schedule' concurrently, independently calculated in-memory schedules can race for identical open student slots.",
-        pipeline: [
-          "Generate candidate schedule in memory using local snapshot",
-          "Open isolated database transaction with read consistency",
-          "Fetch persisted ground-truth intervals for target students & company",
-          "Perform strict database-level conflict re-verification",
-          "If conflict detected: Rollback transaction & signal retry required",
-          "If valid: Persist allocated records & commit atomic transaction",
-        ],
-        mechanism: "Optimistic Transactional Revalidation",
-        guaranteeNote:
-          "This approach provides a robust atomic safety net preventing double-booking without requiring global pessimistic locking across the entire student body during heuristic search.",
-      },
-      walkInSupport: {
-        description:
-          "The underlying job-fair scheduling architecture additionally accommodates spontaneous on-site walk-in candidates without perturbing already locked interview commitments.",
-        prerequisites: [
-          "Company booth recruitment team must be logged in and currently present",
-          "Current system clock must fall strictly within the active designated walk-in window",
-          "Walk-in intake mode must be explicitly toggled active by company recruiters",
-          "Candidate student must hold verified registration within the institutional portal",
-        ],
-      },
-      realWorldConnection: {
-        narrative:
-          "This algorithmic research originated directly from engineering challenges encountered while designing and deploying the enterprise CUI Wah Job Fair Portal. Real-world observations of recruiter delays, double-booking contention, and student queueing motivated the formulation of formal scheduling models, conflict-jumping heuristics, and concurrency validation.",
-        originSystem: "CUI Wah Job Fair Portal",
-        evolutionSteps: [
-          "Operational Job Fair Observations",
-          "Two-Sided Constraint Formalization",
-          "Mathematical Problem Modeling",
-          "Greedy Heuristic Formulation",
-          "Conflict-Jumping Search Optimization",
-          "Synthetic Simulation & Scaling Analysis",
-          "Database Transactional Revalidation",
-          "Integrated Production-Ready Scheduling Engine",
-        ],
-      },
+        "The study models interview allocation as a two-sided temporal scheduling problem in which each assignment simultaneously consumes availability from both a student and a company recruitment team. Because in-demand students receive multiple interview opportunities and companies maintain queues of candidates, scheduling decisions exert cascading ripple effects across the event.",
+      approachSummary:
+        "The study investigates a greedy scheduling strategy for allocating interview requests under coupled temporal and resource constraints. The approach combines heuristic scheduling decisions with mechanisms intended to account for conflicts and concurrent system state.",
+      approachStages: [
+        "Research Problem",
+        "Scheduling Strategy",
+        "Empirical Evaluation",
+      ],
+      priorityPolicyNote:
+        "The study investigates how scheduling priority policies influence allocation efficiency and candidate fairness.",
+      searchStrategyNote:
+        "The research investigates search strategies intended to reduce unnecessary scheduling exploration when temporal conflicts occur.",
+      formalModelingStatement:
+        "The study formulates interview allocation as a constrained scheduling problem involving coupled resource availability, temporal feasibility, and fairness considerations.",
+      formalModelingNotice:
+        "Detailed mathematical formulation withheld during review.",
+      algorithmicAnalysisStatement:
+        "The manuscript evaluates computational behavior and scheduling performance across controlled workloads. Detailed complexity analysis and empirical scaling results are reserved for the submitted manuscript.",
+      evaluationStatement:
+        "The study uses controlled experimental scenarios to examine scheduling behavior under varying workload and constraint conditions. Detailed datasets, configurations, numerical results, and statistical analyses remain private while the manuscript is under review.",
+      evaluationStages: [
+        "Controlled Workloads",
+        "Scheduling Evaluation",
+        "Comparative Analysis",
+      ],
+      fairnessStatement:
+        "The research considers the relationship between scheduling efficiency and candidate-level fairness, with fairness-aware allocation policies identified as an important direction for continued investigation.",
+      concurrencyStatement:
+        "The investigation also considers the challenges introduced when multiple scheduling operations occur concurrently and examines database-level validation as part of reliable allocation.",
+      operationalStatement:
+        "The underlying system also supports operational scenarios beyond pre-scheduled interview allocation.",
+      realWorldNarrative:
+        "This research originated from engineering challenges encountered while designing and deploying the CUI Wah Job Fair Portal. Operational scheduling challenges motivated a deeper investigation into constrained interview allocation, algorithmic scheduling, fairness, and reliable concurrent execution.",
+      originSystem: "CUI Wah Job Fair Portal",
+      evolutionSteps: [
+        "Operational Problem",
+        "Problem Formalization",
+        "Algorithmic Investigation",
+        "Controlled Evaluation",
+        "Research Manuscript",
+      ],
+      scopeStatement:
+        "The current study evaluates a heuristic scheduling approach under controlled experimental conditions. Questions concerning scalability, fairness, optimality, and broader real-world validation remain areas for continued investigation.",
       futureDirections: [
-        "Formulation of multi-objective fairness-aware scheduling priority rules",
-        "Empirical benchmarking against alternative greedy heuristics (e.g., Shortest Processing Time, Slack Time)",
-        "Investigation of local search and metaheuristic approaches (Simulated Annealing, Tabu Search)",
-        "Exact Integer Linear Programming (ILP) formulations for small-to-medium problem instances",
-        "Bipartite matching and network flow reductions for constrained sub-problems",
-        "Maximum-flow formulations with non-uniform time slot capacities",
-        "Scaling evaluations on ultra-large synthetic workloads (10,000+ requests)",
-        "Acquisition and benchmarking against anonymized real-world job fair event logs",
-        "Rigorous statistical hypothesis testing and variance analysis across random request graphs",
-        "Distributed consensus protocols and formal concurrency throughput bounds",
-        "Pareto-optimal frontier analysis balancing total event capacity against candidate fairness",
+        "Fairness-aware scheduling",
+        "Alternative optimization and search strategies",
+        "Larger-scale and real-world evaluation",
       ],
-      limitations: [
-        "Experimental evaluations currently rely exclusively on synthetic scenarios; real-world event logs are not yet available.",
-        "Greedy heuristics make locally optimal decisions and do not guarantee global optimality or maximum possible matching.",
-        "Company call order introduces scheduling path dependency, where earlier callers secure preferable time slots.",
-        "The current priority heuristic requires further investigation regarding its fairness impact on low-frequency interviewees.",
-        "The implemented 5,000-iteration search ceiling may theoretically truncate search in extreme hyper-dense edge scenarios.",
-        "Optimistic transaction revalidation eliminates silent collisions but requires conflicting companies to retry scheduling.",
-        "Statistical tests and effect-size analyses are currently in preliminary development.",
-        "Formal mathematical proofs of approximation ratios under two-sided buffer constraints remain an open inquiry.",
-      ],
+      graduateAlignmentStatement:
+        "This investigation reflects my interest in algorithm design, optimization, and real-world system modeling under coupled constraints, complementing my empirical work in machine learning and robust visual recognition.",
     },
   },
   {

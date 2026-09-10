@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { Project } from "@/data/projects";
-import { ArrowUpRight, Lock, Sparkles, Clock } from "lucide-react";
+import { ArrowUpRight, Lock, Sparkles, Clock, FileCheck2 } from "lucide-react";
 import { GithubIcon } from "@/components/ui/SocialIcons";
 
 interface ProjectCardProps {
@@ -22,7 +22,7 @@ export default function ProjectCard({ project }: ProjectCardProps) {
     >
       <div>
         <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <span
               className={`px-2.5 py-0.5 rounded text-xs font-semibold uppercase tracking-wider font-mono ${
                 project.category === "Primary Research"
@@ -35,9 +35,15 @@ export default function ProjectCard({ project }: ProjectCardProps) {
               {project.category}
             </span>
             {project.status && (
-              <span className="hidden sm:inline-flex items-center gap-1 text-[11px] font-medium text-amber-900 bg-amber-50 border border-amber-200/70 px-2 py-0.2 rounded">
+              <span className="inline-flex items-center gap-1 text-[11px] font-medium text-amber-900 bg-amber-50 border border-amber-200/70 px-2 py-0.5 rounded">
                 <Clock className="w-3 h-3 text-amber-700" />
                 <span>{project.status}</span>
+              </span>
+            )}
+            {project.submissionVenue && (
+              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-blue-900 bg-blue-50 border border-blue-200/80 px-2 py-0.5 rounded">
+                <FileCheck2 className="w-3 h-3 text-blue-700" />
+                <span>Submitted to {project.submissionVenue}</span>
               </span>
             )}
           </div>

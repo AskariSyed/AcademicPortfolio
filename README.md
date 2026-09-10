@@ -42,7 +42,7 @@ The portfolio focuses on developing reliable intelligent systems when visual evi
 ## Featured Research
 
 ### 1. Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions
-* **Status:** `Manuscript in Preparation` *(Intended for future submission to MDPI Sensors)*
+* **Status:** `Manuscript in Preparation` *(Future submission planned for MDPI Sensors)*
 * **Category:** Computer Vision · Robust Recognition · Environmental Domain Shift
 * **Overview:** An ongoing study of robust traffic sign recognition under snow-degraded visual conditions, investigating a multi-stage approach combining controlled environmental degradation, image restoration, and deep-learning-based classification to study how recognition behavior changes when visual evidence becomes partially obscured.
 * **Public Boundary:** High-level problem formulation and methodology are documented publicly. Unpublished abstract text, exact experimental percentages, confusion matrices, and private manuscript files remain confidential.
@@ -54,9 +54,10 @@ The portfolio focuses on developing reliable intelligent systems when visual evi
 * **Public Boundary:** The research repository is currently private. Source code, notebooks, dataset splits, and raw experimental logs are not publicly hosted.
 
 ### 3. Decentralized Greedy Scheduling for Interview Allocation at Job Fairs
-* **Status:** `Initial Research Phase`
-* **Category:** Algorithms · Combinatorial Optimization · Resource Allocation
-* **Overview:** An ongoing algorithmic investigation of priority-based interview scheduling for job fairs, examining two-sided temporal constraints, conflict-jumping greedy search heuristics, computational complexity, buffer duration effects, and allocation fairness.
+* **Status:** `Submitted Manuscript (HITE 2026)`
+* **Category:** Algorithms & Optimization · Combinatorial Optimization · Resource Allocation
+* **Overview:** A research manuscript submitted to HITE 2026, investigating greedy scheduling, conflict-aware temporal allocation, fairness, and transactional revalidation for interview assignment in job fairs.
+* **Public Boundary:** The research implementation repository is currently private during peer review.
 
 ---
 
@@ -131,7 +132,7 @@ The website intentionally adopts a **research-first academic aesthetic** tailore
 
 * **Public Disclosures:** Public case studies provide high-level conceptual overviews of ongoing research problems, theoretical questions, and overall architectures.
 * **Unpublished Material:** Exact unpublished numerical metrics, complete manuscript texts, draft abstracts, benchmark spreadsheets, and private source repositories are intentionally omitted.
-* **Conservative Status Labels:** Project maturity statuses (`Manuscript in Preparation`, `Experimental Validation Ongoing`, `Initial Research Phase`) accurately state the current stage of investigation without overclaiming publication or acceptance.
+* **Conservative Status Labels:** Project maturity statuses (`Submitted Manuscript`, `Manuscript in Preparation`, `Experimental Validation Ongoing`) accurately state the current stage of investigation without overclaiming publication or acceptance.
 
 ---
 

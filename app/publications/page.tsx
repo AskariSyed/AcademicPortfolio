@@ -4,15 +4,18 @@ import SectionContainer from "@/components/layout/SectionContainer";
 import PublicationCard from "@/components/publications/PublicationCard";
 import { PUBLICATIONS } from "@/data/publications";
 import { RESEARCH_DIRECTIONS } from "@/data/research";
-import { FileText, Lightbulb, Clock, ShieldCheck } from "lucide-react";
+import { FileText, ShieldCheck } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Research & Publications",
+  title: "Research Manuscripts & Publications",
   description:
-    "Peer-reviewed manuscripts and conceptual research directions in computer vision and domain shift by Muhammad Hassan Askari.",
+    "Submitted research manuscripts and manuscripts in preparation by Muhammad Hassan Askari in algorithmic scheduling and robust visual perception.",
 };
 
 export default function PublicationsPage() {
+  const submittedManuscripts = PUBLICATIONS.filter((p) => p.stage === "submitted");
+  const inPrepManuscripts = PUBLICATIONS.filter((p) => p.stage === "in_preparation");
+
   return (
     <div className="py-8">
       {/* Header */}
@@ -23,23 +26,41 @@ export default function PublicationsPage() {
             <span>Academic Works</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-            Research &amp; Publications
+            Research Manuscripts &amp; Publications
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-650 leading-relaxed">
-            Formal manuscripts under peer review alongside early-stage conceptual research directions in robust visual perception.
+            Record of original research manuscripts submitted to academic venues, investigations undergoing preparation, and conceptual prospective research directions.
           </p>
         </div>
       </section>
 
-      {/* Manuscripts Section */}
+      {/* Submitted Manuscripts Section */}
       <SectionContainer
-        tag="Current Manuscripts"
-        title="Scholarly Manuscripts"
-        subtitle="Completed research contributions currently under formal peer review."
+        tag="Under Peer Review"
+        title="Submitted Manuscripts"
+        subtitle="Completed research contributions currently under formal academic conference review."
         className="bg-white"
       >
         <div className="space-y-6 max-w-4xl">
-          {PUBLICATIONS.map((paper) => (
+          {submittedManuscripts.map((paper) => (
+            <PublicationCard
+              key={paper.slug}
+              publication={paper}
+              showAbstract={true}
+            />
+          ))}
+        </div>
+      </SectionContainer>
+
+      {/* Manuscripts in Preparation Section */}
+      <SectionContainer
+        tag="Active Refinement"
+        title="Manuscripts in Preparation"
+        subtitle="Original research studies undergoing systematic experimental refinement and methodological analysis with future target submissions."
+        className="bg-slate-50/50"
+      >
+        <div className="space-y-6 max-w-4xl">
+          {inPrepManuscripts.map((paper) => (
             <PublicationCard
               key={paper.slug}
               publication={paper}
@@ -48,10 +69,10 @@ export default function PublicationsPage() {
           ))}
         </div>
 
-        <div className="mt-8 p-4 rounded-lg bg-slate-50 border border-slate-200 max-w-4xl text-xs text-slate-500 flex items-center gap-2.5">
+        <div className="mt-8 p-4 rounded-lg bg-white border border-slate-200 max-w-4xl text-xs text-slate-650 flex items-center gap-2.5 shadow-2xs">
           <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
           <span>
-            Strict Academic Integrity Policy: Citation counts, acceptance venues, and volume/issue numbers will only be presented upon formal publication.
+            <strong>Strict Academic Integrity Policy:</strong> Citation counts, acceptance venues, and volume/issue numbers will only be presented upon formal publication. Manuscripts under review or in preparation do not imply accepted or published status.
           </span>
         </div>
       </SectionContainer>
@@ -61,13 +82,13 @@ export default function PublicationsPage() {
         tag="Active Hypotheses"
         title="Research Directions"
         subtitle="Early-stage conceptual inquiries and theoretical investigations. These represent prospective research vectors for graduate study, not published literature."
-        className="bg-slate-50/50"
+        className="bg-white"
       >
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl">
           {RESEARCH_DIRECTIONS.map((dir, idx) => (
             <div
               key={dir.id}
-              className="p-6 rounded-xl border border-slate-200 bg-white flex flex-col justify-between shadow-2xs"
+              className="p-6 rounded-xl border border-slate-200 bg-slate-50/30 flex flex-col justify-between shadow-2xs"
             >
               <div>
                 <div className="flex items-center justify-between gap-2 mb-3">
@@ -87,13 +108,13 @@ export default function PublicationsPage() {
                   {dir.summary}
                 </p>
 
-                <div className="mt-4 p-3 rounded-md bg-slate-50 border border-slate-100 text-xs text-slate-600">
+                <div className="mt-4 p-3 rounded-md bg-white border border-slate-200/80 text-xs text-slate-600">
                   <strong className="text-slate-800 block mb-1">Motivation:</strong>
                   {dir.motivation}
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-slate-100">
+              <div className="mt-6 pt-4 border-t border-slate-200/80">
                 <span className="text-[11px] font-bold text-slate-700 block mb-2">
                   Open Research Questions:
                 </span>

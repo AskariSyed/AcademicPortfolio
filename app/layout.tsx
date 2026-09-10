@@ -108,16 +108,15 @@ export default function RootLayout({
           "@id": "https://research.askarisyed.com/#person",
         },
       },
-      {
+      ...PUBLICATIONS.map((pub) => ({
         "@type": "ScholarlyArticle",
-        "headline": PUBLICATIONS[0].title,
-        "author": PUBLICATIONS[0].authors.map((name) => ({
+        "headline": pub.title,
+        "author": pub.authors.map((name) => ({
           "@type": "Person",
           "name": name,
         })),
-        "description":
-          "Research on robust traffic-sign classification under snow-degraded visual conditions using a task-aware multi-stage approach.",
-      },
+        "description": pub.description,
+      })),
     ],
   };
 

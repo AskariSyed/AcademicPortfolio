@@ -132,7 +132,7 @@ export default function TrafficSignResearchCaseStudy({
             Manuscript in Preparation
           </h2>
           <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-            The manuscript is currently being refined, including methodological and experimental analysis. The work is intended for future submission to <strong>MDPI Sensors</strong>.
+            The manuscript is currently being refined, including methodological and experimental analysis, with future submission planned for <strong>MDPI Sensors</strong>.
           </p>
         </div>
       </section>

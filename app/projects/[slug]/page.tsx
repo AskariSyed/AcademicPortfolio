@@ -38,13 +38,13 @@ export async function generateMetadata({
   const resolvedParams = await params;
   if (resolvedParams.slug === "snow-degraded-traffic-signs" || resolvedParams.slug === "task-aware-traffic-sign-classification") {
     return {
-      title: "Task-Aware Traffic Sign Classification | Muhammad H. Askari",
+      title: "Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions | Muhammad H. Askari",
       description:
-        "Research by Muhammad Hassan Askari on robust traffic sign classification under snow-degraded visual conditions and environmental domain shift.",
+        "Research manuscript in preparation by Muhammad Hassan Askari on robust traffic sign classification under snow-degraded visual conditions, with future submission planned for MDPI Sensors.",
       openGraph: {
-        title: "Task-Aware Traffic Sign Classification | Muhammad H. Askari",
+        title: "Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions | Muhammad H. Askari",
         description:
-          "Research by Muhammad Hassan Askari on robust traffic sign classification under snow-degraded visual conditions and environmental domain shift.",
+          "Research manuscript in preparation by Muhammad Hassan Askari on robust traffic sign classification under snow-degraded visual conditions, with future submission planned for MDPI Sensors.",
       },
     };
   }
