@@ -1,7 +1,7 @@
 import React from "react";
 import { Eye, Network, Layers, ShieldCheck, ArrowRight } from "lucide-react";
 import SectionContainer from "@/components/layout/SectionContainer";
-import { RESEARCH_FOCUS_CARDS } from "@/data/research";
+import { RESEARCH_FOCUS_CARDS, RESEARCH_HIERARCHY } from "@/data/research";
 import Link from "next/link";
 
 const ICONS = {
@@ -72,12 +72,89 @@ export default function ResearchFocus() {
         })}
       </div>
 
+      {/* Structured Research Hierarchy */}
+      <div className="mt-12 rounded-2xl border border-slate-200 bg-slate-50/70 p-6 sm:p-8 space-y-6">
+        <div>
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
+            Research Interest Hierarchy
+          </span>
+          <h3 className="text-lg sm:text-xl font-bold text-slate-900">
+            Demonstrated vs. Prospective Specialization
+          </h3>
+          <p className="text-xs sm:text-sm text-slate-600 mt-1">
+            Organized to clearly distinguish established empirical investigation from prospective research vectors.
+          </p>
+        </div>
+
+        <div className="grid md:grid-cols-3 gap-4">
+          {/* Primary */}
+          <div className="p-4 sm:p-5 rounded-xl bg-white border-2 border-blue-900/30 shadow-2xs space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
+                Primary Interests
+              </span>
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-100 text-blue-900">
+                Active Projects
+              </span>
+            </div>
+            <ul className="space-y-1.5 text-xs sm:text-sm font-semibold text-slate-900">
+              {RESEARCH_HIERARCHY.primary.map((item) => (
+                <li key={item.title} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-blue-700" />
+                  <span>{item.title}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Secondary */}
+          <div className="p-4 sm:p-5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-700">
+                Secondary Interests
+              </span>
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-100 text-slate-600">
+                Emerging Trajectory
+              </span>
+            </div>
+            <ul className="space-y-1.5 text-xs sm:text-sm font-medium text-slate-700">
+              {RESEARCH_HIERARCHY.secondary.map((item) => (
+                <li key={item.title} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-slate-400" />
+                  <span>{item.title}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Emerging */}
+          <div className="p-4 sm:p-5 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-2.5">
+            <div className="flex items-center justify-between">
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-purple-700">
+                Emerging Direction
+              </span>
+              <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-purple-50 text-purple-700 border border-purple-200">
+                Prospective Vectors
+              </span>
+            </div>
+            <ul className="space-y-1.5 text-xs sm:text-sm font-medium text-slate-700">
+              {RESEARCH_HIERARCHY.emerging.map((item) => (
+                <li key={item.title} className="flex items-center gap-2">
+                  <span className="w-1.5 h-1.5 rounded-full bg-purple-400" />
+                  <span>{item.title}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+
       <div className="mt-8 flex justify-end">
         <Link
-          href="/research"
+          href="/publications"
           className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-900 hover:text-blue-950 hover:underline"
         >
-          <span>View Comprehensive Research Agenda</span>
+          <span>Explore Research Output &amp; Manuscripts</span>
           <ArrowRight className="w-4 h-4" />
         </Link>
       </div>

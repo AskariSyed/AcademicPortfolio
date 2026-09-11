@@ -14,7 +14,7 @@ export default function Footer() {
               {RESEARCH_IDENTITY.name}
             </div>
             <p className="text-xs text-slate-500 mt-0.5">
-              Computer Vision · Robust ML · Domain Adaptation · Multimodal AI
+              Reliable Computer Vision Under Distribution Shift
             </p>
             <p className="text-xs text-slate-400 mt-2 font-mono">
               COMSATS University Islamabad (2022–2026) · CGPA 3.65 · IELTS 7.0
@@ -32,7 +32,7 @@ export default function Footer() {
               href="/publications"
               className="text-xs font-medium text-slate-600 hover:text-slate-900 transition-colors"
             >
-              Publications
+              Research Output
             </Link>
             <Link
               href="/projects"

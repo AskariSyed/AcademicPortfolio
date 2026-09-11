@@ -1,117 +1,92 @@
 import React from "react";
 import SectionContainer from "@/components/layout/SectionContainer";
 import { RESEARCH_TOOLKIT } from "@/data/academic";
-import { BrainCircuit, Wrench, Terminal, Cpu } from "lucide-react";
+import { Terminal, Cpu } from "lucide-react";
 
 export default function ResearchToolkit() {
   return (
     <SectionContainer
       id="research-toolkit"
       tag="Technical Competencies"
-      title="Research &amp; Technical Capabilities"
-      subtitle="Structured into scientific methodologies, laboratory tooling, and enterprise engineering capabilities."
+      title="Technical &amp; Research Stack"
+      subtitle="Strictly categorized into research machine learning tooling and production software engineering foundations."
       className="bg-white"
     >
       <div className="space-y-8">
-        {/* Tier 1: RESEARCH (Visually Dominant) */}
-        <div className="rounded-2xl border-2 border-blue-900/40 bg-gradient-to-br from-blue-50/50 via-white to-slate-50 p-6 sm:p-8 shadow-sm">
-          <div className="flex flex-wrap items-center justify-between gap-2 mb-4">
-            <div className="flex items-center gap-2.5">
-              <div className="w-9 h-9 rounded-lg bg-blue-900 text-white flex items-center justify-center">
-                <BrainCircuit className="w-5 h-5" />
-              </div>
-              <div>
-                <h3 className="text-lg font-bold text-slate-900">
-                  Research Methodologies &amp; Theoretical Areas
-                </h3>
-                <span className="text-xs text-blue-950 font-semibold uppercase tracking-wider">
-                  Primary Specialization (Core Competence)
-                </span>
-              </div>
-            </div>
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-blue-900 text-white">
-              Primary Focus
-            </span>
-          </div>
-
-          <p className="text-xs sm:text-sm text-slate-650 mb-6 max-w-3xl leading-relaxed">
-            Theoretical frameworks, mathematical formulations, and algorithmic architectures actively investigated in empirical projects and ongoing literature review.
-          </p>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-2.5">
-            {RESEARCH_TOOLKIT.research.map((skill) => (
-              <div
-                key={skill}
-                className="p-3 rounded-lg bg-white border border-blue-200/80 shadow-2xs hover:border-blue-900 hover:shadow-xs transition-all"
-              >
-                <span className="text-xs sm:text-sm font-semibold text-slate-900 leading-tight block">
-                  {skill}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Tier 2 & 3: Tools & Engineering (Subdued & Balanced) */}
+        {/* Two Strict Categories: Research/ML vs Engineering */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {/* Tools */}
-          <div className="p-6 rounded-xl border border-slate-200 bg-slate-50/50">
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-8 h-8 rounded-md bg-slate-800 text-white flex items-center justify-center">
-                <Cpu className="w-4 h-4" />
+          {/* 1. Research / ML Stack */}
+          <div className="rounded-2xl border-2 border-blue-900/30 bg-gradient-to-br from-blue-50/50 via-white to-slate-50 p-6 sm:p-8 shadow-sm space-y-4">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-lg bg-blue-900 text-white flex items-center justify-center">
+                  <Cpu className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900">
+                    Research / ML Stack
+                  </h3>
+                  <span className="text-xs text-blue-900 font-semibold uppercase tracking-wider font-mono">
+                    Model Development &amp; Experimentation
+                  </span>
+                </div>
               </div>
-              <div>
-                <h4 className="text-base font-bold text-slate-900">
-                  Research &amp; Laboratory Tools
-                </h4>
-                <span className="text-xs text-slate-500 font-mono">
-                  Frameworks, Compute &amp; Toolchains
-                </span>
-              </div>
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-bold bg-blue-900 text-white">
+                Primary
+              </span>
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-4">
-              {RESEARCH_TOOLKIT.tools.map((tool) => (
+            <p className="text-xs sm:text-sm text-slate-650 leading-relaxed">
+              Core toolchain used for empirical deep learning, image degradation modeling, feature extraction, and multi-seed adaptation protocols.
+            </p>
+
+            <div className="flex flex-wrap gap-2 pt-2">
+              {RESEARCH_TOOLKIT.researchML.map((tech) => (
                 <span
-                  key={tool}
-                  className="px-3 py-1.5 rounded-md text-xs font-semibold bg-white text-slate-800 border border-slate-200/80 shadow-2xs"
+                  key={tech}
+                  className="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-semibold bg-white text-slate-900 border border-blue-200/90 shadow-2xs hover:border-blue-700 transition-colors"
                 >
-                  {tool}
+                  {tech}
                 </span>
               ))}
             </div>
           </div>
 
-          {/* Engineering (Subdued) */}
-          <div className="p-6 rounded-xl border border-slate-200/80 bg-white">
-            <div className="flex items-center gap-2.5 mb-3">
-              <div className="w-8 h-8 rounded-md bg-slate-200 text-slate-700 flex items-center justify-center">
-                <Terminal className="w-4 h-4" />
+          {/* 2. Engineering Stack */}
+          <div className="rounded-2xl border border-slate-200 bg-slate-50/60 p-6 sm:p-8 shadow-2xs space-y-4">
+            <div className="flex items-center justify-between gap-2">
+              <div className="flex items-center gap-2.5">
+                <div className="w-9 h-9 rounded-lg bg-slate-800 text-white flex items-center justify-center">
+                  <Terminal className="w-5 h-5" />
+                </div>
+                <div>
+                  <h3 className="text-lg font-bold text-slate-900">
+                    Engineering Stack
+                  </h3>
+                  <span className="text-xs text-slate-500 font-semibold uppercase tracking-wider font-mono">
+                    Systems, Backend &amp; Architecture
+                  </span>
+                </div>
               </div>
-              <div>
-                <h4 className="text-base font-bold text-slate-800">
-                  Systems &amp; Software Engineering
-                </h4>
-                <span className="text-xs text-slate-500 font-mono">
-                  Applied Implementation Infrastructure
-                </span>
-              </div>
+              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-medium bg-slate-200 text-slate-700">
+                Foundations
+              </span>
             </div>
 
-            <div className="flex flex-wrap gap-2 mt-4">
-              {RESEARCH_TOOLKIT.engineering.map((eng) => (
+            <p className="text-xs sm:text-sm text-slate-650 leading-relaxed">
+              Software engineering stack used to design production backends, real-time database concurrency, containerization, and deployed interactive systems.
+            </p>
+
+            <div className="flex flex-wrap gap-2 pt-2">
+              {RESEARCH_TOOLKIT.engineering.map((tech) => (
                 <span
-                  key={eng}
-                  className="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-100 text-slate-700 border border-slate-200/60"
+                  key={tech}
+                  className="px-3 py-1.5 rounded-lg text-xs sm:text-sm font-medium bg-white text-slate-700 border border-slate-200 shadow-2xs hover:border-slate-400 transition-colors"
                 >
-                  {eng}
+                  {tech}
                 </span>
               ))}
             </div>
-
-            <p className="mt-4 text-[11px] text-slate-500 italic">
-              Systems engineering provides practical implementation speed for deploying scalable research pipelines.
-            </p>
           </div>
         </div>
       </div>

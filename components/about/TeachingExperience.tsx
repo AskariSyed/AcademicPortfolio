@@ -61,6 +61,13 @@ export default function TeachingExperience() {
             <p className="mt-3.5 text-xs sm:text-sm text-slate-650 leading-relaxed border-t border-slate-100 pt-3">
               {item.description}
             </p>
+
+            {item.highlight && (
+              <div className="mt-3 p-2.5 rounded-lg bg-blue-50/70 border border-blue-200/70 text-xs text-blue-900 font-medium">
+                <span className="font-bold text-blue-950">Research Link: </span>
+                {item.highlight}
+              </div>
+            )}
           </div>
         ))}
       </div>

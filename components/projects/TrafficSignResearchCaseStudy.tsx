@@ -12,10 +12,12 @@ import {
   Sparkles,
   Users,
   Building2,
-  Table,
   ArrowRight,
-  Eye,
   ShieldCheck,
+  BarChart3,
+  AlertTriangle,
+  Lightbulb,
+  CheckCircle2,
 } from "lucide-react";
 
 interface TrafficSignResearchCaseStudyProps {
@@ -29,13 +31,13 @@ export default function TrafficSignResearchCaseStudy({
   if (!data) return null;
 
   return (
-    <article className="space-y-14">
+    <article className="space-y-12">
       {/* 1. Project Header / Hero */}
       <section className="rounded-2xl border-2 border-slate-300/80 bg-white p-6 sm:p-10 shadow-sm space-y-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2">
-            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-slate-900 text-white">
-              RESEARCH INVESTIGATION · {project.year}
+            <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-blue-900 text-white">
+              FLAGSHIP RESEARCH INVESTIGATION · {project.year}
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-300/80">
               <Clock className="w-3.5 h-3.5 text-amber-700" />
@@ -43,7 +45,7 @@ export default function TrafficSignResearchCaseStudy({
             </span>
           </div>
           <span className="font-mono text-xs font-semibold text-slate-500 bg-slate-100 px-2.5 py-1 rounded">
-            {project.shortTitle}
+            Environmental Domain Shift
           </span>
         </div>
 
@@ -54,7 +56,7 @@ export default function TrafficSignResearchCaseStudy({
           <p className="text-sm sm:text-base font-semibold text-blue-900 font-mono mt-1.5">
             Computer Vision · Robust Recognition · Environmental Domain Shift · Deep Learning
           </p>
-          <p className="mt-4 text-base sm:text-lg text-slate-700 font-serif italic border-l-3 border-slate-900 pl-4 py-1.5 bg-slate-50 leading-relaxed">
+          <p className="mt-4 text-base sm:text-lg text-slate-700 font-serif italic border-l-3 border-blue-900 pl-4 py-1.5 bg-blue-50/20 leading-relaxed">
             &ldquo;{data.publicDescription}&rdquo;
           </p>
         </div>
@@ -74,520 +76,362 @@ export default function TrafficSignResearchCaseStudy({
           </div>
         </div>
 
-        {/* Research Tags */}
-        <div className="flex flex-wrap gap-2 pt-2 border-t border-slate-100">
-          {project.tags.map((tag) => (
-            <span
-              key={tag}
-              className="text-xs font-medium bg-slate-100 text-slate-700 px-3 py-1 rounded-md border border-slate-200"
-            >
-              {tag}
-            </span>
-          ))}
-        </div>
-
-        {/* Academic Action CTAs */}
-        <div className="pt-2 flex flex-wrap items-center gap-3">
-          <a
-            href="#research-motivation"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-white bg-slate-900 hover:bg-blue-950 transition-colors"
-          >
-            Research Motivation
-          </a>
-          <a
-            href="#research-approach"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 transition-colors"
-          >
-            Research Approach
-          </a>
-          <a
-            href="#evaluation-setting"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 transition-colors"
-          >
-            Evaluation Setting
-          </a>
-          <a
-            href="#research-evolution"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 transition-colors"
-          >
-            Research Evolution
-          </a>
-          <Link
-            href="/contact"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-blue-900 bg-blue-50 border border-blue-200 hover:bg-blue-100 transition-colors"
-          >
-            Contact for Discussion
-          </Link>
+        {/* Action Navigation Bar */}
+        <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-semibold">
+          <a href="#research-problem" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Problem</a>
+          <a href="#research-question" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Question</a>
+          <a href="#method" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Method</a>
+          <a href="#experimental-setup" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Setup</a>
+          <a href="#results" className="px-3 py-1.5 rounded-md bg-blue-50 text-blue-900 hover:bg-blue-100 transition-colors">Results</a>
+          <a href="#what-i-learned" className="px-3 py-1.5 rounded-md bg-amber-50 text-amber-900 hover:bg-amber-100 transition-colors">Peer Review &amp; Revision</a>
+          <a href="#limitations" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Limitations</a>
+          <a href="#next-step" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Next Steps</a>
         </div>
       </section>
 
-      {/* 2. Manuscript Status Callout */}
-      <section className="p-6 rounded-xl bg-amber-50/70 border border-amber-300/80 shadow-2xs space-y-2">
+      {/* Explicit Status Transparency */}
+      <section className="p-5 sm:p-6 rounded-xl bg-amber-50/70 border border-amber-300/80 shadow-2xs space-y-1.5">
         <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-amber-900">
           <ShieldAlert className="w-4 h-4 text-amber-700" />
-          <span>Manuscript Status</span>
+          <span>Research Status Transparency</span>
         </div>
-        <div className="space-y-1">
-          <h2 className="text-base font-bold text-slate-900">
-            Manuscript in Preparation
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-            The manuscript is currently being refined, including methodological and experimental analysis, with future submission planned for <strong>MDPI Sensors</strong>.
-          </p>
-        </div>
+        <h2 className="text-base font-bold text-slate-900">
+          Manuscript in Preparation · MDPI Sensors
+        </h2>
+        <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
+          This study is an ongoing research investigation currently undergoing systematic methodological and experimental refinement. It has not yet been accepted or published. Future formal submission is planned for MDPI Sensors upon completion of remaining validation.
+        </p>
       </section>
 
-      {/* 3. Research Motivation */}
-      <section id="research-motivation" className="scroll-mt-24 space-y-4">
+      {/* Section 1: Research Problem */}
+      <section id="research-problem" className="scroll-mt-24 space-y-4">
         <div>
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Problem Formulation
+            Section 01 · Motivation
           </span>
           <h2 className="text-2xl font-bold text-slate-900">
-            Research Motivation
+            Research Problem
           </h2>
         </div>
 
         <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-4 text-sm sm:text-base text-slate-700 leading-relaxed">
           <p>
-            Autonomous vehicles and intelligent transportation systems depend on reliable visual recognition of traffic signs. Adverse weather conditions such as snow can obscure sign regions, reduce contrast, and remove fine-grained visual cues required for accurate classification.
+            Autonomous vehicle perception and driver assistance systems rely on accurate traffic sign classification to ensure navigational safety. However, real-world cold-climate deployment exposes cameras to severe snow corruption, including falling flakes, surface accumulation, atmospheric scattering, and contrast attenuation.
           </p>
           <p>
-            This research investigates how recognition systems behave when environmental degradation progressively reduces the quality of visual evidence, and whether image restoration can recover information useful for downstream classification.
+            These degradations obscure distinctive edge geometries, color boundaries, and interior glyphs, inducing an acute <strong>environmental domain shift</strong> where clean-trained neural network representations fail catastrophically on degraded target evidence.
           </p>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
+            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs">
+              <strong className="block text-slate-900 mb-1">Visual Occlusion</strong>
+              <span className="text-slate-650">Falling and accumulated snow partially masks sign pictograms.</span>
+            </div>
+            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs">
+              <strong className="block text-slate-900 mb-1">Contrast Loss</strong>
+              <span className="text-slate-650">Atmospheric scattering compresses the dynamic color range.</span>
+            </div>
+            <div className="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs">
+              <strong className="block text-slate-900 mb-1">Domain Divergence</strong>
+              <span className="text-slate-650">Test imagery deviates fundamentally from clean benchmark distributions.</span>
+            </div>
+          </div>
         </div>
       </section>
 
-      {/* 4. Research Question */}
-      <section className="space-y-4">
+      {/* Section 2: Research Question */}
+      <section id="research-question" className="scroll-mt-24 space-y-4">
+        <div>
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
+            Section 02 · Inquiry
+          </span>
+          <h2 className="text-2xl font-bold text-slate-900">
+            Research Question
+          </h2>
+        </div>
+
         <div className="p-6 sm:p-8 rounded-2xl bg-blue-50/50 border border-blue-200/80 space-y-3 shadow-2xs">
           <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
             <HelpCircle className="w-4 h-4 text-blue-700" />
-            <span>Central Research Question</span>
+            <span>Core Hypothesis</span>
           </div>
 
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-slate-900 leading-snug">
-            &ldquo;How can a recognition system maintain reliable classification when environmental degradation progressively removes useful visual information?&rdquo;
-          </h2>
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-slate-900 leading-snug">
+            &ldquo;How can a visual recognition system maintain reliable classification when environmental degradation progressively removes useful visual information?&rdquo;
+          </h3>
 
           <p className="text-xs sm:text-sm text-slate-650 border-t border-blue-200/60 pt-3 leading-relaxed">
-            Addressing this core question requires understanding the transition between clean observational distributions and progressively degraded visual evidence.
+            Specifically: Can an intermediate deep restoration stage recover discriminative boundary and feature evidence before classification heads, and how should restoration and categorization be coordinated under severe corruption?
           </p>
         </div>
       </section>
 
-      {/* 5. Research Approach — High-Level Overview */}
-      <section id="research-approach" className="scroll-mt-24 space-y-6">
+      {/* Section 3: Method */}
+      <section id="method" className="scroll-mt-24 space-y-4">
         <div>
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            System Architecture
+            Section 03 · Architecture
           </span>
           <h2 className="text-2xl font-bold text-slate-900">
-            Research Approach — High-Level Overview
+            Method
           </h2>
-          <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            The study constructs controlled snow-degraded variants of benchmark traffic-sign imagery and compares recognition behavior before degradation, after degradation, and following image restoration.
-          </p>
         </div>
 
-        {/* Clean Academic Pipeline Flow */}
-        <div className="grid grid-cols-1 sm:grid-cols-5 gap-3">
-          {[
-            {
-              step: "01",
-              title: "Benchmark Traffic Sign Images",
-              desc: "Standardized benchmark traffic-sign imagery establishing baseline clean distributions.",
-            },
-            {
-              step: "02",
-              title: "Controlled Snow Degradation",
-              desc: "Controlled environmental synthesis across increasing visual degradation severities.",
-            },
-            {
-              step: "03",
-              title: "Image Restoration",
-              desc: "Deep-learning restoration stage aimed at recovering obscured visual evidence.",
-            },
-            {
-              step: "04",
-              title: "Traffic Sign Classification",
-              desc: "Deep feature categorization heads evaluated on original, degraded, and restored representations.",
-            },
-            {
-              step: "05",
-              title: "Evaluation Across Visual Conditions",
-              desc: "Systematic comparative analysis of recognition behavior across visual conditions.",
-            },
-          ].map((stage) => (
-            <div
-              key={stage.step}
-              className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-1.5 flex flex-col justify-between"
-            >
-              <div>
-                <span className="text-xs font-mono font-bold text-blue-900 block">
-                  STAGE {stage.step}
-                </span>
-                <h3 className="text-xs sm:text-sm font-bold text-slate-900 leading-snug">
-                  {stage.title}
-                </h3>
-              </div>
-              <p className="text-[11px] text-slate-600 leading-relaxed pt-1">
-                {stage.desc}
-              </p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* 6. Methodology Description */}
-      <section className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-900">
-          Methodological Workflow
-        </h3>
-        <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
+        <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-5 text-sm text-slate-700 leading-relaxed">
           <p>
-            The research methodology follows a structured experimental protocol:
-          </p>
-          <ol className="list-decimal list-inside space-y-1.5 text-slate-800 font-medium pl-1">
-            <li>Start with the BTSC benchmark dataset.</li>
-            <li>Evaluate traffic-sign classification under the original benchmark condition.</li>
-            <li>Generate controlled snow-degraded versions of the images.</li>
-            <li>Consider multiple degradation severities.</li>
-            <li>Apply an image restoration/denoising stage.</li>
-            <li>
-              Perform traffic-sign classification on:
-              <ul className="list-disc list-inside pl-4 font-normal text-slate-700 space-y-0.5 mt-1">
-                <li>original images</li>
-                <li>snow-degraded images</li>
-                <li>restored images</li>
-              </ul>
-            </li>
-            <li>Compare recognition behavior across the different visual conditions.</li>
-          </ol>
-        </div>
-      </section>
-
-      {/* 7. Dataset & Evaluation Setting */}
-      <section id="evaluation-setting" className="scroll-mt-24 space-y-6">
-        <div>
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Experimental Foundations
-          </span>
-          <h2 className="text-2xl font-bold text-slate-900">
-            Dataset &amp; Evaluation Setting
-          </h2>
-        </div>
-
-        <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-6">
-          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-            The study uses the <strong>BTSC benchmark dataset</strong> as the foundation for evaluating traffic-sign recognition under progressively degraded visual conditions.
+            The project designs a <strong>task-aware multi-stage framework</strong> that treats adverse weather recognition as an integrated restoration-classification task. Rather than relying on naive sequential restoration (which can introduce artifacts that mislead the classifier), the framework evaluates feature recoverability at intermediate representation layers.
           </p>
 
-          {/* Degradation Conditions Concept */}
-          <div className="p-5 rounded-lg bg-slate-50 border border-slate-200 space-y-3">
-            <span className="text-xs font-mono font-bold uppercase text-slate-600 block">
-              Controlled Degradation Continuum
-            </span>
-            <p className="text-xs text-slate-650 leading-relaxed">
-              Controlled snow degradation is introduced to simulate increasingly challenging visual conditions and investigate how recognition performance changes as useful visual evidence becomes obscured.
-            </p>
-
-            {/* Visual Severity Flow */}
-            <div className="flex flex-wrap items-center justify-center sm:justify-start gap-3 pt-2">
-              <span className="px-4 py-2 rounded-lg bg-white border border-slate-300 font-mono text-xs font-semibold text-slate-800 shadow-2xs">
-                Clean Benchmark
-              </span>
-              <span className="text-slate-400 font-mono">→</span>
-              <span className="px-4 py-2 rounded-lg bg-white border border-amber-200 font-mono text-xs font-semibold text-amber-900 shadow-2xs">
-                Increasing Degradation Severity
-              </span>
-              <span className="text-slate-400 font-mono">→</span>
-              <span className="px-4 py-2 rounded-lg bg-white border border-blue-200 font-mono text-xs font-semibold text-blue-900 shadow-2xs">
-                Restored Evidence
-              </span>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 8 & 9. Image Restoration & Recognition Stages */}
-      <section className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Image Restoration */}
-        <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
-            <Sparkles className="w-4 h-4 text-blue-700" />
-            <span>Intermediate Processing</span>
-          </div>
-          <h3 className="text-lg font-bold text-slate-900">
-            Image Restoration
-          </h3>
-          <p className="text-xs sm:text-sm text-slate-650 leading-relaxed">
-            An image restoration stage is investigated as an intermediate step between environmental degradation and classification, with the goal of recovering visual evidence that may have been obscured by snow.
-          </p>
-        </div>
-
-        {/* Recognition */}
-        <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-3">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
-            <Cpu className="w-4 h-4 text-blue-700" />
-            <span>Downstream Task</span>
-          </div>
-          <h3 className="text-lg font-bold text-slate-900">
-            Recognition
-          </h3>
-          <p className="text-xs sm:text-sm text-slate-650 leading-relaxed">
-            Restored and degraded imagery is evaluated through a deep-learning-based traffic sign classification stage to examine whether restoration can improve the availability of discriminative visual information.
-          </p>
-        </div>
-      </section>
-
-      {/* 10. Experimental Comparison Table */}
-      <section className="space-y-4">
-        <div>
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Comparative Protocol
-          </span>
-          <h3 className="text-lg font-bold text-slate-900">
-            Experimental Condition Comparison
-          </h3>
-        </div>
-
-        <div className="overflow-x-auto rounded-xl border border-slate-200 bg-white shadow-2xs">
-          <table className="w-full text-left text-xs sm:text-sm">
-            <thead className="bg-slate-50 border-b border-slate-200 text-xs font-mono font-bold uppercase text-slate-600">
-              <tr>
-                <th className="px-5 py-3 w-48">Visual Condition</th>
-                <th className="px-5 py-3">Purpose</th>
-              </tr>
-            </thead>
-            <tbody className="divide-y divide-slate-200 text-slate-700">
-              <tr className="hover:bg-slate-50/60 transition-colors">
-                <td className="px-5 py-3 font-semibold text-slate-900 font-mono">
-                  Clean
-                </td>
-                <td className="px-5 py-3">
-                  Establish benchmark recognition behavior
-                </td>
-              </tr>
-              <tr className="hover:bg-slate-50/60 transition-colors">
-                <td className="px-5 py-3 font-semibold text-amber-900 font-mono">
-                  Snow-Degraded
-                </td>
-                <td className="px-5 py-3">
-                  Measure the effect of environmental degradation
-                </td>
-              </tr>
-              <tr className="hover:bg-slate-50/60 transition-colors">
-                <td className="px-5 py-3 font-semibold text-blue-900 font-mono">
-                  Restored
-                </td>
-                <td className="px-5 py-3">
-                  Investigate whether visual restoration recovers useful evidence
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-      </section>
-
-      {/* 11. Research Status & Evaluation (No Exact Numbers) */}
-      <section className="space-y-4">
-        <div className="p-6 sm:p-8 rounded-2xl bg-white border-2 border-slate-300 shadow-2xs space-y-4">
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex flex-wrap items-center gap-2">
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-blue-50 text-blue-900 border border-blue-200">
-                Experimental Evaluation Ongoing
-              </span>
-              <span className="px-2.5 py-0.5 rounded-full text-xs font-mono font-semibold bg-amber-50 text-amber-900 border border-amber-200">
-                Manuscript in Preparation
-              </span>
-            </div>
-            <span className="text-xs font-mono text-slate-400">
-              Refinement In Progress
-            </span>
-          </div>
-
-          <h2 className="text-xl sm:text-2xl font-bold text-slate-900 leading-snug">
-            Research Status &amp; Evaluation
-          </h2>
-
-          <p className="text-sm sm:text-base text-slate-700 font-serif italic border-l-2 border-blue-900 pl-4 py-1.5 bg-slate-50 leading-relaxed">
-            &ldquo;Experimental evaluation is ongoing. The current study examines recognition behavior across clean, snow-degraded, and restored traffic-sign imagery, with further analysis being refined as part of manuscript preparation.&rdquo;
-          </p>
-        </div>
-      </section>
-
-      {/* 12. Research Evolution */}
-      <section id="research-evolution" className="scroll-mt-24 space-y-6">
-        <div>
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Scholarly Iteration
-          </span>
-          <h2 className="text-2xl font-bold text-slate-900">
-            Research Evolution
-          </h2>
-          <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            Demonstrating active research iteration rather than presenting a static or finalized benchmark.
-          </p>
-        </div>
-
-        <div className="p-6 rounded-xl bg-slate-50 border border-slate-200 space-y-4">
-          <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
             {[
-              "Initial Traffic Sign Study",
-              "Adverse Weather Focus",
-              "Snow-Degraded Recognition",
-              "Multi-Stage Restoration + Classification",
-              "Task-Aware Reformulation",
-              "Expanded Experimental Evaluation",
-              "Manuscript Preparation",
-            ].map((step, idx, arr) => (
-              <React.Fragment key={step}>
-                <span className="px-3 py-1.5 rounded bg-white text-slate-800 border border-slate-200 shadow-2xs">
-                  {step}
-                </span>
-                {idx < arr.length - 1 && (
-                  <span className="text-slate-400 font-mono">→</span>
-                )}
-              </React.Fragment>
+              { stage: "01", title: "Degraded Input", desc: "Snow occlusion & scattering" },
+              { stage: "02", title: "Normalization", desc: "Spatial & dynamic alignment" },
+              { stage: "03", title: "Deep Restoration", desc: "Targeted snow removal" },
+              { stage: "04", title: "Feature Recovery", desc: "Edge & contour preservation" },
+              { stage: "05", title: "Deep Classifier", desc: "Compound-scaled backbone" },
+              { stage: "06", title: "Robust Category", desc: "Calibrated prediction" },
+            ].map((s) => (
+              <div key={s.stage} className="p-3 rounded-lg bg-slate-50 border border-slate-200 text-center space-y-1">
+                <span className="text-[10px] font-mono font-bold text-blue-900 block">STAGE {s.stage}</span>
+                <span className="text-xs font-bold text-slate-800 block leading-tight">{s.title}</span>
+                <span className="text-[10px] text-slate-500 block">{s.desc}</span>
+              </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* 13. Connection to My Broader Research Direction */}
-      <section className="space-y-6">
+      {/* Section 4: Experimental Setup */}
+      <section id="experimental-setup" className="scroll-mt-24 space-y-4">
         <div>
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Unified Research Agenda
+            Section 04 · Protocol
           </span>
           <h2 className="text-2xl font-bold text-slate-900">
-            Connection to My Broader Research Direction
+            Experimental Setup
           </h2>
         </div>
 
-        <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-4">
-          <p className="text-xs sm:text-sm text-slate-700 leading-relaxed">
-            This study forms part of a broader research interest in building visual intelligence systems that remain reliable when the distribution or quality of visual evidence changes.
-          </p>
+        <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-4 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 space-y-1.5">
+              <span className="text-xs font-mono font-bold text-slate-500 uppercase block">Benchmark Dataset</span>
+              <p className="font-semibold text-slate-900 text-sm">Belgium Traffic Sign Classification (BTSC)</p>
+              <p className="text-slate-650 text-xs">Used as the primary clean baseline distribution for traffic sign classes, spanning speed limits, prohibitions, warnings, and mandatory directions.</p>
+            </div>
 
-          {/* Research Trajectory */}
-          <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 space-y-2">
-            <span className="text-xs font-mono font-bold text-slate-600 block uppercase">
-              Robustness &amp; Domain Shift Trajectory
-            </span>
-            <div className="flex flex-wrap items-center gap-2 text-xs font-semibold">
-              {[
-                "Snow-Degraded Traffic Signs",
-                "Robust Visual Recognition",
-                "Environmental Domain Shift",
-                "Few-Shot Adaptation",
-                "Visual Reliability",
-                "Multimodal AI",
-              ].map((node, idx, arr) => (
-                <React.Fragment key={node}>
-                  <span className="px-2.5 py-1 rounded bg-white text-slate-800 border border-slate-200">
-                    {node}
-                  </span>
-                  {idx < arr.length - 1 && (
-                    <span className="text-slate-400 font-mono">→</span>
-                  )}
-                </React.Fragment>
-              ))}
+            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 space-y-1.5">
+              <span className="text-xs font-mono font-bold text-slate-500 uppercase block">Classification Backbone</span>
+              <p className="font-semibold text-slate-900 text-sm">EfficientNet-B2 (Compound Scaling)</p>
+              <p className="text-slate-650 text-xs">Evaluated across clean inputs, corrupted snow conditions, and restored representations to establish performance degradation and recovery trajectories.</p>
             </div>
           </div>
 
-          <p className="text-xs text-slate-600 border-t border-slate-100 pt-3 italic leading-relaxed">
-            This study connects naturally to my other research investigation in <strong>Few-Shot Adaptation for AI-Generated Image Detection under Unseen Generator Distribution Shift</strong>, exploring how models maintain reliability across physical environmental corruptions and generative distribution shifts.
-          </p>
+          <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 space-y-2">
+            <span className="text-xs font-mono font-bold text-slate-500 uppercase block">Degradation Protocol</span>
+            <p className="text-slate-650 text-xs leading-relaxed">
+              Controlled synthetic snow degradation is introduced at calibrated severity levels to simulate real atmospheric scattering, flake density, and contrast attenuation. Models are evaluated across three paired conditions: (1) Clean Baseline, (2) Snow-Degraded, and (3) Post-Restoration.
+            </p>
+          </div>
         </div>
       </section>
 
-      {/* 14. Future Research Questions */}
-      <section className="space-y-4">
+      {/* Section 5: Results */}
+      <section id="results" className="scroll-mt-24 space-y-4">
         <div>
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Prospective Investigations
+            Section 05 · Quantitative Evidence
           </span>
           <h2 className="text-2xl font-bold text-slate-900">
-            Future Research Questions
+            Results
           </h2>
         </div>
 
-        <div className="space-y-2.5">
-          {[
-            "How can models adapt to progressively changing environmental conditions rather than a single fixed degradation?",
-            "Can degradation-aware representations improve robustness across unseen weather conditions?",
-            "Can uncertainty estimation identify when visual evidence has become unreliable?",
-            "Can multimodal systems compensate when visual evidence is incomplete or degraded?",
-            "How can restoration and recognition be jointly optimized without introducing misleading visual information?",
-          ].map((q, idx) => (
-            <div
-              key={idx}
-              className="p-4 rounded-xl bg-white border border-slate-200 shadow-2xs flex items-start gap-3"
-            >
-              <span className="font-mono text-xs font-bold text-blue-900 bg-blue-50 px-2 py-0.5 rounded border border-blue-200 shrink-0">
-                Q0{idx + 1}
+        <div className="p-6 sm:p-8 rounded-xl bg-white border-2 border-blue-900/30 shadow-2xs space-y-6">
+          {/* Prominent Metric Banner */}
+          <div className="p-5 rounded-xl bg-blue-50/70 border border-blue-200/90 flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+            <div>
+              <span className="text-xs font-mono font-bold text-blue-900 uppercase tracking-wider block mb-1">
+                Top-1 Classification Accuracy under Severe Snow
               </span>
-              <p className="text-xs sm:text-sm text-slate-800 font-medium leading-relaxed">
-                {q}
+              <div className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight">
+                68.02% → 87.34%
+              </div>
+              <p className="text-xs text-slate-650 mt-1">
+                Measured on EfficientNet-B2 under severe snow degradation following task-aware multi-stage recovery.
               </p>
             </div>
-          ))}
+            <span className="px-3 py-1.5 rounded-md bg-blue-900 text-white font-mono text-xs font-bold shrink-0 text-center">
+              +19.32% Gain
+            </span>
+          </div>
+
+          {/* Comparative Table */}
+          <div className="overflow-x-auto rounded-lg border border-slate-200">
+            <table className="w-full text-left text-xs sm:text-sm">
+              <thead className="bg-slate-50 border-b border-slate-200 font-mono text-slate-650 text-[11px] uppercase">
+                <tr>
+                  <th className="px-4 py-3">Evaluation Condition</th>
+                  <th className="px-4 py-3">Backbone Model</th>
+                  <th className="px-4 py-3">Observation</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-100 text-slate-700">
+                <tr>
+                  <td className="px-4 py-3 font-semibold text-slate-900">Clean Benchmark</td>
+                  <td className="px-4 py-3 font-mono">EfficientNet-B2</td>
+                  <td className="px-4 py-3 text-slate-650">Baseline upper-bound performance under uncorrupted lighting</td>
+                </tr>
+                <tr className="bg-rose-50/30">
+                  <td className="px-4 py-3 font-semibold text-rose-900">Severe Snow Degradation</td>
+                  <td className="px-4 py-3 font-mono text-rose-900">EfficientNet-B2 (68.02%)</td>
+                  <td className="px-4 py-3 text-slate-650">Severe drop due to occlusion, contrast attenuation, and feature loss</td>
+                </tr>
+                <tr className="bg-blue-50/40">
+                  <td className="px-4 py-3 font-semibold text-blue-950">Multi-Stage Task-Aware</td>
+                  <td className="px-4 py-3 font-mono text-blue-950 font-bold">EfficientNet-B2 (87.34%)</td>
+                  <td className="px-4 py-3 text-slate-650">Substantial accuracy recovery through discriminative feature recovery</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div className="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs text-slate-650 flex items-start gap-2">
+            <ShieldCheck className="w-4 h-4 text-blue-900 shrink-0 mt-0.5" />
+            <span>
+              Detailed confusion matrices, per-class sensitivity breakdowns, and ablation tables are cataloged internally for manuscript submission.
+            </span>
+          </div>
         </div>
       </section>
 
-      {/* 15. Research Integrity & Privacy */}
-      <section className="p-6 sm:p-8 rounded-xl bg-slate-50 border border-slate-200 space-y-2">
-        <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-slate-700">
-          <ShieldCheck className="w-4 h-4 text-slate-900" />
-          <span>Research Integrity</span>
-        </div>
-        <p className="text-xs sm:text-sm text-slate-650 leading-relaxed">
-          This project is currently under manuscript preparation. Public materials intentionally provide a high-level overview of the research problem and methodology while unpublished experimental details, manuscript content, numerical results, figures, and research artifacts remain private until an appropriate publication stage.
-        </p>
-      </section>
-
-      {/* 16. Academic Navigation Actions */}
-      <section className="p-6 sm:p-8 rounded-2xl bg-slate-900 text-white shadow-md space-y-4">
+      {/* Section 6: What I Learned (Peer Review, Rejection & Revision) */}
+      <section id="what-i-learned" className="scroll-mt-24 space-y-4">
         <div>
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-300 block mb-1">
-            Scholarly Dialogue
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-amber-900 block mb-1">
+            Section 06 · Scholarly Growth
           </span>
-          <h3 className="text-lg sm:text-xl font-bold">
-            Explore Research Agenda &amp; Academic Background
-          </h3>
-          <p className="mt-1 text-xs sm:text-sm text-slate-300 leading-relaxed">
-            Interested in discussing environmental domain shift, robust perception, or research collaborations?
-          </p>
+          <h2 className="text-2xl font-bold text-slate-900">
+            What I Learned: Peer-Review Feedback &amp; Methodological Revision
+          </h2>
         </div>
 
-        <div className="pt-2 flex flex-wrap items-center gap-3">
-          <Link
-            href="/research"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-slate-900 bg-white hover:bg-slate-100 transition-colors"
-          >
-            Explore Research Agenda
-          </Link>
-          <Link
-            href="/experience"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-white bg-blue-700 hover:bg-blue-600 transition-colors"
-          >
-            Academic Experience
-          </Link>
-          <Link
-            href="/cv"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
-          >
-            Academic CV
-          </Link>
-          <Link
-            href="/contact"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-slate-300 bg-slate-800 hover:bg-slate-700 border border-slate-700 transition-colors"
-          >
-            Contact
-          </Link>
+        <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-5 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <div className="p-4 rounded-lg bg-amber-50/60 border border-amber-200 text-slate-800 space-y-2">
+            <div className="flex items-center gap-2 font-bold text-amber-950 text-xs uppercase tracking-wider font-mono">
+              <AlertTriangle className="w-4 h-4 text-amber-700" />
+              <span>FIT 2025 Submission &amp; Rejection</span>
+            </div>
+            <p className="leading-relaxed">
+              The earliest formulation of this project was submitted to <strong>FIT 2025</strong> and subsequently rejected. Peer reviewers raised valid, critical concerns: the experimental baselines lacked sufficient depth, the two-step sequential pipeline was insufficiently ablated, and the work needed clearer theoretical justification for why restoration would assist classification rather than introduce hallucinated artifacts.
+            </p>
+          </div>
+
+          <div className="space-y-2">
+            <h3 className="text-sm sm:text-base font-bold text-slate-900">
+              Systematic Methodological Overhaul
+            </h3>
+            <p>
+              Rather than discarding the work, I used the reviewer feedback as a diagnostic roadmap. This experience taught me foundational research maturity:
+            </p>
+            <ul className="space-y-2 pl-2">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>From naive cascading to task-aware feature recovery:</strong> Disentangling image enhancement from categorical classification to isolate whether restored pixels translate to restored representations.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Expanded ablation depth:</strong> Measuring intermediate feature recoverability and comparing against direct training under noise.</span>
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <span><strong>Appreciation for rigorous peer review:</strong> Recognizing that critique is the core mechanism through which scientific rigor is achieved.</span>
+              </li>
+            </ul>
+          </div>
         </div>
+      </section>
+
+      {/* Section 7: Limitations */}
+      <section id="limitations" className="scroll-mt-24 space-y-4">
+        <div>
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block mb-1">
+            Section 07 · Boundary Analysis
+          </span>
+          <h2 className="text-2xl font-bold text-slate-900">
+            Limitations
+          </h2>
+        </div>
+
+        <div className="p-6 sm:p-8 rounded-xl bg-slate-50 border border-slate-200 shadow-2xs space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <p>
+            To maintain academic honesty, the current study recognizes several experimental limitations:
+          </p>
+          <ul className="space-y-2 pl-2 text-slate-650">
+            <li className="flex items-start gap-2">
+              <span className="text-blue-900 font-bold">•</span>
+              <span><strong>Synthetic Weather Models:</strong> While degradation parameters are physically grounded, synthetic snow cannot fully reproduce the micro-optical scattering, wiper streaks, and compound freezing effects of real-world blizzards.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-blue-900 font-bold">•</span>
+              <span><strong>Computational Latency:</strong> Running multi-stage image restoration before deep classification incurs computational overhead that requires optimization for real-time autonomous driving embedded platforms.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-blue-900 font-bold">•</span>
+              <span><strong>Compound Corruptions:</strong> The current evaluation focuses primarily on snow; co-occurring degradations (such as snow with nighttime glare or rain-snow slush) remain to be systematically benchmarked.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Section 8: Next Step */}
+      <section id="next-step" className="scroll-mt-24 space-y-4">
+        <div>
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
+            Section 08 · Future Agenda
+          </span>
+          <h2 className="text-2xl font-bold text-slate-900">
+            Next Scientifically Meaningful Steps
+          </h2>
+        </div>
+
+        <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <p>
+            The next milestones for this research trajectory include:
+          </p>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 space-y-1">
+              <strong className="text-slate-900 text-xs block">1. Real-World Data Collection</strong>
+              <span className="text-slate-650 text-xs">Validating the multi-stage framework against natural, in-the-wild snow-degraded traffic imagery captured across diverse geographic regions.</span>
+            </div>
+            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 space-y-1">
+              <strong className="text-slate-900 text-xs block">2. Spatial Uncertainty Weighting</strong>
+              <span className="text-slate-650 text-xs">Incorporating patch-level uncertainty maps to weight feature representations dynamically where degradation is most acute.</span>
+            </div>
+            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 space-y-1">
+              <strong className="text-slate-900 text-xs block">3. Differentiable End-to-End Tuning</strong>
+              <span className="text-slate-650 text-xs">Formulating a unified objective where the restoration module receives task loss gradients from the classifier.</span>
+            </div>
+            <div className="p-4 rounded-lg bg-slate-50 border border-slate-200 space-y-1">
+              <strong className="text-slate-900 text-xs block">4. MDPI Sensors Submission</strong>
+              <span className="text-slate-650 text-xs">Finalizing ablation benchmarks, formatting manuscript tables, and submitting for peer review.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Navigation Footer */}
+      <section className="p-6 rounded-xl bg-slate-900 text-white flex flex-wrap items-center justify-between gap-4">
+        <div>
+          <h3 className="text-sm font-bold">Next Flagship Project</h3>
+          <p className="text-xs text-slate-300">Few-Shot Adaptation for AI-Generated Image Detection under Unseen Generator Distribution Shift</p>
+        </div>
+        <Link
+          href="/projects/fewshot-aigd-shift"
+          className="px-4 py-2 rounded-md text-xs font-semibold bg-white text-slate-900 hover:bg-slate-100 transition-colors flex items-center gap-1.5"
+        >
+          <span>Explore Case Study 02</span>
+          <ArrowRight className="w-3.5 h-3.5" />
+        </Link>
       </section>
     </article>
   );

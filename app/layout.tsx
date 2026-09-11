@@ -30,22 +30,20 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://research-with-askari.vercel.app"),
   title: {
-    default: "Muhammad Hassan Askari | Computer Science Graduate | AI/ML",
+    default: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
     template: "%s | Muhammad Hassan Askari",
   },
   description:
-    "Muhammad Hassan Askari is a Computer Science graduate from COMSATS University Islamabad working on AI/ML, trustworthy AI, robust machine learning, computer vision, LLM-based systems, and RAG.",
+    "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
   keywords: [
     "Muhammad Hassan Askari",
     "Computer Science Graduate",
-    "AI/ML",
-    "trustworthy AI",
-    "robust machine learning",
-    "computer vision",
-    "LLM-based systems",
-    "RAG",
-    "domain adaptation",
-    "environmental domain shift",
+    "AI/ML Research",
+    "Computer Vision",
+    "Robust Computer Vision",
+    "Distribution Shift",
+    "Few-Shot Adaptation",
+    "Environmental Domain Shift",
     "COMSATS University Islamabad",
   ],
   authors: [{ name: "Muhammad Hassan Askari", url: "https://research-with-askari.vercel.app/" }],
@@ -58,15 +56,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://research-with-askari.vercel.app/",
     siteName: "Muhammad Hassan Askari Portfolio",
-    title: "Muhammad Hassan Askari | Computer Science Graduate | AI/ML",
+    title: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
     description:
-      "Muhammad Hassan Askari is a Computer Science graduate from COMSATS University Islamabad working on AI/ML, trustworthy AI, robust machine learning, computer vision, LLM-based systems, and RAG.",
+      "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Hassan Askari | Computer Science Graduate | AI/ML",
+    title: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
     description:
-      "Muhammad Hassan Askari is a Computer Science graduate from COMSATS University Islamabad working on AI/ML, trustworthy AI, robust machine learning, computer vision, LLM-based systems, and RAG.",
+      "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
   },
   robots: {
     index: true,

@@ -70,60 +70,64 @@ export default function FewShotAigdCaseStudy({ project }: FewShotAigdCaseStudyPr
         </div>
 
         {/* Academic Action CTAs (No public repo links) */}
-        <div className="pt-2 flex flex-wrap items-center gap-3">
-          <a
-            href="#research-question"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-white bg-slate-900 hover:bg-blue-950 transition-colors"
-          >
-            Research Overview
-          </a>
-          <a
-            href="#experimental-results"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-slate-800 bg-white border border-slate-300 hover:bg-slate-50 transition-colors"
-          >
-            View Preliminary Results
-          </a>
-          <Link
-            href="/contact"
-            className="px-4 py-2 rounded-md text-xs font-semibold text-blue-900 bg-blue-50 border border-blue-200 hover:bg-blue-100/70 transition-colors"
-          >
-            Contact for Research Discussion
-          </Link>
+        <div className="pt-2 flex flex-wrap items-center gap-2.5 text-xs font-semibold">
+          <a href="#research-problem" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Problem</a>
+          <a href="#research-question" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Question</a>
+          <a href="#method" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Method</a>
+          <a href="#experimental-setup" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Setup</a>
+          <a href="#results" className="px-3 py-1.5 rounded-md bg-blue-50 text-blue-900 hover:bg-blue-100 transition-colors">Results</a>
+          <a href="#what-i-learned" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">What I Learned</a>
+          <a href="#limitations" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Limitations</a>
+          <a href="#next-step" className="px-3 py-1.5 rounded-md bg-slate-100 text-slate-700 hover:bg-slate-200 transition-colors">Next Steps</a>
         </div>
       </section>
 
-      {/* 2. Research Question */}
-      <section id="research-question" className="scroll-mt-24">
-        <div className="p-6 sm:p-8 rounded-2xl bg-blue-50/60 border border-blue-200/80 space-y-4 shadow-2xs">
-          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
-            <HelpCircle className="w-4 h-4 text-blue-700" />
-            <span>Central Research Question</span>
-          </div>
-
-          <h2 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-slate-900 leading-snug">
-            &ldquo;{data.researchQuestion}&rdquo;
+      {/* Section 01: Research Problem */}
+      <section id="research-problem" className="scroll-mt-24 space-y-4">
+        <div>
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
+            Section 01 · Problem Formulation
+          </span>
+          <h2 className="text-2xl font-bold text-slate-900">
+            Research Problem: Generator Distribution Shift
           </h2>
+        </div>
 
-          <p className="text-sm sm:text-base text-slate-700 leading-relaxed border-t border-blue-200/60 pt-3">
-            {data.questionContext}
+        <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-3 text-sm sm:text-base text-slate-700 leading-relaxed">
+          <p>
+            {data.motivation}
+          </p>
+          <p className="text-xs sm:text-sm text-slate-650 pt-2 border-t border-slate-100">
+            When standard detectors encounter synthetic media produced by previously unobserved architectures, recognition accuracy degrades sharply. Retraining entire deep models for each new generator is computationally expensive and requires large labeled datasets that are unavailable during early distribution emergence.
           </p>
         </div>
       </section>
 
-      {/* 3. Research Motivation & Conceptual Diagram */}
-      <section className="space-y-6">
+      {/* Section 02: Research Question */}
+      <section id="research-question" className="scroll-mt-24 space-y-4">
         <div>
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Significance
+            Section 02 · Core Hypothesis
           </span>
           <h2 className="text-2xl font-bold text-slate-900">
-            Why This Problem Matters
+            Research Question
           </h2>
         </div>
 
-        <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-          {data.motivation}
-        </p>
+        <div className="p-6 sm:p-8 rounded-2xl bg-blue-50/60 border border-blue-200/80 space-y-3 shadow-2xs">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
+            <HelpCircle className="w-4 h-4 text-blue-700" />
+            <span>Target Inquiry</span>
+          </div>
+
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-slate-900 leading-snug">
+            &ldquo;{data.researchQuestion}&rdquo;
+          </h3>
+
+          <p className="text-sm text-slate-700 leading-relaxed border-t border-blue-200/60 pt-3">
+            {data.questionContext}
+          </p>
+        </div>
 
         {/* Conceptual Visual Flow */}
         <div className="p-6 rounded-xl bg-slate-50 border border-slate-200">
@@ -167,37 +171,48 @@ export default function FewShotAigdCaseStudy({ project }: FewShotAigdCaseStudyPr
         </div>
       </section>
 
-      {/* 4. Detection Backbone */}
-      <section className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs">
-        <div className="flex items-center gap-3 mb-3">
-          <div className="w-9 h-9 rounded-lg bg-blue-900 text-white flex items-center justify-center">
-            <Cpu className="w-5 h-5" />
-          </div>
-          <div>
-            <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block">
-              Core Architecture
-            </span>
-            <h3 className="text-lg font-bold text-slate-900">
-              Detection Backbone: {data.backbone.name}
-            </h3>
-          </div>
-        </div>
-        <p className="text-sm text-slate-700 leading-relaxed">
-          {data.backbone.description}
-        </p>
-      </section>
-
-      {/* 5. Research Dataset */}
-      <section className="space-y-6">
+      {/* Section 03: Method */}
+      <section id="method" className="scroll-mt-24 space-y-4">
         <div>
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Data Architecture
+            Section 03 · Method
           </span>
           <h2 className="text-2xl font-bold text-slate-900">
-            Research Dataset ({data.dataset.total.toLocaleString()} Images)
+            Method: Architecture &amp; Adaptation Strategies
+          </h2>
+        </div>
+
+        <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-3">
+          <div className="flex items-center gap-3 mb-1">
+            <div className="w-9 h-9 rounded-lg bg-blue-900 text-white flex items-center justify-center shrink-0">
+              <Cpu className="w-5 h-5" />
+            </div>
+            <div>
+              <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block">
+                Detection Backbone
+              </span>
+              <h3 className="text-lg font-bold text-slate-900">
+                {data.backbone.name}
+              </h3>
+            </div>
+          </div>
+          <p className="text-sm text-slate-700 leading-relaxed">
+            {data.backbone.description}
+          </p>
+        </div>
+      </section>
+
+      {/* Section 04: Experimental Setup */}
+      <section id="experimental-setup" className="scroll-mt-24 space-y-6">
+        <div>
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
+            Section 04 · Experimental Setup
+          </span>
+          <h2 className="text-2xl font-bold text-slate-900">
+            Experimental Setup: Curated Dataset &amp; Split Protocols
           </h2>
           <p className="text-sm text-slate-650 mt-1">
-            Curated evaluation archive balancing natural photographic distribution with multi-generator synthetic artifacts.
+            Curated evaluation archive balancing natural photographic distribution with multi-generator synthetic artifacts across {data.dataset.total.toLocaleString()} images.
           </p>
         </div>
 
@@ -460,20 +475,20 @@ export default function FewShotAigdCaseStudy({ project }: FewShotAigdCaseStudyPr
         </div>
       </section>
 
-      {/* 11. Preliminary Experimental Results (Verified numbers only) */}
-      <section id="experimental-results" className="scroll-mt-24 space-y-6">
+      {/* Section 05: Results & Data Integrity Audit */}
+      <section id="results" className="scroll-mt-24 space-y-6">
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div>
             <div className="flex items-center gap-2">
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
-                Empirical Observations
+                Section 05 · Quantitative Evidence
               </span>
               <span className="px-2 py-0.2 rounded text-[10px] font-mono font-bold bg-amber-50 text-amber-900 border border-amber-200">
                 {data.preliminaryResults.badge}
               </span>
             </div>
             <h2 className="text-2xl font-bold text-slate-900 mt-1">
-              Preliminary Experimental Results ({data.preliminaryResults.metric})
+              Results: Preliminary Mean ROC-AUC Across Few-Shot Conditions
             </h2>
           </div>
         </div>
@@ -772,17 +787,22 @@ export default function FewShotAigdCaseStudy({ project }: FewShotAigdCaseStudyPr
         </div>
       </section>
 
-      {/* 15. Research Interpretation */}
-      <section className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-3">
-        <h3 className="text-base font-bold text-slate-900">
-          What the Experiments Are Exploring
-        </h3>
-        <p className="text-xs text-slate-650">
-          Empirical evaluation addresses these specific hypotheses without claiming prematurely unvalidated causal conclusions:
+      {/* Section 06: What I Learned */}
+      <section id="what-i-learned" className="scroll-mt-24 p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-4">
+        <div>
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
+            Section 06 · Interpretation
+          </span>
+          <h2 className="text-2xl font-bold text-slate-900">
+            What I Learned: Research Interpretation
+          </h2>
+        </div>
+        <p className="text-xs sm:text-sm text-slate-650 leading-relaxed">
+          Empirical evaluation addresses these specific hypotheses regarding few-shot adaptation under generator distribution shift:
         </p>
         <ul className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-2 text-xs text-slate-700">
           {data.researchInterpretation.map((point, idx) => (
-            <li key={idx} className="flex items-start gap-2 p-2.5 rounded bg-slate-50 border border-slate-100">
+            <li key={idx} className="flex items-start gap-2 p-3 rounded-lg bg-slate-50 border border-slate-200/80">
               <span className="text-blue-900 font-bold shrink-0">•</span>
               <span>{point}</span>
             </li>
@@ -790,14 +810,46 @@ export default function FewShotAigdCaseStudy({ project }: FewShotAigdCaseStudyPr
         </ul>
       </section>
 
-      {/* 16. Connection to Broader Research */}
-      <section className="space-y-6">
+      {/* Section 07: Limitations */}
+      <section id="limitations" className="scroll-mt-24 space-y-4">
         <div>
-          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Intellectual Synthesis
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block mb-1">
+            Section 07 · Limitations
           </span>
           <h2 className="text-2xl font-bold text-slate-900">
-            How This Research Fits My Broader Interests
+            Limitations &amp; Pending Validation
+          </h2>
+        </div>
+
+        <div className="p-6 sm:p-8 rounded-xl bg-slate-50 border border-slate-200 space-y-3 text-xs sm:text-sm text-slate-700 leading-relaxed">
+          <p>
+            To maintain research integrity and avoid overclaiming on preliminary empirical observations:
+          </p>
+          <ul className="space-y-2 pl-2 text-slate-650">
+            <li className="flex items-start gap-2">
+              <span className="text-blue-900 font-bold">•</span>
+              <span><strong>Preliminary Scope:</strong> Results reflect the initial experimental matrix across 50 runs, but paired statistical tests and multi-seed zero-shot baseline benchmarks are still being completed.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-blue-900 font-bold">•</span>
+              <span><strong>Generator Coverage:</strong> The leave-generator-out protocol currently holds out two major synthesis systems (Midjourney &amp; Wukong); evaluating additional diffusion and autoregressive architectures is necessary for universal generalization claims.</span>
+            </li>
+            <li className="flex items-start gap-2">
+              <span className="text-blue-900 font-bold">•</span>
+              <span><strong>Multiple-Comparison Correction:</strong> Rigorous statistical significance testing across all 5 shot levels and multiple seeds requires Holm-Bonferroni correction to verify effect sizes reliably.</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      {/* Section 08: Next Step */}
+      <section id="next-step" className="scroll-mt-24 space-y-6">
+        <div>
+          <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
+            Section 08 · Future Milestones
+          </span>
+          <h2 className="text-2xl font-bold text-slate-900">
+            Next Scientifically Meaningful Steps
           </h2>
           <p className="text-sm text-slate-650 mt-1">
             {data.broaderConnection.narrative}
@@ -838,13 +890,27 @@ export default function FewShotAigdCaseStudy({ project }: FewShotAigdCaseStudyPr
             </div>
           </div>
         </div>
-      </section>
 
-      {/* 17. Future Research Questions */}
-      <section className="space-y-4">
-        <h3 className="text-lg font-bold text-slate-900">
-          Future Research Questions (Prospective Inquiries)
-        </h3>
+        <div className="space-y-3">
+          <h3 className="text-base font-bold text-slate-900">
+            Planned Validation Experiments:
+          </h3>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs">
+            <div className="p-3.5 rounded-lg bg-white border border-slate-200">
+              <strong className="text-slate-900 block mb-1">1. Paired Statistical Testing</strong>
+              <span className="text-slate-650">Verify effect sizes and calculate Cohen&apos;s d between classifier-only adaptation and last-block representations.</span>
+            </div>
+            <div className="p-3.5 rounded-lg bg-white border border-slate-200">
+              <strong className="text-slate-900 block mb-1">2. Multiple-Testing Correction</strong>
+              <span className="text-slate-650">Apply family-wise error rate corrections across all 50 experimental runs.</span>
+            </div>
+            <div className="p-3.5 rounded-lg bg-white border border-slate-200">
+              <strong className="text-slate-900 block mb-1">3. Manuscript Preparation</strong>
+              <span className="text-slate-650">Synthesize multi-seed baseline comparisons into final publication tables and figures.</span>
+            </div>
+          </div>
+        </div>
+
         <ul className="space-y-2 text-xs sm:text-sm text-slate-700">
           {data.futureResearchQuestions.map((q, idx) => (
             <li

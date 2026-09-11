@@ -8,17 +8,15 @@ export default function ResearchQuestions() {
     <SectionContainer
       id="research-questions"
       tag="Theoretical Inquiry"
-      title="Questions I'm Currently Exploring"
-      subtitle="Foundational research inquiries guiding my academic trajectory into graduate research."
+      title="Guiding Research Questions"
+      subtitle="A coherent progression from degraded visual inputs to few-shot distribution adaptation and multimodal evidence insufficiency."
       className="bg-slate-50/60"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-        {RESEARCH_QUESTIONS.map((item, index) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {RESEARCH_QUESTIONS.map((item) => (
           <div
             key={item.number}
-            className={`group relative flex flex-col justify-between p-6 sm:p-7 rounded-xl border border-slate-200/90 bg-white hover:border-blue-900/40 hover:shadow-md transition-all duration-300 ${
-              index === 0 ? "lg:col-span-2" : ""
-            }`}
+            className="group relative flex flex-col justify-between p-6 sm:p-7 rounded-xl border border-slate-200/90 bg-white hover:border-blue-900/40 hover:shadow-md transition-all duration-300"
           >
             <div>
               <div className="flex items-center justify-between mb-4">

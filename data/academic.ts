@@ -42,6 +42,7 @@ export interface TeachingExperience {
   semestersCount?: number;
   description: string;
   institution: string;
+  highlight?: string;
 }
 
 export const EDUCATION: EducationRecord = {
@@ -161,12 +162,21 @@ export const RESEARCH_INTERESTS: string[] = [
 export const TEACHING_EXPERIENCE: TeachingExperience[] = [
   {
     role: "Teaching Assistant",
+    course: "Pattern Recognition",
+    duration: "2 Semesters (Spring 2025 – Spring 2026)",
+    semestersCount: 2,
+    institution: "COMSATS University Islamabad — Wah Campus",
+    description:
+      "Supported laboratory evaluation, student queries, viva sessions, and academic administration. Focused on statistical decision theory, supervised classification, and feature extraction—directly connecting to my empirical research in robust computer vision and distribution shift.",
+  },
+  {
+    role: "Teaching Assistant",
     course: "Artificial Intelligence",
-    duration: "Spring 2026",
+    duration: "1 Semester (Spring 2026)",
     semestersCount: 1,
     institution: "COMSATS University Islamabad — Wah Campus",
     description:
-      "Served as a Teaching Assistant for Artificial Intelligence during Spring 2026, supporting assessment activities, student viva examinations, academic queries, and maintenance of assessment records.",
+      "Supported assessment activities, student viva examinations, academic queries, and assessment record maintenance across core heuristic search, knowledge representation, and probabilistic reasoning.",
   },
   {
     role: "Teaching Assistant",
@@ -175,16 +185,7 @@ export const TEACHING_EXPERIENCE: TeachingExperience[] = [
     semestersCount: 3,
     institution: "COMSATS University Islamabad — Wah Campus",
     description:
-      "Served as a Teaching Assistant across multiple semesters, supporting quizzes, assignments, examinations, student viva sessions, academic queries, and assessment administration.",
-  },
-  {
-    role: "Teaching Assistant",
-    course: "Pattern Recognition",
-    duration: "2 Semesters (Spring 2025 – Spring 2026)",
-    semestersCount: 2,
-    institution: "COMSATS University Islamabad — Wah Campus",
-    description:
-      "Served as a Teaching Assistant, supporting assessment activities, student academic queries, viva sessions, and course-related academic administration.",
+      "Supported quizzes, assignments, examinations, student viva sessions, and code evaluation across three consecutive semesters, covering algorithmic complexity, graph algorithms, and dynamic programming.",
   },
   {
     role: "Teaching Assistant",
@@ -193,23 +194,12 @@ export const TEACHING_EXPERIENCE: TeachingExperience[] = [
     semestersCount: 1,
     institution: "COMSATS University Islamabad — Wah Campus",
     description:
-      "Served as a Teaching Assistant, assisting with quizzes, assignments, examinations, viva sessions, student queries, and assessment administration.",
+      "Assisted with quizzes, assignments, examinations, viva sessions, student queries, and assessment administration covering lexical analysis, parsing techniques, and syntax-directed translation.",
   },
 ];
 
 export const RESEARCH_TOOLKIT = {
-  research: [
-    "Computer Vision",
-    "Deep Learning",
-    "Robust Machine Learning",
-    "Domain Adaptation",
-    "Domain Generalization",
-    "Few-Shot Learning",
-    "Multimodal Learning",
-    "Vision-Language Models",
-    "Uncertainty Modeling",
-  ],
-  tools: [
+  researchML: [
     "Python",
     "PyTorch",
     "OpenCV",
@@ -217,15 +207,12 @@ export const RESEARCH_TOOLKIT = {
     "Pandas",
     "CUDA",
     "Jupyter",
-    "Git",
   ],
   engineering: [
     "C#",
     "ASP.NET Core",
-    "React",
-    "TypeScript",
     "FastAPI",
-    "SQL Server",
+    "React / TypeScript",
     "PostgreSQL",
     "Docker",
     "Flutter",

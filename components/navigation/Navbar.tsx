@@ -9,7 +9,7 @@ import { RESEARCH_IDENTITY } from "@/data/research";
 
 const NAV_LINKS = [
   { href: "/research", label: "Research" },
-  { href: "/publications", label: "Publications" },
+  { href: "/publications", label: "Research Output" },
   { href: "/projects", label: "Projects" },
   { href: "/experience", label: "Experience" },
   { href: "/certificates", label: "Certificates" },

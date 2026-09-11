@@ -40,21 +40,49 @@ export interface ResearchDirection {
   keyQuestions: string[];
 }
 
+export interface ResearchHierarchy {
+  primary: {
+    title: string;
+    description: string;
+    topics: string[];
+  }[];
+  secondary: {
+    title: string;
+    description: string;
+    topics: string[];
+  }[];
+  emerging: {
+    title: string;
+    description: string;
+    topics: string[];
+  }[];
+}
+
 export const RESEARCH_IDENTITY = {
   name: "Muhammad Hassan Askari",
-  title: "Early-Career AI & Computer Vision Researcher",
-  researchFields: "Computer Vision · Robust Machine Learning · Domain Adaptation · Multimodal AI",
-  primaryStatement: "Reliable Visual Intelligence Under Environmental Domain Shift",
-  headline: "I study how AI systems can remain reliable when visual evidence becomes uncertain, incomplete, degraded, or distributionally shifted.",
-  supportingStatement: "My research interests lie at the intersection of Computer Vision, Robust Machine Learning, Domain Generalization, Domain Adaptation, and Multimodal AI, with a particular focus on reliable visual understanding under challenging real-world conditions.",
+  title: "Computer Science Graduate | AI/ML Research",
+  researchFields: "Robust Computer Vision · Distribution Shift · Few-Shot Adaptation · Multimodal AI",
+  primaryStatement: "Reliable Computer Vision Under Distribution Shift",
+  headline: "I study how visual AI systems can remain reliable when data distributions change, visual evidence is degraded, or target-domain supervision is limited.",
+  supportingStatement: "My work investigates visual recognition under environmental degradation and adaptation to unseen visual distributions, with an emerging trajectory toward uncertainty-aware multimodal models and reliable visual reasoning.",
+  trajectory: [
+    "Software Engineering",
+    "Research Exposure",
+    "Computer Vision",
+    "Environmental Domain Shift",
+    "Robust Machine Learning",
+    "Few-Shot Adaptation",
+    "Reliable Visual AI",
+    "Multimodal / Vision-Language Research",
+  ],
   institution: "COMSATS University Islamabad — Wah Campus",
   degree: "BS Computer Science",
   period: "2022–2026",
   cgpa: "3.65 / 4.00",
-  credits: "133 Credits",
+  credits: "133 Credits Completed",
   ielts: "7.0 Overall (CEFR C1)",
-  currentObjective: "Seeking Master's opportunities that align with my research in computer vision, domain adaptation, and reliable visual intelligence.",
-  fundingObjective: "Seeking Master's opportunities that align with my research.",
+  currentObjective: "Seeking funded graduate research opportunities (MRes / MPhil / PhD) in computer vision, domain adaptation, and reliable visual intelligence.",
+  fundingObjective: "Seeking funded graduate research opportunities in reliable computer vision and distribution shift.",
   email: "askari.syed04@gmail.com",
   github: "https://github.com/AskariSyed",
   linkedin: "https://www.linkedin.com/in/syed-hassan-askari/",
@@ -64,184 +92,200 @@ export const RESEARCH_IDENTITY = {
 export const RESEARCH_FOCUS_CARDS: ResearchFocusCard[] = [
   {
     id: "robust-cv",
-    title: "ROBUST COMPUTER VISION",
-    tagline: "Perception under severe visual corruption",
-    description: "Developing visual recognition systems that remain reliable under snow, fog, rain, low light, blur, noise, and other environmental degradations.",
-    topics: ["Robust Recognition", "Image Degradation", "Visual Reliability"],
+    title: "Robust Computer Vision",
+    tagline: "Environmental degradation & corrupted inputs",
+    description: "Investigating how visual recognition systems maintain predictive stability when physical corruptions such as snow, atmospheric scattering, blur, and occlusion attenuate discriminative evidence.",
+    topics: ["Environmental Degradation", "Visual Robustness", "Corrupted Inputs"],
   },
   {
     id: "domain-adaptation",
-    title: "DOMAIN ADAPTATION & GENERALIZATION",
-    tagline: "Generalizing across shifted distributions",
-    description: "Studying how models can generalize across changing visual distributions and adapt to unseen environments with limited target-domain supervision.",
-    topics: ["Domain Generalization", "Domain Adaptation", "Few-Shot Learning"],
+    title: "Distribution Shift & Adaptation",
+    tagline: "Out-of-distribution shift & limited supervision",
+    description: "Developing empirical protocols and parameter-efficient strategies that adapt visual models to unseen visual distributions using minimal target-domain support examples.",
+    topics: ["Domain Adaptation", "Domain Generalization", "Few-Shot Adaptation"],
   },
   {
     id: "multimodal-ai",
-    title: "MULTIMODAL AI",
-    tagline: "Cross-modal reasoning with degraded vision",
-    description: "Exploring how vision-language models can combine visual and linguistic evidence while recognizing uncertainty and unreliable visual inputs.",
-    topics: ["VLMs", "MLLMs", "Cross-Modal Learning"],
-  },
-  {
-    id: "trustworthy-vision",
-    title: "TRUSTWORTHY VISUAL INTELLIGENCE",
-    tagline: "Epistemic uncertainty & evidence estimation",
-    description: "Investigating how AI systems can estimate evidence reliability before making predictions or reasoning over visual inputs.",
-    topics: ["Uncertainty", "Evidence Selection", "Reliable AI"],
+    title: "Reliable Multimodal AI",
+    tagline: "Cross-modal reasoning & evidence evaluation",
+    description: "Exploring prospective mechanisms for vision-language models to evaluate visual evidence integrity dynamically, mitigating hallucination when sensory data becomes ambiguous.",
+    topics: ["Vision-Language Models", "Uncertainty-Aware Reasoning", "Reliable Evidence"],
   },
 ];
 
+export const RESEARCH_HIERARCHY: ResearchHierarchy = {
+  primary: [
+    {
+      title: "Robust Computer Vision",
+      description: "Recognition under corrupted inputs, environmental degradation, and adverse weather conditions.",
+      topics: ["Adverse Weather", "Image Restoration Coordination", "Feature Recovery"],
+    },
+    {
+      title: "Distribution Shift & Domain Adaptation",
+      description: "Evaluating models on out-of-distribution target domains and designing robust generalization protocols.",
+      topics: ["Leave-Generator-Out", "Unseen Domains", "Domain Shift"],
+    },
+    {
+      title: "Few-Shot Learning / Adaptation",
+      description: "Investigating parameter-efficient adaptation to unseen distributions with minimal target-domain supervisory support.",
+      topics: ["Support Sets", "Classifier Tuning", "Representation Adaptation"],
+    },
+  ],
+  secondary: [
+    {
+      title: "Multimodal AI / Vision-Language Models",
+      description: "Investigating how models integrate visual and linguistic evidence when sensory inputs are degraded.",
+      topics: ["Cross-Modal Attention", "Visual Grounding", "Multimodal Reliability"],
+    },
+    {
+      title: "Uncertainty-Aware Visual Reasoning",
+      description: "Estimating spatial and epistemic confidence scores to identify when perceptual inputs cannot be trusted.",
+      topics: ["Confidence Calibration", "Failure Detection", "Evidence Gating"],
+    },
+  ],
+  emerging: [
+    {
+      title: "RAG Reliability / Adversarial Retrieval",
+      description: "Examining retrieval corruption, prompt manipulation, and evidence grounding in language-model pipelines.",
+      topics: ["Untrusted Context", "Dense Retrieval Verification", "Grounded Reasoning"],
+    },
+  ],
+};
+
 export const RESEARCH_JOURNEY_TEXT =
-  "My path toward research began unexpectedly. Entering my computer science degree with aspirations firmly rooted in software development, an encouraging faculty mentor introduced me to academic inquiry. What followed—a rejected first manuscript, intensive reviewer-driven revision, empirical persistence, and a transition into retrieval vulnerabilities—permanently shaped my intellectual journey. Today, my research converges around a singular foundational question: How should an intelligent system behave when the evidence it receives cannot be completely trusted?";
+  "My trajectory into research began with practical software engineering, followed by faculty mentorship that introduced me to academic inquiry. Encountering a rejected initial conference submission, conducting extensive reviewer-driven revision, and expanding from physical sensory degradation to generator distribution shifts crystallized my research trajectory: How can visual AI systems remain reliable when deployed under changing, degraded, or out-of-distribution evidence?";
 
 export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
   {
     step: 1,
     stageNumber: "01",
     period: "Undergraduate Beginning",
-    title: "Software Developer at Heart",
-    tag: "Engineering Roots",
+    title: "Software Engineering Foundations",
+    tag: "Engineering Discipline",
     badgeVariant: "neutral",
     narrative:
-      "When I began my Bachelor of Science in Computer Science at COMSATS University Islamabad, my ambition was firmly set on becoming a software developer. I enjoyed building full-stack applications, exploring new technologies, and turning ideas into working systems. Academic research was not part of my plan, I perceived it as an intimidating, highly abstract domain and lacked confidence that I possessed the theoretical foundation or skills to become a researcher.",
+      "I began my Computer Science degree with a focus on software development, building full-stack applications, relational database schemas, and distributed backends. Developing production systems gave me strong code literacy, debugging persistence, and appreciation for system-level constraints.",
     bridge:
-      "Building software provided strong engineering discipline, but my trajectory soon encountered an unexpected catalyst.",
+      "Engineering foundations provided implementation discipline, while faculty mentorship opened the door to open-ended inquiry.",
     description:
-      "Original aspirations focused strictly on software engineering and system development, with academic research outside initial expectations.",
+      "Initial background focused on software development and systems engineering before transitioning into empirical research.",
   },
   {
     step: 2,
     stageNumber: "02",
     period: "Faculty Mentorship",
-    title: "An Unexpected Beginning in Research",
-    tag: "Faculty Encouragement",
+    title: "Research Exposure & Mentorship",
+    tag: "Academic Inquiry",
     badgeVariant: "blue",
     narrative:
-      "During my undergraduate studies, a faculty mentor noticed my work and encouraged me to get involved in research and give it a try. Research had been entirely outside my plans, but this encouragement became a defining turning point. Stepping beyond predetermined software specifications, I decided to test whether I could formulate hypotheses, navigate open-ended ambiguity, and investigate an unsolved technical problem.",
+      "A faculty mentor encouraged me to explore academic research. Stepping beyond predetermined software specifications, I began reading literature in autonomous perception and formulating hypotheses on computer vision under adverse weather.",
     bridge:
-      "That encouragement led directly to my first empirical formulation in autonomous computer vision.",
+      "That encouragement led directly to my first empirical formulation in robust computer vision.",
     description:
-      "Encouraged by a faculty mentor to step into research, shifting from structured coding to open-ended inquiry.",
+      "Encouraged by faculty mentorship to transition from structured coding to hypothesis-driven research.",
   },
   {
     step: 3,
     stageNumber: "03",
     period: "Initial Formulation",
-    title: "My First Research Problem",
-    tag: "Computer Vision",
+    title: "Traffic Sign Classification Under Snow",
+    tag: "Environmental Domain Shift",
     badgeVariant: "neutral",
     narrative:
-      "My first major research initiative investigated autonomous vehicle perception: traffic sign classification under heavy snow degradation. In severe winter conditions, camera sensors suffer from uneven whiteout occlusions, drastic contrast loss, and obscured discriminative geometry. I formulated an initial multi-stage classification pipeline, prepared benchmark datasets, authored my first manuscript titled “Multi-Stage Traffic Sign Classification Under Heavy Snow”, and submitted it to FIT 2025.",
+      "My first major research project investigated autonomous perception under severe snow degradation. In winter conditions, camera sensors suffer from uneven occlusions, contrast loss, and obscured discriminative geometry. I formulated an initial multi-stage pipeline and submitted the study to FIT 2025.",
     bridge:
-      "With the submission complete, I awaited the peer review process with eager anticipation.",
+      "The submission entered formal academic peer review.",
     description:
-      "Formulated first manuscript on traffic sign classification under heavy snow and submitted to FIT 2025.",
+      "Authored first manuscript on traffic sign classification under snow degradation and submitted to FIT 2025.",
   },
   {
     step: 4,
     stageNumber: "04",
-    period: "FIT 2025 Submission",
-    title: "The Rejection",
-    tag: "Peer Review Milestone",
+    period: "FIT 2025 Peer Review",
+    title: "Peer-Review Feedback & Rejection",
+    tag: "Constructive Criticism",
     badgeVariant: "amber",
     narrative:
-      "The manuscript was rejected. It was a disheartening moment and my first direct encounter with the uncompromising rigor of academic peer review. The reviewers highlighted critical gaps in experimental depth, baseline comparisons, and methodological justification. For an early-career researcher, a rejection can easily prompt abandonment, but this outcome forced me to pause and fundamentally re-evaluate how I understood scientific inquiry.",
+      "The manuscript was rejected at FIT 2025. The reviewers provided incisive critique, highlighting gaps in baseline comparisons, ablation depth, and the need for stronger methodological justification. Rather than abandoning the problem, I treated the peer-review feedback as a diagnostic blueprint to elevate the rigor of the work.",
     bridge:
-      "Rather than abandoning the problem, I chose to treat the critique as a diagnostic blueprint.",
+      "Peer review prompted a comprehensive methodological overhaul.",
     description:
-      "First manuscript rejected at FIT 2025, confronting the demanding rigor of academic peer review.",
+      "Manuscript rejected at FIT 2025; deconstructed reviewer criticism to identify fundamental methodological limitations.",
   },
   {
     step: 5,
     stageNumber: "05",
-    period: "Methodological Realignment",
-    title: "Learning to Research Through Feedback",
-    tag: "Critical Evaluation",
+    period: "Methodological Revision",
+    title: "Systematic Methodological Revision",
+    tag: "Empirical Rigor",
     badgeVariant: "neutral",
     narrative:
-      "Rather than shelving the project, I systematically deconstructed the reviewer comments, examining every identified vulnerability. My initial understanding of research had been naive: I had assumed research was mainly about having a novel idea and getting it published. Through peer criticism, I learned that genuine research demands questioning one's own assumptions, uncovering subtle baseline biases, analyzing why specific samples fail, and designing rigorous additional experiments to isolate root causes.",
+      "I systematically redesigned the investigation: transitioning from a naive sequential pipeline to a task-aware multi-stage framework, isolating restoration-classification trade-offs, expanding baseline comparisons, and measuring feature recovery before the final classification head.",
     bridge:
-      "This intellectual shift prompted a comprehensive overhaul of the methodology and experimental protocol.",
+      "Revised experimental design produced substantially stronger quantitative evidence.",
     description:
-      "Transformed rejection into a learning milestone: questioning assumptions, examining failure modes, and refining experimental rigor.",
+      "Re-engineered the framework with task-aware coordination, expanded baselines, and comprehensive ablations.",
   },
   {
     step: 6,
     stageNumber: "06",
     period: "Empirical Maturation",
-    title: "Discovering That I Enjoy Research",
-    tag: "Persistence & Validation",
+    title: "Quantitative Validation & Continued Preparation",
+    tag: "Manuscript Revision",
     badgeVariant: "emerald",
     highlightMetric: "EfficientNet-B2: 68.02% → 87.34%",
     narrative:
-      "The work evolved into “Task-Aware Multi-Stage Framework for Traffic Sign Classification under Snow-Degraded Conditions”. I expanded dataset preparation, introduced task-aware stage disentanglement, and conducted extensive ablation studies. Top-1 classification accuracy on EfficientNet-B2 improved from 68.02% to 87.34% under severe snow conditions. The revised manuscript is now being refined with future submission planned for MDPI Sensors. Far beyond the numerical gain, persisting through critique and revision made me realize that I genuinely enjoy the scientific research process.",
+      "Under severe snow conditions, classification accuracy on EfficientNet-B2 improved from 68.02% to 87.34% through task-aware multi-stage processing. This experience solidified my dedication to empirical research and demonstrated the value of persevering through rigorous peer review. The manuscript is now in preparation for submission to MDPI Sensors.",
     bridge:
-      "Having tackled physical sensory corruption in vision, my curiosity broadened toward language and retrieval architectures.",
+      "Investigating environmental corruption led naturally to studying another form of distribution shift.",
     description:
-      "Substantial methodological revision improved classification accuracy from 68.02% to 87.34%; discovered genuine passion for research.",
+      "Quantitative accuracy improved from 68.02% to 87.34%; manuscript currently undergoing refinement for MDPI Sensors.",
   },
   {
     step: 7,
     stageNumber: "07",
-    period: "Cross-Modal Expansion",
-    title: "From Vision to Language Models",
-    tag: "Generative Systems & RAG",
-    badgeVariant: "neutral",
+    period: "Distribution Shift Expansion",
+    title: "Generator Distribution Shift & Few-Shot Adaptation",
+    tag: "Leave-Generator-Out",
+    badgeVariant: "indigo",
+    highlightMetric: "11,000 Images · 50 Experimental Runs",
     narrative:
-      "My research interests expanded toward Large Language Models and Retrieval-Augmented Generation (RAG). Bridging software engineering with applied machine learning, I built an AI Email Copilot that utilized dense semantic search to query past correspondence archives and generate context-aware draft responses. While building and benchmarking the system, my interest shifted from simply making an AI pipeline work to investigating the reliability of the retrieved knowledge grounding the model.",
+      "In synthetic media forensics, detectors trained on known image generators degrade sharply when encountering unseen architectures. I designed a controlled leave-generator-out evaluation across 11,000 images, auditing for leakage and evaluating few-shot adaptation strategies across 5 shot levels and 5 random seeds to investigate adaptation under generator shift.",
     bridge:
-      "A foundational security vulnerability emerged: what happens when retrieved knowledge is untrusted?",
+      "The intellectual link: both domains examine predictive reliability when input evidence diverges from training distributions.",
     description:
-      "Explored LLMs and RAG via an AI Email Copilot; focus shifted from generative fluency to knowledge retrieval integrity.",
+      "Formulated few-shot adaptation study for AI-generated image detection under unseen generator distribution shift.",
   },
   {
     step: 8,
     stageNumber: "08",
-    period: "AI Safety & Security",
-    title: "The Question of Trust",
-    tag: "Adversarial Vulnerability",
-    badgeVariant: "amber",
+    period: "Broader Perspective",
+    title: "Reliable Reasoning Under Distribution Shift",
+    tag: "Research Trajectory",
+    badgeVariant: "blue",
     narrative:
-      "I observed that a RAG architecture can generate articulate, highly persuasive responses even when the retrieved context is inaccurate, contradictory, or maliciously injected. This led directly into critical questions of Prompt Injection, Adversarial Retrieval, Knowledge Manipulation, and Retrieval Reliability. When an intelligent system lacks the capability to verify whether retrieved knowledge is authentic, its downstream decision-making cannot be trusted.",
+      "Across both projects, a central intellectual question emerged: How can intelligent systems remain reliable when the evidence distribution changes? While environmental weather corruption (optical noise and occlusion) and generator distribution shift (unseen synthetic artifacts) involve distinct technical mechanisms, both expose the fragility of models when test distributions shift away from training distributions.",
     bridge:
-      "At this juncture, the fundamental connection between vision and language snapped into focus.",
+      "This perspective informs my graduate research trajectory in reliable computer vision and multimodal AI.",
     description:
-      "Investigated prompt injection, adversarial retrieval manipulation, and the critical danger of untrusted retrieved context.",
-  },
-  {
-    step: 9,
-    stageNumber: "09",
-    period: "Unified Research Agenda",
-    title: "A Broader Direction: Reliable & Trustworthy AI",
-    tag: "Foundational Convergence",
-    badgeVariant: "indigo",
-    narrative:
-      "My trajectory from computer vision to language models revealed a singular underlying intellectual problem: How should an intelligent system behave when the evidence it receives cannot be completely trusted? In the traffic sign project, visual evidence was physically degraded by heavy snow. In RAG systems, textual evidence is vulnerable to malicious manipulation or noise. These are distinct technical domains, but they share the exact same core challenge. Today, my research direction is dedicated to Reliable and Trustworthy AI encompassing distribution shift, domain adaptation, few-shot learning, visual uncertainty, and adversarial robustness.",
-    bridge:
-      "This unified focus drives my ongoing academic preparation and graduate research outlook.",
-    description:
-      "Synthesized visual degradation and adversarial retrieval into a unified research agenda on Reliable & Trustworthy AI.",
+      "Connected environmental domain shift and generator distribution shift into a coherent research trajectory on visual reliability.",
   },
 ];
 
 export const RESEARCH_JOURNEY_CLOSING = {
   quote:
-    "I did not begin my degree with a plan to become a researcher. That direction emerged through experimentation, rejection, revision, and increasingly difficult questions about how intelligent systems behave when their inputs cannot be fully trusted.",
+    "My research trajectory developed through experimentation, peer-review critique, methodological revision, and an increasing focus on how visual models behave when test distributions diverge from training conditions.",
   coreQuestion:
-    "How should an intelligent system behave when the evidence it receives cannot be completely trusted?",
+    "How can visual AI systems maintain reliable predictions when operating under distribution shift, degraded evidence, or limited target-domain supervision?",
   unifyingInsight:
-    "In traffic sign recognition, the visual evidence is corrupted by severe snow. In retrieval-augmented systems, the textual evidence is compromised by manipulation or noise. Addressing both challenges demands intelligent systems that can evaluate evidence reliability before committing to a decision.",
+    "In traffic sign recognition, visual evidence is physically degraded by snow. In AI-generated image detection, visual artifacts shift due to unseen generative models. While technically distinct, both problems reveal how distribution shifts compromise model reliability and motivate robust adaptation mechanisms.",
   currentFocusAreas: [
     "Robust Computer Vision",
-    "Distribution Shift",
+    "Environmental Domain Shift",
     "Domain Adaptation",
     "Few-Shot Learning",
     "Visual Reliability",
-    "Uncertainty Estimation",
-    "Adversarial Robustness",
-    "RAG Security",
-    "Trustworthy AI",
+    "Uncertainty-Aware Reasoning",
     "Multimodal AI",
   ],
 };
@@ -249,28 +293,18 @@ export const RESEARCH_JOURNEY_CLOSING = {
 export const RESEARCH_QUESTIONS: ResearchQuestion[] = [
   {
     number: "01",
-    question: "Can a vision model estimate how trustworthy each visual region is under environmental degradation?",
-    context: "Investigating spatial reliability maps to weight feature representations based on localized degradation severity.",
+    question: "How can visual models estimate and maintain reliable predictions under environmental degradation?",
+    context: "Investigating spatial reliability and feature recovery when severe environmental corruptions—such as snow, scattering, and contrast loss—obscure discriminative visual evidence.",
   },
   {
     number: "02",
-    question: "Can degradation characteristics be incorporated directly into robust visual representation learning?",
-    context: "Conditioning deep feature encoders on estimated physical corruption parameters rather than treating degradation as passive noise.",
+    question: "How can models adapt to unseen visual distributions using limited target-domain supervision?",
+    context: "Investigating parameter-efficient adaptation strategies and leave-generator-out protocols that adapt representations when models encounter out-of-distribution targets without full retraining.",
   },
   {
     number: "03",
-    question: "How can models adapt to progressive environmental domain shifts rather than isolated source-target shifts?",
-    context: "Formulating weather changes as continuous temporal and physical progressions across non-stationary distributions.",
-  },
-  {
-    number: "04",
-    question: "Can vision-language models recognize when visual evidence is insufficient or unreliable?",
-    context: "Preventing multimodal hallucinations by enabling foundation models to acknowledge when visual tokens lack semantic integrity.",
-  },
-  {
-    number: "05",
-    question: "Can multimodal systems selectively rely on alternative evidence when one visual source becomes unreliable?",
-    context: "Dynamic cross-modal fusion that modulates linguistic, depth, or contextual priors dynamically as optical cameras degrade.",
+    question: "How can multimodal models recognize when available visual evidence is insufficient for reliable reasoning?",
+    context: "Exploring uncertainty-aware cross-modal reasoning to detect when visual tokens lack semantic integrity, preventing overconfident hallucinations in vision-language architectures.",
   },
 ];
 
