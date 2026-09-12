@@ -116,6 +116,36 @@
   background: #94a3b8;
 }
 
+/* Animated SVG Pipeline Data-Flow Beam */
+@keyframes flowDash {
+  0% {
+    stroke-dashoffset: 24;
+  }
+  100% {
+    stroke-dashoffset: 0;
+  }
+}
+
+.animate-flow-dash {
+  stroke-dasharray: 6 6;
+  animation: flowDash 1.4s linear infinite;
+}
+
+@keyframes signalPulse {
+  0%, 100% {
+    opacity: 0.3;
+    transform: scale(0.9);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+}
+
+.animate-signal-pulse {
+  animation: signalPulse 2.4s ease-in-out infinite;
+}
+
 /* Accessibility: respect user preference for reduced motion */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -130,4 +160,14 @@
   .framed-card:hover {
     transform: none !important;
   }
+
+  .animate-flow-dash {
+    animation: none !important;
+    stroke-dashoffset: 0 !important;
+  }
+
+  .animate-signal-pulse {
+    animation: none !important;
+  }
 }
+

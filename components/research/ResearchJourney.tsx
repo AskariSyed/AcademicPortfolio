@@ -19,9 +19,9 @@ import {
   Sparkles,
   ArrowRight,
   ShieldCheck,
-  Cpu,
   Layers,
 } from "lucide-react";
+import { FadeIn, HoverLift } from "@/components/ui/motion";
 
 // Subtle icon map corresponding to each narrative milestone
 const STAGE_ICONS = [
@@ -46,7 +46,7 @@ export default function ResearchJourney() {
       className="bg-slate-50/50"
     >
       {/* Supporting narrative introduction */}
-      <div className="max-w-4xl mx-auto p-6 sm:p-8 mb-12 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+      <FadeIn direction="up" distance={20} className="max-w-4xl mx-auto p-6 sm:p-8 mb-12 rounded-2xl bg-white border border-slate-200 shadow-2xs">
         <div className="flex items-center gap-2 mb-3 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
           <Compass className="w-4 h-4" />
           <span>The Formative Narrative</span>
@@ -54,7 +54,7 @@ export default function ResearchJourney() {
         <p className="text-base sm:text-lg text-slate-800 font-serif leading-relaxed italic">
           &ldquo;{RESEARCH_JOURNEY_TEXT}&rdquo;
         </p>
-      </div>
+      </FadeIn>
 
       {/* Narrative Timeline Flow */}
       <div className="relative max-w-4xl mx-auto">
@@ -90,80 +90,80 @@ export default function ResearchJourney() {
                   : "bg-white border-slate-200/90 hover:border-slate-300 shadow-2xs";
 
             return (
-              <div
-                key={step.step}
-                className="relative flex flex-col sm:flex-row items-start sm:gap-6 group"
-              >
-                {/* Node Milestone Indicator */}
-                <div className="flex items-center gap-3 sm:gap-0 shrink-0">
-                  <div
-                    className={`w-16 h-16 rounded-xl flex flex-col items-center justify-center border shadow-xs transition-all duration-300 z-10 shrink-0 ${nodeStyle}`}
-                  >
-                    <IconComponent className="w-5 h-5 mb-0.5" />
-                    <span className="text-[11px] font-mono font-bold">
-                      {step.stageNumber}
-                    </span>
-                  </div>
-
-                  <div className="sm:hidden flex flex-col">
-                    <span className="text-[10px] font-mono font-semibold uppercase text-slate-400">
-                      {step.period}
-                    </span>
-                    <span className="text-xs font-mono font-bold text-blue-900">
-                      {step.tag}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Main Content Narrative Card */}
-                <div
-                  className={`mt-3 sm:mt-0 flex-1 p-5 sm:p-7 rounded-xl border transition-all duration-300 ${cardStyle}`}
-                >
-                  {/* Header Row */}
-                  <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-100">
-                    <div>
-                      <span className="hidden sm:block text-[11px] font-mono text-slate-400 font-medium">
-                        {step.period}
+              <FadeIn key={step.step} direction="up" delay={0.05} distance={18}>
+                <div className="relative flex flex-col sm:flex-row items-start sm:gap-6 group">
+                  {/* Node Milestone Indicator */}
+                  <div className="flex items-center gap-3 sm:gap-0 shrink-0">
+                    <div
+                      className={`w-16 h-16 rounded-xl flex flex-col items-center justify-center border shadow-xs transition-all duration-300 z-10 shrink-0 ${nodeStyle}`}
+                    >
+                      <IconComponent className="w-5 h-5 mb-0.5" />
+                      <span className="text-[11px] font-mono font-bold">
+                        {step.stageNumber}
                       </span>
-                      <h3 className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">
-                        {step.title}
-                      </h3>
                     </div>
 
-                    <div className="flex items-center gap-2">
-                      {step.highlightMetric && (
-                        <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200">
-                          <TrendingUp className="w-3.5 h-3.5" />
-                          <span>{step.highlightMetric}</span>
-                        </span>
-                      )}
-                      <span className="hidden sm:inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-medium text-slate-700 bg-slate-100 border border-slate-200/80">
+                    <div className="sm:hidden flex flex-col">
+                      <span className="text-[10px] font-mono font-semibold uppercase text-slate-400">
+                        {step.period}
+                      </span>
+                      <span className="text-xs font-mono font-bold text-blue-900">
                         {step.tag}
                       </span>
                     </div>
                   </div>
 
-                  {/* Core Narrative Paragraph */}
-                  <p className="text-sm text-slate-700 leading-relaxed">
-                    {step.narrative}
-                  </p>
+                  {/* Main Content Narrative Card */}
+                  <HoverLift
+                    lift={-3}
+                    className={`mt-3 sm:mt-0 flex-1 p-5 sm:p-7 rounded-xl border transition-all duration-300 hover:shadow-md ${cardStyle}`}
+                  >
+                    {/* Header Row */}
+                    <div className="flex flex-wrap items-center justify-between gap-2 pb-3 mb-3 border-b border-slate-100">
+                      <div>
+                        <span className="hidden sm:block text-[11px] font-mono text-slate-400 font-medium">
+                          {step.period}
+                        </span>
+                        <h3 className="text-base sm:text-lg font-bold text-slate-900 mt-0.5">
+                          {step.title}
+                        </h3>
+                      </div>
 
-                  {/* Intellectual Transition Bridge */}
-                  {step.bridge && (
-                    <div className="mt-4 pt-3 border-t border-slate-100/80 flex items-start gap-2 text-xs font-serif text-slate-500 italic">
-                      <ArrowRight className="w-3.5 h-3.5 text-blue-900 shrink-0 mt-0.5" />
-                      <span>{step.bridge}</span>
+                      <div className="flex items-center gap-2">
+                        {step.highlightMetric && (
+                          <span className="inline-flex items-center gap-1 px-2.5 py-1 rounded-md text-xs font-mono font-semibold text-emerald-800 bg-emerald-50 border border-emerald-200">
+                            <TrendingUp className="w-3.5 h-3.5" />
+                            <span>{step.highlightMetric}</span>
+                          </span>
+                        )}
+                        <span className="hidden sm:inline-block px-2.5 py-0.5 rounded text-[11px] font-mono font-medium text-slate-700 bg-slate-100 border border-slate-200/80">
+                          {step.tag}
+                        </span>
+                      </div>
                     </div>
-                  )}
+
+                    {/* Core Narrative Paragraph */}
+                    <p className="text-sm text-slate-700 leading-relaxed">
+                      {step.narrative}
+                    </p>
+
+                    {/* Intellectual Transition Bridge */}
+                    {step.bridge && (
+                      <div className="mt-4 pt-3 border-t border-slate-100/80 flex items-start gap-2 text-xs font-serif text-slate-500 italic">
+                        <ArrowRight className="w-3.5 h-3.5 text-blue-900 shrink-0 mt-0.5" />
+                        <span>{step.bridge}</span>
+                      </div>
+                    )}
+                  </HoverLift>
                 </div>
-              </div>
+              </FadeIn>
             );
           })}
         </div>
       </div>
 
       {/* The Central Intellectual Parallel Card */}
-      <div className="max-w-4xl mx-auto mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950 text-white shadow-md">
+      <FadeIn direction="up" delay={0.15} distance={20} className="max-w-4xl mx-auto mt-14 p-6 sm:p-8 rounded-2xl bg-gradient-to-br from-blue-950 via-slate-900 to-indigo-950 text-white shadow-md">
         <div className="flex items-center gap-2 mb-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-300">
           <Layers className="w-4 h-4" />
           <span>The Unifying Intellectual Thread</span>
@@ -175,7 +175,7 @@ export default function ResearchJourney() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5 mt-6 pt-6 border-t border-white/15">
           {/* Visual Domain Parallel */}
-          <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+          <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
             <div className="flex items-center gap-2 text-xs font-mono font-semibold text-sky-300 uppercase mb-2">
               <Eye className="w-3.5 h-3.5" />
               <span>In Computer Vision (Snow Degradation)</span>
@@ -188,7 +188,7 @@ export default function ResearchJourney() {
           </div>
 
           {/* Language Domain Parallel */}
-          <div className="p-4 rounded-xl bg-white/5 border border-white/10">
+          <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
             <div className="flex items-center gap-2 text-xs font-mono font-semibold text-indigo-300 uppercase mb-2">
               <ShieldAlert className="w-3.5 h-3.5" />
               <span>In RAG &amp; Language Models</span>
@@ -204,10 +204,10 @@ export default function ResearchJourney() {
         <p className="mt-5 text-xs sm:text-sm text-slate-300 leading-relaxed italic">
           {RESEARCH_JOURNEY_CLOSING.unifyingInsight}
         </p>
-      </div>
+      </FadeIn>
 
       {/* Reflective Concluding Statement & Current Focus */}
-      <div className="max-w-4xl mx-auto mt-8 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-2xs">
+      <FadeIn direction="up" delay={0.2} distance={20} className="max-w-4xl mx-auto mt-8 p-6 sm:p-8 rounded-2xl bg-white border border-slate-200 shadow-2xs">
         <div className="flex items-center gap-2 mb-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
           <ShieldCheck className="w-4 h-4" />
           <span>Research Commitment &amp; Graduate Focus</span>
@@ -232,7 +232,7 @@ export default function ResearchJourney() {
             ))}
           </div>
         </div>
-      </div>
+      </FadeIn>
     </SectionContainer>
   );
 }

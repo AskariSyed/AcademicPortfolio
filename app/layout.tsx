@@ -7,6 +7,9 @@ import { RESEARCH_IDENTITY } from "@/data/research";
 import { PUBLICATIONS } from "@/data/publications";
 import { Analytics } from "@vercel/analytics/next";
 
+import CookieBanner from "@/components/ui/CookieBanner";
+import StickyMobileCTA from "@/components/ui/StickyMobileCTA";
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
@@ -48,6 +51,13 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Muhammad Hassan Askari", url: "https://research-with-askari.vercel.app/" }],
   creator: "Muhammad Hassan Askari",
+  icons: {
+    icon: [
+      { url: "/icon.svg", type: "image/svg+xml" },
+    ],
+    apple: "/icon.svg",
+  },
+  manifest: "/site.webmanifest",
   alternates: {
     canonical: "https://research-with-askari.vercel.app/",
   },
@@ -144,8 +154,10 @@ export default function RootLayout({
       </head>
       <body className="font-sans min-h-screen flex flex-col bg-slate-50/50 text-slate-900 antialiased selection:bg-blue-100 selection:text-blue-900">
         <Navbar />
-        <main className="flex-1">{children}</main>
+        <main className="flex-1 pb-16 md:pb-0">{children}</main>
         <Footer />
+        <StickyMobileCTA />
+        <CookieBanner />
         <Analytics />
       </body>
     </html>

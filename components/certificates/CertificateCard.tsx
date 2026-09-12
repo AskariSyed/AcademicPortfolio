@@ -4,6 +4,7 @@ import React from "react";
 import Image from "next/image";
 import { Certificate } from "@/data/certificates";
 import { Eye, Award } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
 
 interface CertificateCardProps {
   certificate: Certificate;
@@ -18,6 +19,7 @@ export default function CertificateCard({
 }: CertificateCardProps) {
   const rotation = certificate.frameStyle?.rotationDeg ?? ((index % 5) - 2) * 1.1;
   const isPriority = index < 4;
+  const shouldReduceMotion = useReducedMotion();
 
   // Frame border styles
   const frameBorderClass =
@@ -53,10 +55,21 @@ export default function CertificateCard({
       {/* Hanging Wire and Wall Pin (Researcher's office aesthetic) */}
       <div className="certificate-hanging-wire opacity-70 group-hover:opacity-100 transition-opacity" />
 
-      {/* Physical Framed Container */}
-      <div
-        style={{ transform: `rotate(${rotation}deg)` }}
-        className={`framed-card rounded-lg p-2.5 sm:p-3.5 border-4 shadow-frame transition-all duration-300 ${frameBorderClass}`}
+      {/* Physical Framed Container with tactile spring physics */}
+      <motion.div
+        initial={{ rotate: rotation }}
+        whileHover={
+          shouldReduceMotion
+            ? undefined
+            : {
+                y: -8,
+                scale: 1.025,
+                rotate: 0,
+                transition: { type: "spring", stiffness: 350, damping: 22 },
+              }
+        }
+        whileTap={shouldReduceMotion ? undefined : { scale: 0.99 }}
+        className={`framed-card rounded-lg p-2.5 sm:p-3.5 border-4 shadow-frame group-hover:shadow-2xl transition-shadow duration-300 ${frameBorderClass}`}
       >
         {/* Beveled Matting Board */}
         <div
@@ -73,7 +86,7 @@ export default function CertificateCard({
                 alt={certificate.title}
                 fill
                 sizes="(max-width: 640px) 280px, 320px"
-                className="object-contain bg-white select-none transition-transform duration-300 group-hover:scale-[1.02]"
+                className="object-contain bg-white select-none transition-transform duration-300 group-hover:scale-[1.03]"
                 priority={isPriority}
                 loading={isPriority ? "eager" : "lazy"}
                 quality={85}
@@ -91,7 +104,7 @@ export default function CertificateCard({
             )}
 
             {/* Hover Inspect Prompt */}
-            <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center gap-1.5 text-white text-xs font-semibold backdrop-blur-2xs">
+            <div className="absolute inset-0 bg-slate-950/60 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center justify-center gap-1.5 text-white text-xs font-semibold backdrop-blur-2xs">
               <Eye className="w-4 h-4" />
               <span>Inspect Credential</span>
             </div>
@@ -114,7 +127,7 @@ export default function CertificateCard({
             </div>
           </div>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 }

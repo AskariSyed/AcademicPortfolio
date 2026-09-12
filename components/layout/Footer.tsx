@@ -83,9 +83,18 @@ export default function Footer() {
           </div>
         </div>
 
-        <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-2">
+        <div className="mt-8 pt-6 border-t border-slate-100 flex flex-col sm:flex-row items-center justify-between text-xs text-slate-400 gap-3">
           <div>
             © {new Date().getFullYear()} {RESEARCH_IDENTITY.name}. Built with Next.js App Router.
+          </div>
+          <div className="flex items-center gap-4 text-xs">
+            <Link href="/privacy" className="hover:text-slate-700 transition-colors">
+              Privacy Policy
+            </Link>
+            <span className="text-slate-300">•</span>
+            <Link href="/terms" className="hover:text-slate-700 transition-colors">
+              Terms &amp; Conditions
+            </Link>
           </div>
         </div>
       </div>
