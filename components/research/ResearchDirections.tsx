@@ -11,9 +11,9 @@ export default function ResearchDirections() {
   return (
     <SectionContainer
       id="research-directions"
-      tag="Future Trajectory"
-      title="Where I Want to Go Next"
-      subtitle="Proposed methodological pipelines and long-term directions for Master's research."
+      tag="Future Directions"
+      title="Areas I Want to Explore Next"
+      subtitle="Methodological concepts and exploratory directions I am interested in investigating further in graduate studies or research collaborations."
       className="bg-white"
     >
       {/* Narrative block */}

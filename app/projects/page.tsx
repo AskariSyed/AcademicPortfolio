@@ -6,16 +6,16 @@ import { PROJECTS } from "@/data/projects";
 import { Layers, Terminal, Sparkles } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Research & Technical Projects",
+  title: "Research & Technical Projects | Muhammad Hassan Askari",
   description:
-    "Empirical machine learning and computer vision implementations by Muhammad Hassan Askari, focusing on domain adaptation, robustness, and visual reliability.",
+    "Undergraduate research projects, empirical machine learning experiments, and software systems by Muhammad Hassan Askari, BS in Computer Science graduate.",
   alternates: {
     canonical: "https://research-with-askari.vercel.app/projects",
   },
   openGraph: {
     title: "Research & Technical Projects | Muhammad Hassan Askari",
     description:
-      "Empirical machine learning and computer vision implementations by Muhammad Hassan Askari, focusing on domain adaptation, robustness, and visual reliability.",
+      "Undergraduate research projects, empirical machine learning experiments, and software systems by Muhammad Hassan Askari, BS in Computer Science graduate.",
     url: "https://research-with-askari.vercel.app/projects",
   },
 };
@@ -37,16 +37,16 @@ export default function ProjectsPage() {
             Research &amp; Technical Projects
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-650 leading-relaxed">
-            Hands-on machine learning architectures, few-shot adaptation pipelines, and applied software systems. Research implementations are prioritized over enterprise engineering.
+            Undergraduate research projects, machine learning experiments, and algorithmic software systems developed during my Computer Science degree.
           </p>
         </div>
       </section>
 
       {/* Primary Research Projects */}
       <SectionContainer
-        tag="Core Research Implementations"
-        title="Machine Learning &amp; Vision Systems"
-        subtitle="Empirical projects exploring robust visual representations, domain shifts, and retrieval augmentation."
+        tag="Research Projects &amp; Experiments"
+        title="Machine Learning &amp; Computer Vision"
+        subtitle="Undergraduate research and empirical investigations exploring robust visual representations, domain shifts, and adaptation."
         className="bg-white"
       >
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -56,11 +56,11 @@ export default function ProjectsPage() {
         </div>
       </SectionContainer>
 
-      {/* Applied Software Engineering (Subdued) */}
+      {/* Applied Software Engineering */}
       <SectionContainer
-        tag="Engineering Foundation"
-        title="Applied Software Engineering"
-        subtitle="Large-scale full-stack systems engineering supporting software implementation speed and architectural reliability."
+        tag="Engineering &amp; Algorithms Foundation"
+        title="Software Systems &amp; Optimization"
+        subtitle="Full-stack and algorithmic systems demonstrating software architecture, database management, and concurrent scheduling."
         className="bg-slate-50/50"
       >
         <div className="max-w-3xl">

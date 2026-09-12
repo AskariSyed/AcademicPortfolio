@@ -33,20 +33,22 @@ export const viewport: Viewport = {
 export const metadata: Metadata = {
   metadataBase: new URL("https://research-with-askari.vercel.app"),
   title: {
-    default: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
+    default: "Muhammad Hassan Askari | Computer Science Graduate & Aspiring Researcher",
     template: "%s | Muhammad Hassan Askari",
   },
   description:
-    "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
+    "Recent Computer Science graduate exploring research across AI/ML, Computer Vision, Data Science, Software Engineering, and Algorithms.",
   keywords: [
     "Muhammad Hassan Askari",
     "Computer Science Graduate",
+    "Aspiring Researcher",
     "AI/ML Research",
     "Computer Vision",
-    "Robust Computer Vision",
+    "Data Science",
+    "Software Engineering",
+    "Algorithms and Optimization",
     "Distribution Shift",
     "Few-Shot Adaptation",
-    "Environmental Domain Shift",
     "COMSATS University Islamabad",
   ],
   authors: [{ name: "Muhammad Hassan Askari", url: "https://research-with-askari.vercel.app/" }],
@@ -66,15 +68,15 @@ export const metadata: Metadata = {
     locale: "en_US",
     url: "https://research-with-askari.vercel.app/",
     siteName: "Muhammad Hassan Askari Portfolio",
-    title: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
+    title: "Muhammad Hassan Askari | Computer Science Graduate & Aspiring Researcher",
     description:
-      "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
+      "Recent Computer Science graduate exploring research across AI/ML, Computer Vision, Data Science, Software Engineering, and Algorithms.",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
+    title: "Muhammad Hassan Askari | Computer Science Graduate & Aspiring Researcher",
     description:
-      "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
+      "Recent Computer Science graduate exploring research across AI/ML, Computer Vision, Data Science, Software Engineering, and Algorithms.",
   },
   robots: {
     index: true,
@@ -103,7 +105,7 @@ export default function RootLayout({
         "@id": "https://research-with-askari.vercel.app/#person",
         "name": "Muhammad Hassan Askari",
         "url": "https://research-with-askari.vercel.app/",
-        "jobTitle": "Computer Science Graduate",
+        "jobTitle": "Computer Science Graduate & Aspiring Researcher",
         "alumniOf": {
           "@type": "CollegeOrUniversity",
           "name": "COMSATS University Islamabad",
@@ -113,14 +115,14 @@ export default function RootLayout({
           "https://www.linkedin.com/in/syed-hassan-askari/",
         ],
         "knowsAbout": [
+          "Artificial Intelligence",
+          "Machine Learning",
           "Computer Vision",
-          "Trustworthy AI",
-          "Robust Machine Learning",
-          "Domain Adaptation",
-          "Multimodal Artificial Intelligence",
-          "Environmental Domain Shift",
-          "Large Language Models",
-          "Retrieval-Augmented Generation",
+          "Data Science",
+          "Software Engineering",
+          "Algorithms and Optimization",
+          "Distribution Shift",
+          "Reliable AI",
         ],
       },
       {

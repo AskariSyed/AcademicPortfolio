@@ -6,16 +6,16 @@ import { EDUCATION, IELTS_RECORD, TEACHING_EXPERIENCE, RESEARCH_TOOLKIT } from "
 import { PUBLICATIONS } from "@/data/publications";
 
 export const metadata: Metadata = {
-  title: "Academic Curriculum Vitae (CV)",
+  title: "Academic Curriculum Vitae (CV) | Muhammad Hassan Askari",
   description:
-    "Curriculum Vitae of Muhammad Hassan Askari: BS Computer Science from COMSATS University Islamabad, research focus in robust computer vision and trustworthy AI.",
+    "Academic Curriculum Vitae of Muhammad Hassan Askari: BS Computer Science graduate from COMSATS University Islamabad, with research experience in AI/ML, computer vision, data science, software engineering, and algorithms.",
   alternates: {
     canonical: "https://research-with-askari.vercel.app/cv",
   },
   openGraph: {
     title: "Academic Curriculum Vitae (CV) | Muhammad Hassan Askari",
     description:
-      "Curriculum Vitae of Muhammad Hassan Askari: BS Computer Science from COMSATS University Islamabad, research focus in robust computer vision and trustworthy AI.",
+      "Academic Curriculum Vitae of Muhammad Hassan Askari: BS Computer Science graduate from COMSATS University Islamabad, with research experience in AI/ML, computer vision, data science, software engineering, and algorithms.",
     url: "https://research-with-askari.vercel.app/cv",
   },
 };

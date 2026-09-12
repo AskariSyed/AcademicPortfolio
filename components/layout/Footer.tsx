@@ -14,7 +14,7 @@ export default function Footer() {
               {RESEARCH_IDENTITY.name}
             </div>
             <p className="text-xs text-slate-500 mt-0.5">
-              Reliable Computer Vision Under Distribution Shift
+              Computer Science Graduate · Exploring Research in AI &amp; Computing Systems
             </p>
             <p className="text-xs text-slate-400 mt-2 font-mono">
               COMSATS University Islamabad (2022–2026) · CGPA 3.65 · IELTS 7.0

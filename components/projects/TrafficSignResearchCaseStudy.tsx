@@ -37,7 +37,7 @@ export default function TrafficSignResearchCaseStudy({
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap items-center gap-2">
             <span className="px-3 py-1 rounded-full text-xs font-mono font-bold uppercase tracking-wider bg-blue-900 text-white">
-              FLAGSHIP RESEARCH INVESTIGATION · {project.year}
+              UNDERGRADUATE RESEARCH PROJECT · {project.year}
             </span>
             <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-amber-50 text-amber-900 border border-amber-300/80">
               <Clock className="w-3.5 h-3.5 text-amber-700" />
@@ -178,7 +178,7 @@ export default function TrafficSignResearchCaseStudy({
 
         <div className="p-6 sm:p-8 rounded-xl bg-white border border-slate-200 shadow-2xs space-y-5 text-sm text-slate-700 leading-relaxed">
           <p>
-            The project designs a <strong>task-aware multi-stage framework</strong> that treats adverse weather recognition as an integrated restoration-classification task. Rather than relying on naive sequential restoration (which can introduce artifacts that mislead the classifier), the framework evaluates feature recoverability at intermediate representation layers.
+            In this project, I investigated a <strong>task-aware multi-stage framework</strong> that treats adverse weather recognition as an integrated restoration-classification task. Rather than relying on naive sequential restoration (which can introduce artifacts that mislead the classifier), the framework evaluates feature recoverability at intermediate representation layers.
           </p>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
@@ -319,10 +319,10 @@ export default function TrafficSignResearchCaseStudy({
           <div className="p-4 rounded-lg bg-amber-50/60 border border-amber-200 text-slate-800 space-y-2">
             <div className="flex items-center gap-2 font-bold text-amber-950 text-xs uppercase tracking-wider font-mono">
               <AlertTriangle className="w-4 h-4 text-amber-700" />
-              <span>FIT 2025 Submission &amp; Rejection</span>
+              <span>FIT 2025 Peer-Review Feedback &amp; Revision</span>
             </div>
             <p className="leading-relaxed">
-              The earliest formulation of this project was submitted to <strong>FIT 2025</strong> and subsequently rejected. Peer reviewers raised valid, critical concerns: the experimental baselines lacked sufficient depth, the two-step sequential pipeline was insufficiently ablated, and the work needed clearer theoretical justification for why restoration would assist classification rather than introduce hallucinated artifacts.
+              The initial version of this project was submitted to <strong>FIT 2025</strong>. Reviewers provided constructive and incisive feedback, highlighting essential areas for improvement: experimental baselines required deeper comparison, the sequential pipeline needed clearer stage disentanglement, and the work required stronger justification to verify whether restoration genuinely preserved discriminative boundaries.
             </p>
           </div>
 
@@ -387,10 +387,10 @@ export default function TrafficSignResearchCaseStudy({
       <section id="next-step" className="scroll-mt-24 space-y-4">
         <div>
           <span className="text-xs font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
-            Section 08 · Future Agenda
+            Section 08 · Future Direction
           </span>
           <h2 className="text-2xl font-bold text-slate-900">
-            Next Scientifically Meaningful Steps
+            Next Steps &amp; Validation Goals
           </h2>
         </div>
 
@@ -422,7 +422,7 @@ export default function TrafficSignResearchCaseStudy({
       {/* Navigation Footer */}
       <section className="p-6 rounded-xl bg-slate-900 text-white flex flex-wrap items-center justify-between gap-4">
         <div>
-          <h3 className="text-sm font-bold">Next Flagship Project</h3>
+          <h3 className="text-sm font-bold">Next Research Exploration</h3>
           <p className="text-xs text-slate-300">Few-Shot Adaptation for AI-Generated Image Detection under Unseen Generator Distribution Shift</p>
         </div>
         <Link

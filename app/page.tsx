@@ -8,16 +8,16 @@ import CredentialsBanner from "@/components/certificates/CredentialsBanner";
 import ContactSection from "@/components/contact/ContactSection";
 
 export const metadata: Metadata = {
-  title: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
+  title: "Muhammad Hassan Askari | Computer Science Graduate & Aspiring Researcher",
   description:
-    "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
+    "Recent Computer Science graduate exploring research across AI/ML, Computer Vision, Data Science, Software Engineering, and Algorithms.",
   alternates: {
     canonical: "https://research-with-askari.vercel.app/",
   },
   openGraph: {
-    title: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
+    title: "Muhammad Hassan Askari | Computer Science Graduate & Aspiring Researcher",
     description:
-      "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
+      "Recent Computer Science graduate exploring research across AI/ML, Computer Vision, Data Science, Software Engineering, and Algorithms.",
     url: "https://research-with-askari.vercel.app/",
     siteName: "Muhammad Hassan Askari Portfolio",
     locale: "en_US",
@@ -25,9 +25,9 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Muhammad Hassan Askari | AI/ML Research & Computer Vision",
+    title: "Muhammad Hassan Askari | Computer Science Graduate & Aspiring Researcher",
     description:
-      "Computer Science graduate researching robust computer vision, distribution shift, few-shot adaptation, and reliable visual AI.",
+      "Recent Computer Science graduate exploring research across AI/ML, Computer Vision, Data Science, Software Engineering, and Algorithms.",
   },
 };
 

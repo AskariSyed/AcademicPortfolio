@@ -14,13 +14,13 @@ export default function ResearchTrajectorySummary() {
         <FadeIn direction="up" distance={20} className="max-w-3xl mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-900 border border-blue-200/80 mb-3">
             <Compass className="w-3.5 h-3.5 text-blue-800" />
-            <span>Intellectual Development</span>
+            <span>Academic &amp; Research Development</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
             Research Trajectory &amp; Narrative
           </h2>
           <p className="mt-3 text-base text-slate-650 leading-relaxed">
-            Transitioning from software engineering foundations to empirical computer vision, methodological peer-review revision, and learning under distribution shift.
+            Developing from software engineering foundations to undergraduate research in computer vision, distribution shift, and algorithmic optimization.
           </p>
         </FadeIn>
 
@@ -95,7 +95,7 @@ export default function ResearchTrajectorySummary() {
           {/* Unifying Question (Carefully worded, not forcing identical mechanisms) */}
           <FadeIn direction="up" delay={0.25} distance={12} className="p-4 rounded-xl bg-blue-50/40 border border-blue-200/80 text-xs sm:text-sm text-slate-800 leading-relaxed">
             <p className="font-serif italic">
-              &ldquo;While physical weather corruption and synthetic artifact shifts involve distinct technical mechanisms, both demonstrate that models degrade when operational distributions diverge from training distributions. My research direction studies how visual AI models can evaluate degraded evidence and adapt reliably.&rdquo;
+              &ldquo;Through undergraduate research and software systems projects, I explored how computational models perform when operational conditions diverge from training distributions or encounter resource constraints. These experiences have motivated me to pursue research further across Computer Science.&rdquo;
             </p>
           </FadeIn>
 
@@ -104,7 +104,7 @@ export default function ResearchTrajectorySummary() {
               href="/research"
               className="group inline-flex items-center gap-1.5 text-xs font-semibold text-blue-900 hover:text-blue-950 hover:underline"
             >
-              <span>Read Full Research Agenda &amp; Questions</span>
+              <span>Read Full Research Narrative</span>
               <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
             </Link>
           </div>

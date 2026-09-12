@@ -7,6 +7,7 @@ import Link from "next/link";
 const ICONS = {
   "robust-cv": Eye,
   "domain-adaptation": Network,
+  "algorithms-systems": ShieldCheck,
   "multimodal-ai": Layers,
   "trustworthy-vision": ShieldCheck,
 };
@@ -17,16 +18,16 @@ export default function ResearchFocus() {
       id="research-focus"
       tag="Core Interests"
       title="Research Focus"
-      subtitle="I am interested in understanding how visual AI systems can remain reliable when the conditions under which they operate change."
+      subtitle="Undergraduate research focus across robust computer vision, distribution shift, and algorithmic optimization, with an openness to broader Computer Science research."
       className="bg-white"
     >
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
         {RESEARCH_FOCUS_CARDS.map((card, idx) => {
           const Icon = ICONS[card.id as keyof typeof ICONS] || Eye;
           return (
             <div
               key={card.id}
-              className="group relative flex flex-col justify-between rounded-xl border border-slate-200/90 bg-slate-50/40 p-6 sm:p-8 hover:bg-white hover:border-blue-900/40 hover:shadow-md transition-all duration-300"
+              className="group relative flex flex-col justify-between rounded-xl border border-slate-200/90 bg-slate-50/40 p-6 sm:p-7 hover:bg-white hover:border-blue-900/40 hover:shadow-md transition-all duration-300"
             >
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
@@ -39,7 +40,7 @@ export default function ResearchFocus() {
                 </div>
 
                 <div>
-                  <h3 className="text-lg sm:text-xl font-bold tracking-tight text-slate-900 group-hover:text-blue-950 transition-colors">
+                  <h3 className="text-lg font-bold tracking-tight text-slate-900 group-hover:text-blue-950 transition-colors">
                     {card.title}
                   </h3>
                   <p className="text-xs font-medium text-slate-500 mt-1 italic">
@@ -47,20 +48,20 @@ export default function ResearchFocus() {
                   </p>
                 </div>
 
-                <p className="text-sm sm:text-base text-slate-650 leading-relaxed">
+                <p className="text-xs sm:text-sm text-slate-650 leading-relaxed">
                   &ldquo;{card.description}&rdquo;
                 </p>
               </div>
 
               <div className="pt-6 mt-6 border-t border-slate-200/70">
-                <div className="flex flex-wrap items-center gap-2">
-                  <span className="text-xs font-semibold text-slate-500 mr-1">
+                <div className="flex flex-wrap items-center gap-1.5">
+                  <span className="text-[11px] font-semibold text-slate-500 mr-1">
                     Key Topics:
                   </span>
                   {card.topics.map((topic) => (
                     <span
                       key={topic}
-                      className="inline-block px-2.5 py-1 rounded-md text-xs font-medium bg-white text-slate-700 border border-slate-200/80 group-hover:border-slate-300"
+                      className="inline-block px-2 py-0.5 rounded-md text-[11px] font-medium bg-white text-slate-700 border border-slate-200/80 group-hover:border-slate-300"
                     >
                       {topic}
                     </span>
@@ -79,10 +80,10 @@ export default function ResearchFocus() {
             Research Interest Hierarchy
           </span>
           <h3 className="text-lg sm:text-xl font-bold text-slate-900">
-            Demonstrated vs. Prospective Specialization
+            Explored Research &amp; Open Areas of Interest
           </h3>
           <p className="text-xs sm:text-sm text-slate-600 mt-1">
-            Organized to clearly distinguish established empirical investigation from prospective research vectors.
+            Distinguishing undergraduate research projects from broader Computer Science areas I am interested in exploring further.
           </p>
         </div>
 
@@ -94,7 +95,7 @@ export default function ResearchFocus() {
                 Primary Interests
               </span>
               <span className="px-2 py-0.5 rounded text-[10px] font-mono font-bold bg-blue-100 text-blue-900">
-                Active Projects
+                Undergraduate Projects
               </span>
             </div>
             <ul className="space-y-1.5 text-xs sm:text-sm font-semibold text-slate-900">
@@ -114,7 +115,7 @@ export default function ResearchFocus() {
                 Secondary Interests
               </span>
               <span className="px-2 py-0.5 rounded text-[10px] font-mono font-medium bg-slate-100 text-slate-600">
-                Emerging Trajectory
+                Broader Foundation
               </span>
             </div>
             <ul className="space-y-1.5 text-xs sm:text-sm font-medium text-slate-700">

@@ -46,7 +46,7 @@ export const PUBLICATIONS: Publication[] = [
       "Systems Concurrency",
     ],
     description:
-      "A research investigation into constrained interview scheduling, greedy allocation, fairness, and concurrency-aware validation for high-throughput job-fair environments.",
+      "A research study investigating constrained interview scheduling, greedy allocation, candidate fairness, and concurrency-aware validation for high-throughput job-fair environments, broadening my research profile into algorithms and software systems.",
     problem:
       "Allocating interviews at job fairs requires resolving constrained student and company schedules under coupled availability and temporal constraints.",
     researchQuestion:
@@ -80,13 +80,13 @@ export const PUBLICATIONS: Publication[] = [
       "Deep Learning",
     ],
     description:
-      "A study of robust traffic sign classification under snow-degraded visual conditions, investigating a task-aware multi-stage framework combining controlled environmental degradation, image restoration, and downstream classification.",
+      "An undergraduate research study investigating robust traffic sign classification under snow-degraded visual conditions, exploring a task-aware multi-stage framework that coordinates image restoration with downstream classification.",
     problem:
       "Severe snow degradation introduces visual occlusions, scattering, and contrast attenuation, obscuring discriminative fine-grained sign features and creating an acute distribution shift.",
     researchQuestion:
       "How can a recognition system maintain reliable classification when environmental degradation progressively removes useful visual information?",
     approach:
-      "A task-aware multi-stage framework designed to coordinate deep image restoration with robust classification, recovering discriminative evidence prior to final category prediction.",
+      "I investigated a task-aware multi-stage framework designed to coordinate deep image restoration with classification, exploring whether discriminative evidence can be recovered prior to final category prediction.",
     methodologyPipeline: [
       "Snow-Degraded Image",
       "Data Preparation",

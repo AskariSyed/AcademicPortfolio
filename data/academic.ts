@@ -54,7 +54,7 @@ export const EDUCATION: EducationRecord = {
   totalCgpa: "4.00",
   credits: 133,
   highlight:
-    "Rigorous undergraduate training across artificial intelligence, algorithms, software engineering, and systems architectures.",
+    "Solid undergraduate foundation across computer science, software engineering, and algorithms, complemented by undergraduate research in computer vision and machine learning.",
 };
 
 export const IELTS_RECORD: LanguageProficiency = {
@@ -148,15 +148,32 @@ export const SELECTED_COURSEWORK: AcademicCourse[] = COURSE_GROUPS.flatMap(
 );
 
 export const RESEARCH_INTERESTS: string[] = [
+  "Artificial Intelligence",
+  "Machine Learning",
   "Computer Vision",
-  "Robust Machine Learning",
-  "Deep Learning",
-  "Domain Adaptation",
-  "Domain Generalization",
-  "Few-Shot Learning",
-  "Multimodal AI",
-  "Vision-Language Models",
-  "Visual Reliability & Uncertainty Modeling",
+  "Data Science",
+  "Software Engineering",
+  "Algorithms & Optimization",
+  "Distribution Shift & Adaptation",
+  "Reliable / Trustworthy AI",
+];
+
+export const CATEGORIZED_RESEARCH_INTERESTS = [
+  {
+    category: "Demonstrated Research Exploration",
+    description: "Hands-on undergraduate investigations and empirical projects",
+    topics: ["Computer Vision", "Machine Learning", "Distribution Shift & Adaptation"],
+  },
+  {
+    category: "Systems & Algorithms Foundation",
+    description: "Coursework, technical projects, and optimization research",
+    topics: ["Algorithms & Optimization", "Software Engineering", "Data Science & Analytics"],
+  },
+  {
+    category: "Complementary & Emerging Interests",
+    description: "Areas of continued study and prospective graduate inquiry",
+    topics: ["Reliable / Trustworthy AI", "Multimodal Perception"],
+  },
 ];
 
 export const TEACHING_EXPERIENCE: TeachingExperience[] = [

@@ -10,18 +10,18 @@ import { FadeIn, StaggerContainer, StaggerItem, HoverLift } from "@/components/u
 
 const PRIMARY_AREAS = [
   {
-    title: "Robust Computer Vision",
-    subtitle: "Environmental degradation, visual robustness, recognition under corrupted inputs.",
+    title: "AI, Machine Learning & Vision",
+    subtitle: "Undergraduate research investigating visual recognition under adverse weather and few-shot adaptation under generator shift.",
     icon: Eye,
   },
   {
-    title: "Distribution Shift & Adaptation",
-    subtitle: "Domain adaptation, domain generalization, and few-shot adaptation.",
+    title: "Algorithms & Software Systems",
+    subtitle: "Constrained two-sided scheduling, discrete optimization, database concurrency, and enterprise systems architectures.",
     icon: Network,
   },
   {
-    title: "Reliable Multimodal AI",
-    subtitle: "Future work around vision-language models, uncertainty-aware reasoning, and reliable evidence.",
+    title: "Data Science & Robust Computing",
+    subtitle: "Empirical evaluation protocols, multi-seed benchmarks, and exploring reliable machine intelligence under uncertainty.",
     icon: Layers,
   },
 ];
@@ -39,7 +39,7 @@ export default function HeroSection() {
           <StaggerItem>
             <div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-900 border border-blue-200/80 shadow-2xs hover:bg-blue-100/70 transition-colors">
               <span className="w-2 h-2 rounded-full bg-blue-600 animate-subtle-pulse" />
-              <span>Open to Graduate Research (MRes / MPhil / PhD)</span>
+              <span>Open to Research Opportunities &amp; Graduate Studies</span>
             </div>
           </StaggerItem>
 
@@ -79,16 +79,16 @@ export default function HeroSection() {
                 {RESEARCH_IDENTITY.name}
               </h1>
               <p className="mt-2 text-base sm:text-lg font-semibold text-blue-950 font-mono">
-                Computer Science Graduate | AI/ML Research
+                Computer Science Graduate | Aspiring Researcher
               </p>
             </div>
 
             <div className="pt-1">
               <span className="text-xs font-mono font-bold tracking-wider text-blue-900 uppercase block mb-1">
-                Core Research Theme
+                Research Background &amp; Focus
               </span>
               <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900 leading-snug">
-                Reliable Computer Vision Under Distribution Shift
+                Computer Vision, Machine Learning &amp; Computing Systems
               </h2>
             </div>
 
@@ -105,7 +105,7 @@ export default function HeroSection() {
                 href="/research"
                 className="group inline-flex items-center gap-2 px-5 py-2.5 rounded-md text-sm font-semibold text-white bg-slate-900 hover:bg-blue-950 transition-all duration-200 shadow-xs hover:shadow-md active:scale-95"
               >
-                <span>Explore Research</span>
+                <span>Explore Research Background</span>
                 <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
               </Link>
 
@@ -175,13 +175,13 @@ export default function HeroSection() {
         <div className="mt-10 pt-8 border-t border-slate-200/90">
           <div className="flex items-center justify-between mb-4">
             <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500">
-              Primary Research Areas
+              Research Interests &amp; Foundation
             </span>
             <Link
               href="/research"
               className="group text-xs font-semibold text-blue-900 hover:underline flex items-center gap-1"
             >
-              <span>View Research Agenda</span>
+              <span>View Research Profile</span>
               <ArrowRight className="w-3 h-3 transition-transform group-hover:translate-x-0.5" />
             </Link>
           </div>

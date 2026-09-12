@@ -9,16 +9,16 @@ import { RESEARCH_IDENTITY } from "@/data/research";
 import { Sparkles, Eye } from "lucide-react";
 
 export const metadata: Metadata = {
-  title: "Research Agenda & Directions",
+  title: "Research Explorations & Interests | Muhammad Hassan Askari",
   description:
-    "Theoretical investigations in reliable visual intelligence, environmental domain shift, visual uncertainty, and multimodal perception by Muhammad Hassan Askari.",
+    "Research explorations across AI/ML, computer vision, data science, software engineering, and algorithms by Muhammad Hassan Askari, a recent Computer Science graduate.",
   alternates: {
     canonical: "https://research-with-askari.vercel.app/research",
   },
   openGraph: {
-    title: "Research Agenda & Directions | Muhammad Hassan Askari",
+    title: "Research Explorations & Interests | Muhammad Hassan Askari",
     description:
-      "Theoretical investigations in reliable visual intelligence, environmental domain shift, visual uncertainty, and multimodal perception by Muhammad Hassan Askari.",
+      "Research explorations across AI/ML, computer vision, data science, software engineering, and algorithms by Muhammad Hassan Askari, a recent Computer Science graduate.",
     url: "https://research-with-askari.vercel.app/research",
   },
 };
@@ -34,13 +34,13 @@ export default function ResearchPage() {
             <span>Research Trajectory</span>
           </div>
           <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-slate-900">
-            Research Agenda &amp; Focus
+            Research Explorations &amp; Focus
           </h1>
           <p className="mt-4 text-lg text-slate-700 font-serif leading-relaxed">
-            &ldquo;{RESEARCH_IDENTITY.headline}&rdquo;
+            &ldquo;An overview of my undergraduate research projects, empirical experiments, and exploratory interests across Computer Science.&rdquo;
           </p>
-          <p className="mt-3 text-sm sm:text-base text-slate-600 leading-relaxed">
-            {RESEARCH_IDENTITY.supportingStatement}
+          <p className="mt-3 text-sm sm:text-base text-slate-650 leading-relaxed">
+            My primary research experience centers on robust computer vision and distribution shift, complemented by investigations in discrete optimization, data science, and software systems.
           </p>
         </div>
       </section>

@@ -35,7 +35,7 @@ export default function AboutPage() {
             Academic Background
           </h1>
           <p className="mt-4 text-base sm:text-lg text-slate-650 leading-relaxed">
-            Rigorous undergraduate training at COMSATS University Islamabad, multi-semester teaching assistantships in core computing courses, and research-focused software capabilities.
+            Bachelor of Science in Computer Science from COMSATS University Islamabad, with hands-on undergraduate research in computer vision and algorithms, multi-semester teaching assistantships, and practical systems engineering experience.
           </p>
 
           <div className="mt-6">

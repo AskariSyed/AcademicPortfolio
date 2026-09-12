@@ -21,7 +21,7 @@ export default function ContactSection() {
     name: "",
     email: "",
     institution: "",
-    topic: "PhD / Research Advisory (2027)",
+    topic: "Graduate Research (MRes / MPhil / PhD)",
     message: "",
     hp_website: "",
   });
@@ -133,7 +133,7 @@ export default function ContactSection() {
       id="contact"
       tag="Get in Touch"
       title="Let's Discuss Research"
-      subtitle="I am actively interested in discussing graduate research opportunities, potential lab openings, and research collaborations."
+      subtitle="I am actively interested in discussing graduate research opportunities, potential lab openings, and research collaborations across Computer Science."
       className="bg-slate-50/50"
     >
       <FadeIn direction="up" distance={20} className="max-w-5xl mx-auto rounded-2xl border border-slate-200 bg-white p-6 sm:p-10 shadow-sm hover:shadow-md transition-shadow">
@@ -185,7 +185,7 @@ export default function ContactSection() {
                 <div>
                   <span className="text-xs text-slate-400 font-mono block">RESEARCH STATUS</span>
                   <span className="font-medium text-slate-800">
-                    Graduated (BS CS) · Available for 2027 Research Roles
+                    BS CS Graduate · Open to Research Opportunities
                   </span>
                 </div>
               </div>
@@ -214,6 +214,14 @@ export default function ContactSection() {
                 <span>LinkedIn</span>
                 <ExternalLink className="w-2.5 h-2.5 opacity-50" />
               </a>
+            </div>
+
+            {/* Research Objective Note */}
+            <div className="p-4 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-700 space-y-1.5">
+              <span className="font-semibold text-slate-900 block">Current Status &amp; Objective:</span>
+              <p className="leading-relaxed text-slate-650">
+                Actively seeking graduate research opportunities, research assistantships, and lab openings across Computer Science. I welcome inquiries regarding ongoing projects, potential research collaborations, and academic advising.
+              </p>
             </div>
 
             {/* Direct Email Fallback */}
@@ -367,10 +375,10 @@ export default function ContactSection() {
                   onChange={(e) => handleChange("topic", e.target.value)}
                   className="w-full px-3.5 py-2.5 rounded-lg text-sm bg-white border border-slate-300 text-slate-900 focus:outline-hidden focus:ring-2 focus:ring-blue-200 focus:border-blue-900 transition-all disabled:bg-slate-100 disabled:cursor-not-allowed"
                 >
-                  <option value="PhD / Research Advisory (2027)">PhD / Research Advisory (2027)</option>
+                  <option value="Graduate Research (MRes / MPhil / PhD)">Graduate Research (MRes / MPhil / PhD)</option>
+                  <option value="Research Assistantship / Lab Opening">Research Assistantship / Lab Opening</option>
                   <option value="Research Collaboration">Research Collaboration</option>
                   <option value="Paper / Codebase Discussion">Paper / Codebase Discussion</option>
-                  <option value="Academic Speaking / Peer-Review">Academic Speaking / Peer-Review</option>
                   <option value="General Academic Inquiry">General Academic Inquiry</option>
                 </select>
               </div>

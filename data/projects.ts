@@ -215,9 +215,9 @@ export const PROJECTS: Project[] = [
       "Environmental Domain Shift",
     ],
     summary:
-      "An ongoing study of robust traffic sign recognition under snow-degraded visual conditions using a multi-stage restoration and classification approach.",
+      "An undergraduate research project investigating traffic sign recognition under snow degradation using a task-aware multi-stage restoration and classification framework.",
     description:
-      "An ongoing study of robust traffic sign classification under snow-degraded visual conditions. The research investigates a task-aware multi-stage approach that combines controlled environmental degradation, image restoration, and deep-learning-based classification to study how recognition performance changes when visual evidence becomes partially obscured or degraded.",
+      "An undergraduate research project investigating robust traffic sign classification under snow-degraded visual conditions. The project examined a task-aware multi-stage approach combining controlled environmental degradation, image restoration, and deep-learning classification to study how recognition behaves when visual evidence is corrupted by adverse weather.",
     keyContributions: [
       "Formulation of adverse snow weather as structured environmental domain shift",
       "Task-aware multi-stage coordination between image enhancement and deep classification",
@@ -234,7 +234,7 @@ export const PROJECTS: Project[] = [
         "The manuscript is currently being refined, including methodological and experimental analysis, with future submission planned for MDPI Sensors.",
       intendedVenue: "MDPI Sensors (In Preparation)",
       publicDescription:
-        "An ongoing study of robust traffic sign classification under snow-degraded visual conditions. The research investigates a task-aware multi-stage approach that combines controlled environmental degradation, image restoration, and deep-learning-based classification to study how recognition performance changes when visual evidence becomes partially obscured or degraded.",
+        "An undergraduate research study of robust traffic sign classification under snow-degraded visual conditions. The project investigated a task-aware multi-stage approach combining controlled environmental degradation, image restoration, and deep-learning-based classification to evaluate how recognition performance changes when visual evidence is degraded.",
       motivation: {
         overview:
           "Reliable traffic-sign recognition is a foundational prerequisite for autonomous vehicles and advanced driver-assistance systems (ADAS). However, real-world deployment in cold-climate regions subjects visual perception systems to acute atmospheric and physical corruptions from falling and accumulated snow.",
@@ -246,7 +246,7 @@ export const PROJECTS: Project[] = [
           "Degradation of fine-grained discriminative texture details",
         ],
         coreInquiry:
-          "The research investigates whether a task-aware, multi-stage processing pipeline can recover discriminative evidence prior to classification, improving recognition robustness when snow severely corrupts input imagery.",
+          "The project investigated whether a task-aware, multi-stage processing pipeline can recover discriminative evidence prior to classification, evaluating recognition robustness when snow corrupts input imagery.",
       },
       trajectoryFlow: [
         "Clean Traffic Sign Recognition",
@@ -325,7 +325,7 @@ export const PROJECTS: Project[] = [
       ],
       broaderConnection: {
         narrative:
-          "This research forms an integral pillar of my broader scholarly identity: Reliable Visual Intelligence Under Environmental Domain Shift. It investigates how visual AI systems preserve decision reliability when real-world deployment conditions diverge from clean training distributions.",
+          "This undergraduate research project allowed me to explore how visual AI systems behave when test conditions diverge from clean training distributions, connecting naturally to broader questions of distribution shift across machine learning.",
         trajectory: [
           "Snow-Degraded Traffic Signs",
           "Robust Visual Recognition",
@@ -335,7 +335,7 @@ export const PROJECTS: Project[] = [
           "Multimodal AI",
         ],
         conceptualSymmetry:
-          "Environmental domain shift in adverse weather conceptually mirrors unseen generator distribution shift in synthetic image detection—both demand robust representations invariant to out-of-distribution visual noise.",
+          "Environmental domain shift in adverse weather conceptually parallels unseen generator distribution shift in synthetic image detection—both examine how models perform when test evidence diverges from training distributions.",
       },
       futureDirections: [
         "Stronger adverse-weather benchmark datasets with multi-level corruption annotations",
@@ -348,7 +348,7 @@ export const PROJECTS: Project[] = [
         "Multimodal perception fusing vision with radar/LiDAR under severe visual occlusions",
       ],
       supervisorRelevance:
-        "Demonstrates foundational rigor in computer vision, domain shift analysis, and deep learning pipelines—positioning well for prospective graduate inquiries in robust visual perception, autonomous driving, and resilient AI systems.",
+        "Demonstrates foundational training in computer vision, domain shift analysis, and deep learning pipelines—providing strong preparation for prospective graduate research in robust visual perception and resilient AI systems.",
     },
   },
   {
@@ -372,7 +372,7 @@ export const PROJECTS: Project[] = [
     summary:
       "This research project investigates whether a pretrained AI-generated image detector can adapt to previously unseen image generators using only a small number of support examples.",
     description:
-      "AI-generated image synthesis systems evolve rapidly. When detectors encounter imagery produced by previously unobserved generative architectures, standard deep classifiers experience acute performance degradation. This research case study formulates detection under unseen generators as a distribution-shift challenge and investigates whether few-shot adaptation mechanisms can restore classification reliability with minimal target-domain supervisory support.",
+      "AI-generated image synthesis systems evolve rapidly. When detectors encounter imagery produced by previously unobserved generative architectures, standard deep classifiers experience performance degradation. This project explores detection under unseen generators as a distribution-shift challenge and investigates whether few-shot adaptation mechanisms can adapt representations with minimal target-domain supervisory support.",
     keyContributions: [
       "Controlled leave-generator-out evaluation protocol isolating unseen generator distribution shift",
       "50-condition experimental matrix across 5 shot levels and 5 random seeds",

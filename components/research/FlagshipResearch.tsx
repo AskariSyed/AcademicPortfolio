@@ -13,13 +13,13 @@ export default function FlagshipResearch() {
         <FadeIn direction="up" distance={20} className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-900 border border-blue-200/80 mb-3">
             <Layers className="w-3.5 h-3.5 text-blue-800" />
-            <span>Core Empirical Investigations</span>
+            <span>Undergraduate &amp; Technical Research Projects</span>
           </div>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900">
-            Flagship Research Projects
+            Featured Research Projects
           </h2>
           <p className="mt-3 text-base text-slate-650 leading-relaxed">
-            Empirical investigations focused on visual recognition under environmental degradation and adaptation under generator distribution shift, complemented by formal algorithmic systems optimization.
+            Projects exploring visual recognition under environmental degradation, few-shot adaptation under generator distribution shift, and algorithmic interview scheduling under coupled constraints.
           </p>
         </FadeIn>
 
@@ -39,7 +39,7 @@ export default function FlagshipResearch() {
                   </span>
                 </div>
                 <span className="text-xs font-mono text-slate-500">
-                  Flagship Computer Vision Project
+                  Undergraduate Research Project
                 </span>
               </div>
 
@@ -55,7 +55,7 @@ export default function FlagshipResearch() {
                   </h3>
 
                   <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                    Investigates how visual perception systems maintain reliable classification when adverse weather obscures visual evidence. Severe snow introduces atmospheric scattering, contrast attenuation, and uneven geometric occlusions. The work examines a task-aware coordination between deep image restoration and classification heads to recover discriminative evidence prior to categorization.
+                    I investigated how visual perception systems maintain reliable classification when adverse weather obscures visual evidence. Severe snow introduces atmospheric scattering, contrast attenuation, and uneven geometric occlusions. The project evaluated a task-aware coordination between deep image restoration and classification heads to recover discriminative evidence prior to categorization.
                   </p>
 
                   {/* Narrative of FIT 2025 review & revision */}
@@ -64,7 +64,7 @@ export default function FlagshipResearch() {
                       <span>Research Evolution &amp; Peer-Review Response</span>
                     </div>
                     <p className="text-slate-650 leading-relaxed">
-                      Originally submitted to <strong>FIT 2025</strong> and rejected with incisive feedback regarding baseline depth and stage disentanglement. Rather than abandoning the investigation, I systematically revised the methodology—transitioning from a naive two-step sequence to a task-aware formulation with expanded ablations and feature-recovery analysis.
+                      Following constructive peer-review feedback at <strong>FIT 2025</strong> concerning baseline depth and stage disentanglement, I systematically refined the methodology—transitioning from a naive two-step sequence to a task-aware formulation with expanded ablations, intermediate feature recoverability analysis, and a 19.32% recovery in accuracy under severe snow.
                     </p>
                   </div>
 
@@ -134,7 +134,7 @@ export default function FlagshipResearch() {
                   </span>
                 </div>
                 <span className="text-xs font-mono text-slate-500">
-                  Major Research Project
+                  Empirical Research Project
                 </span>
               </div>
 
@@ -150,7 +150,7 @@ export default function FlagshipResearch() {
                   </h3>
 
                   <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
-                    Deep detectors trained on specific generative architectures fail when exposed to images synthesized by previously unobserved generators. This project formulates detection under unseen generators as a distribution-shift challenge and investigates whether few-shot adaptation mechanisms can adapt representations with minimal target-domain supervision.
+                    Deep detectors trained on specific generative architectures often degrade when exposed to images synthesized by previously unobserved generators. This project explores detection under unseen generators as a distribution-shift challenge and investigates whether few-shot adaptation mechanisms can adapt representations with minimal target-domain supervision.
                   </p>
 
                   {/* Experimental Protocol Summary */}
@@ -232,7 +232,7 @@ export default function FlagshipResearch() {
                 Algorithmic Systems &amp; Optimization
               </span>
               <p className="text-xs text-slate-500 mt-0.5">
-                Complementary research in discrete optimization and concurrency-aware systems modeling (visually separated from the visual AI trajectory).
+                Complementary research in discrete optimization and concurrency-aware systems modeling, showing broader Computer Science research interests beyond computer vision.
               </p>
             </div>
             <span className="px-2.5 py-0.5 rounded text-xs font-mono font-semibold bg-slate-100 text-slate-700 border border-slate-200">

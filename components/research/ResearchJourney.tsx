@@ -42,7 +42,7 @@ export default function ResearchJourney() {
       id="research-journey"
       tag="Intellectual Evolution"
       title="Research Journey"
-      subtitle="The personal and intellectual trajectory from software engineering to questions of reliable, trustworthy intelligence."
+      subtitle="The personal and intellectual trajectory from software engineering foundations to empirical research in machine learning, computer vision, and algorithms."
       className="bg-slate-50/50"
     >
       {/* Supporting narrative introduction */}
@@ -181,22 +181,22 @@ export default function ResearchJourney() {
               <span>In Computer Vision (Snow Degradation)</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-              The AI system must recognize critical targets when the sensory
-              visual evidence is severely corrupted by physical environmental
-              degradation, occlusions, and contrast loss.
+              The AI system must recognize critical visual cues when the input
+              evidence is corrupted by physical environmental degradation,
+              atmospheric scattering, and occlusions.
             </p>
           </div>
 
-          {/* Language Domain Parallel */}
+          {/* Generator Domain Parallel */}
           <div className="p-4 rounded-xl bg-white/5 border border-white/10 hover:bg-white/10 transition-colors">
             <div className="flex items-center gap-2 text-xs font-mono font-semibold text-indigo-300 uppercase mb-2">
               <ShieldAlert className="w-3.5 h-3.5" />
-              <span>In RAG &amp; Language Models</span>
+              <span>In Synthetic Media (Generator Shift)</span>
             </div>
             <p className="text-xs sm:text-sm text-slate-200 leading-relaxed">
-              The AI system must generate accurate responses when retrieved
-              textual context may be factually conflicting, manipulated, or
-              deliberately injected by an adversary.
+              Detectors encounter synthetic imagery synthesized by previously
+              unobserved generative models, requiring parameter-efficient
+              adaptation to adjust representations under domain shift.
             </p>
           </div>
         </div>
@@ -219,7 +219,7 @@ export default function ResearchJourney() {
 
         <div className="mt-6 pt-5 border-t border-slate-100">
           <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block mb-3">
-            Core Fields of Investigation in Reliable &amp; Trustworthy AI
+            Explored Fields &amp; Broader Research Interests
           </span>
           <div className="flex flex-wrap gap-2">
             {RESEARCH_JOURNEY_CLOSING.currentFocusAreas.map((area) => (

@@ -7,7 +7,9 @@ import {
   IELTS_RECORD,
   COURSE_GROUPS,
   RESEARCH_INTERESTS,
+  CATEGORIZED_RESEARCH_INTERESTS,
 } from "@/data/academic";
+import { WHAT_I_AM_LOOKING_FOR } from "@/data/research";
 import {
   BookOpen,
   School,
@@ -31,7 +33,7 @@ export default function AcademicBackground() {
       id="academic-background"
       tag="Academic History"
       title="Academic Background"
-      subtitle="Undergraduate training in Computer Science spanning artificial intelligence, algorithms, software engineering, systems, security, and distributed computing, complemented by independent research in robust computer vision and machine learning."
+      subtitle="Undergraduate education in Computer Science spanning artificial intelligence, algorithms, software engineering, systems, security, and distributed computing, complemented by undergraduate research in computer vision, machine learning, and optimization."
       className="bg-white"
     >
       <div className="space-y-12">
@@ -189,33 +191,82 @@ export default function AcademicBackground() {
         <section className="rounded-2xl border border-slate-200 bg-slate-50/70 p-6 sm:p-8 md:p-10 shadow-2xs space-y-6">
           <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
             <Compass className="w-4 h-4 text-blue-700" />
-            <span>Graduate Trajectory</span>
+            <span>Research Interests &amp; Scope</span>
           </div>
 
           <div>
             <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
-              Research Interests
+              Research Interests &amp; Direction
             </h3>
             <p className="mt-3 text-sm sm:text-base text-slate-700 font-serif italic border-l-2 border-blue-900 pl-4 py-1.5 bg-white rounded-r-md leading-relaxed">
-              &ldquo;My formal undergraduate training provided a foundation in artificial intelligence, algorithms, software engineering, systems, and computing, while my subsequent research work has developed toward robust computer vision, machine learning, domain adaptation, and multimodal AI.&rdquo;
+              &ldquo;I completed my BS in Computer Science with a strong technical foundation in software engineering, systems, and algorithms. Through undergraduate research exposure and mentorship, I became increasingly drawn to research—exploring machine learning, computer vision, distribution shift, and optimization. While my deepest project work is in visual intelligence under degradation, I am broadly interested across Computer Science and eager to continue developing as a researcher.&rdquo;
             </p>
           </div>
 
-          {/* Research Interests Tags */}
-          <div className="pt-2">
-            <span className="text-xs font-mono font-bold uppercase text-slate-500 block mb-3">
-              Independent Research &amp; Theoretical Focus
-            </span>
-            <div className="flex flex-wrap gap-2.5">
-              {RESEARCH_INTERESTS.map((interest) => (
-                <span
-                  key={interest}
-                  className="inline-flex items-center gap-1.5 px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white text-slate-900 border border-slate-300/80 shadow-2xs"
-                >
-                  <Sparkles className="w-3.5 h-3.5 text-blue-900" />
-                  <span>{interest}</span>
-                </span>
-              ))}
+          {/* Categorized Research Interests (Subtle hierarchy) */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2">
+            {CATEGORIZED_RESEARCH_INTERESTS.map((group) => (
+              <div key={group.category} className="p-4 rounded-xl bg-white border border-slate-200/90 shadow-2xs flex flex-col justify-between">
+                <div>
+                  <span className="text-[11px] font-mono font-bold uppercase tracking-wider text-blue-900 block mb-1">
+                    {group.category}
+                  </span>
+                  <p className="text-[11px] text-slate-500 mb-3 leading-snug">
+                    {group.description}
+                  </p>
+                </div>
+                <div className="flex flex-wrap gap-1.5 pt-2 border-t border-slate-100">
+                  {group.topics.map((t) => (
+                    <span
+                      key={t}
+                      className="px-2.5 py-1 rounded-md text-xs font-medium bg-slate-50 text-slate-800 border border-slate-200/70"
+                    >
+                      {t}
+                    </span>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* What I Am Looking For Section */}
+        <section className="rounded-2xl border-2 border-blue-900/20 bg-blue-50/40 p-6 sm:p-8 md:p-10 shadow-2xs space-y-5">
+          <div className="flex items-center gap-2 text-xs font-mono font-bold uppercase tracking-wider text-blue-900">
+            <Layers className="w-4 h-4 text-blue-800" />
+            <span>Next Step in Research</span>
+          </div>
+
+          <h3 className="text-xl sm:text-2xl font-bold tracking-tight text-slate-900">
+            What I Am Looking For
+          </h3>
+
+          <p className="text-sm sm:text-base text-slate-800 leading-relaxed font-medium bg-white p-5 rounded-xl border border-blue-200/80 shadow-2xs">
+            {WHAT_I_AM_LOOKING_FOR.statement}
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80">
+              <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block mb-2">
+                Opportunities of Interest
+              </span>
+              <ul className="space-y-1.5 text-xs text-slate-700">
+                {WHAT_I_AM_LOOKING_FOR.targetRoles.map((role) => (
+                  <li key={role} className="flex items-center gap-2">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-900 shrink-0" />
+                    <span>{role}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className="p-4 rounded-xl bg-white border border-slate-200/80">
+              <span className="text-xs font-mono font-bold text-slate-500 uppercase tracking-wider block mb-2">
+                Target Research Environments
+              </span>
+              <p className="text-xs text-slate-650 leading-relaxed">
+                University research laboratories, faculty-led research groups, and graduate programs offering active mentorship, rigorous peer feedback, and collaborative project development.
+              </p>
             </div>
           </div>
         </section>

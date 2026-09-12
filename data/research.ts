@@ -58,22 +58,41 @@ export interface ResearchHierarchy {
   }[];
 }
 
+export const WHAT_I_AM_LOOKING_FOR = {
+  statement:
+    "I am currently looking to start my research career in Computer Science. I am open to research opportunities across areas such as Artificial Intelligence, Machine Learning, Data Science, Computer Vision, Software Engineering, Algorithms, and related fields. I am particularly interested in working in environments where I can learn from experienced researchers, contribute to ongoing work, and develop further as a researcher.",
+  targetRoles: [
+    "Graduate Research (MRes / MPhil / PhD)",
+    "Research Assistantships & Lab Openings",
+    "Collaborative Research Projects",
+  ],
+  openAreas: [
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Computer Vision",
+    "Data Science",
+    "Software Engineering",
+    "Algorithms & Optimization",
+    "Reliable / Trustworthy AI",
+  ],
+};
+
 export const RESEARCH_IDENTITY = {
   name: "Muhammad Hassan Askari",
-  title: "Computer Science Graduate | AI/ML Research",
-  researchFields: "Robust Computer Vision · Distribution Shift · Few-Shot Adaptation · Multimodal AI",
-  primaryStatement: "Reliable Computer Vision Under Distribution Shift",
-  headline: "I study how visual AI systems can remain reliable when data distributions change, visual evidence is degraded, or target-domain supervision is limited.",
-  supportingStatement: "My work investigates visual recognition under environmental degradation and adaptation to unseen visual distributions, with an emerging trajectory toward uncertainty-aware multimodal models and reliable visual reasoning.",
+  title: "Computer Science Graduate | Aspiring Researcher",
+  researchFields: "Artificial Intelligence · Machine Learning · Computer Vision · Data Science · Software Engineering · Algorithms & Optimization",
+  primaryStatement: "Computer Science Graduate Exploring Research in AI & Computing",
+  headline: "I am a recent Computer Science graduate interested in starting my research career across areas including AI/ML, Computer Vision, Data Science, Software Engineering, and related fields.",
+  supportingStatement: "Through undergraduate research and technical projects, I have investigated visual recognition under environmental degradation, few-shot adaptation under generator distribution shift, and algorithmic interview scheduling under coupled constraints.",
   trajectory: [
     "Software Engineering",
-    "Research Exposure",
-    "Computer Vision",
-    "Environmental Domain Shift",
-    "Robust Machine Learning",
-    "Few-Shot Adaptation",
-    "Reliable Visual AI",
-    "Multimodal / Vision-Language Research",
+    "Research Mentorship",
+    "Computer Vision Under Snow",
+    "Peer-Review & Revision",
+    "Distribution Shift & Few-Shot",
+    "Algorithms & Optimization",
+    "Broader CS Research",
+    "Starting Research Career",
   ],
   institution: "COMSATS University Islamabad — Wah Campus",
   degree: "BS Computer Science",
@@ -81,8 +100,8 @@ export const RESEARCH_IDENTITY = {
   cgpa: "3.65 / 4.00",
   credits: "133 Credits Completed",
   ielts: "7.0 Overall (CEFR C1)",
-  currentObjective: "Seeking funded graduate research opportunities (MRes / MPhil / PhD) in computer vision, domain adaptation, and reliable visual intelligence.",
-  fundingObjective: "Seeking funded graduate research opportunities in reliable computer vision and distribution shift.",
+  currentObjective: "Looking to start my research career through graduate research opportunities (MRes / MPhil / PhD) or research positions across Computer Science.",
+  fundingObjective: "Seeking research opportunities across AI/ML, Computer Vision, Data Science, Software Engineering, and Algorithms.",
   email: "askari.syed04@gmail.com",
   github: "https://github.com/AskariSyed",
   linkedin: "https://www.linkedin.com/in/syed-hassan-askari/",
@@ -92,81 +111,86 @@ export const RESEARCH_IDENTITY = {
 export const RESEARCH_FOCUS_CARDS: ResearchFocusCard[] = [
   {
     id: "robust-cv",
-    title: "Robust Computer Vision",
+    title: "Computer Vision & Robust Recognition",
     tagline: "Environmental degradation & corrupted inputs",
-    description: "Investigating how visual recognition systems maintain predictive stability when physical corruptions such as snow, atmospheric scattering, blur, and occlusion attenuate discriminative evidence.",
-    topics: ["Environmental Degradation", "Visual Robustness", "Corrupted Inputs"],
+    description: "Investigating how visual recognition systems behave when adverse weather conditions—such as snow, atmospheric scattering, and occlusion—attenuate discriminative visual evidence.",
+    topics: ["Undergraduate Research", "Snow Degradation", "Image Restoration", "Feature Recovery"],
   },
   {
     id: "domain-adaptation",
     title: "Distribution Shift & Adaptation",
-    tagline: "Out-of-distribution shift & limited supervision",
-    description: "Developing empirical protocols and parameter-efficient strategies that adapt visual models to unseen visual distributions using minimal target-domain support examples.",
-    topics: ["Domain Adaptation", "Domain Generalization", "Few-Shot Adaptation"],
+    tagline: "Out-of-distribution shift & few-shot learning",
+    description: "Evaluating model generalization when test distributions diverge from training domains, and experimenting with few-shot adaptation strategies using minimal target-domain supervisory support.",
+    topics: ["Leave-Generator-Out", "Few-Shot Adaptation", "Synthetic Image Forensics", "Data Leakage Audits"],
   },
   {
-    id: "multimodal-ai",
-    title: "Reliable Multimodal AI",
-    tagline: "Cross-modal reasoning & evidence evaluation",
-    description: "Exploring prospective mechanisms for vision-language models to evaluate visual evidence integrity dynamically, mitigating hallucination when sensory data becomes ambiguous.",
-    topics: ["Vision-Language Models", "Uncertainty-Aware Reasoning", "Reliable Evidence"],
+    id: "algorithms-systems",
+    title: "Algorithms, Optimization & Systems",
+    tagline: "Constrained allocation, scheduling & concurrency",
+    description: "Exploring algorithmic formulation, heuristic scheduling, fairness policies, and database concurrency validation originating from real-world software deployment challenges.",
+    topics: ["Heuristic Scheduling", "Discrete Optimization", "Concurrency Validation", "Software Systems"],
   },
 ];
 
 export const RESEARCH_HIERARCHY: ResearchHierarchy = {
   primary: [
     {
-      title: "Robust Computer Vision",
-      description: "Recognition under corrupted inputs, environmental degradation, and adverse weather conditions.",
+      title: "Computer Vision & Robust Recognition",
+      description: "Undergraduate empirical research on traffic-sign classification under adverse weather and snow degradation.",
       topics: ["Adverse Weather", "Image Restoration Coordination", "Feature Recovery"],
     },
     {
-      title: "Distribution Shift & Domain Adaptation",
-      description: "Evaluating models on out-of-distribution target domains and designing robust generalization protocols.",
-      topics: ["Leave-Generator-Out", "Unseen Domains", "Domain Shift"],
+      title: "Distribution Shift & Adaptation",
+      description: "Experimental investigation of few-shot adaptation for AI-generated image detection under unseen generator shift.",
+      topics: ["Leave-Generator-Out", "Unseen Domains", "Few-Shot Adaptation"],
     },
     {
-      title: "Few-Shot Learning / Adaptation",
-      description: "Investigating parameter-efficient adaptation to unseen distributions with minimal target-domain supervisory support.",
-      topics: ["Support Sets", "Classifier Tuning", "Representation Adaptation"],
+      title: "Algorithms & Optimization",
+      description: "Heuristic interview scheduling under coupled two-sided availability, temporal constraints, and concurrency validation.",
+      topics: ["Discrete Optimization", "Resource Allocation", "System Concurrency"],
     },
   ],
   secondary: [
     {
-      title: "Multimodal AI / Vision-Language Models",
-      description: "Investigating how models integrate visual and linguistic evidence when sensory inputs are degraded.",
-      topics: ["Cross-Modal Attention", "Visual Grounding", "Multimodal Reliability"],
+      title: "Data Science & Empirical Evaluation",
+      description: "Designing multi-seed experimental matrices, data leakage audits, and statistical evaluation across research datasets.",
+      topics: ["Data Auditing", "Multi-Seed Protocols", "Statistical Analysis"],
     },
     {
-      title: "Uncertainty-Aware Visual Reasoning",
-      description: "Estimating spatial and epistemic confidence scores to identify when perceptual inputs cannot be trusted.",
-      topics: ["Confidence Calibration", "Failure Detection", "Evidence Gating"],
+      title: "Software Engineering & Systems",
+      description: "Architecting full-stack systems, relational database schemas, and high-throughput backend services.",
+      topics: ["System Architecture", "Relational Modeling", "Production APIs"],
     },
   ],
   emerging: [
     {
-      title: "RAG Reliability / Adversarial Retrieval",
-      description: "Examining retrieval corruption, prompt manipulation, and evidence grounding in language-model pipelines.",
-      topics: ["Untrusted Context", "Dense Retrieval Verification", "Grounded Reasoning"],
+      title: "Reliable / Trustworthy AI",
+      description: "Exploring uncertainty-aware reasoning and failure detection when operational evidence is degraded or ambiguous.",
+      topics: ["Uncertainty Estimation", "Failure Detection", "Evidence Calibration"],
+    },
+    {
+      title: "Multimodal Perception",
+      description: "Studying how vision-language models can evaluate evidence integrity dynamically when sensory inputs are corrupted.",
+      topics: ["Vision-Language Models", "Cross-Modal Reasoning", "Multimodal Reliability"],
     },
   ],
 };
 
 export const RESEARCH_JOURNEY_TEXT =
-  "My trajectory into research began with practical software engineering, followed by faculty mentorship that introduced me to academic inquiry. Encountering a rejected initial conference submission, conducting extensive reviewer-driven revision, and expanding from physical sensory degradation to generator distribution shifts crystallized my research trajectory: How can visual AI systems remain reliable when deployed under changing, degraded, or out-of-distribution evidence?";
+  "I initially developed a strong interest in software development and engineering during my bachelor's degree. Through undergraduate projects and research exposure, I gradually became interested in research and began exploring machine learning, computer vision, distribution shift, adaptation, and related areas. Alongside AI research, I also explored algorithms, optimization, and software systems. These experiences have motivated me to pursue research further.";
 
 export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
   {
     step: 1,
     stageNumber: "01",
-    period: "Undergraduate Beginning",
-    title: "Software Engineering Foundations",
+    period: "Undergraduate Foundation",
+    title: "Software Development & Systems",
     tag: "Engineering Discipline",
     badgeVariant: "neutral",
     narrative:
-      "I began my Computer Science degree with a focus on software development, building full-stack applications, relational database schemas, and distributed backends. Developing production systems gave me strong code literacy, debugging persistence, and appreciation for system-level constraints.",
+      "I began my Computer Science degree with a strong interest in software development and engineering, building full-stack applications, relational database schemas, and backend services. Working on software systems gave me practical programming fluency, debugging persistence, and an appreciation for system constraints.",
     bridge:
-      "Engineering foundations provided implementation discipline, while faculty mentorship opened the door to open-ended inquiry.",
+      "Engineering foundations provided implementation discipline, while faculty mentorship opened the door to academic inquiry.",
     description:
       "Initial background focused on software development and systems engineering before transitioning into empirical research.",
   },
@@ -178,21 +202,21 @@ export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
     tag: "Academic Inquiry",
     badgeVariant: "blue",
     narrative:
-      "A faculty mentor encouraged me to explore academic research. Stepping beyond predetermined software specifications, I began reading literature in autonomous perception and formulating hypotheses on computer vision under adverse weather.",
+      "Through faculty mentorship, I was encouraged to look beyond fixed software requirements and explore open-ended research questions. I began reading literature in autonomous perception and formulated hypotheses on how computer vision models behave under adverse weather conditions.",
     bridge:
-      "That encouragement led directly to my first empirical formulation in robust computer vision.",
+      "That encouragement led directly to my first undergraduate research investigation.",
     description:
       "Encouraged by faculty mentorship to transition from structured coding to hypothesis-driven research.",
   },
   {
     step: 3,
     stageNumber: "03",
-    period: "Initial Formulation",
+    period: "First Research Study",
     title: "Traffic Sign Classification Under Snow",
-    tag: "Environmental Domain Shift",
+    tag: "Environmental Degradation",
     badgeVariant: "neutral",
     narrative:
-      "My first major research project investigated autonomous perception under severe snow degradation. In winter conditions, camera sensors suffer from uneven occlusions, contrast loss, and obscured discriminative geometry. I formulated an initial multi-stage pipeline and submitted the study to FIT 2025.",
+      "My first major research project investigated autonomous perception under severe snow degradation. In winter conditions, camera sensors suffer from uneven occlusions, contrast loss, and obscured geometry. I formulated an initial multi-stage pipeline and submitted the study to FIT 2025.",
     bridge:
       "The submission entered formal academic peer review.",
     description:
@@ -202,25 +226,25 @@ export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
     step: 4,
     stageNumber: "04",
     period: "FIT 2025 Peer Review",
-    title: "Peer-Review Feedback & Rejection",
+    title: "Reviewer Feedback & Methodological Lessons",
     tag: "Constructive Criticism",
     badgeVariant: "amber",
     narrative:
-      "The manuscript was rejected at FIT 2025. The reviewers provided incisive critique, highlighting gaps in baseline comparisons, ablation depth, and the need for stronger methodological justification. Rather than abandoning the problem, I treated the peer-review feedback as a diagnostic blueprint to elevate the rigor of the work.",
+      "The initial study underwent peer review at FIT 2025. Reviewers provided constructive critique, identifying gaps in baseline comparisons, ablation depth, and the need for clearer theoretical justification. Rather than being discouraged, I treated this feedback as a valuable roadmap to improve the scientific rigor of the work.",
     bridge:
-      "Peer review prompted a comprehensive methodological overhaul.",
+      "Reviewer feedback motivated a thorough methodological revision.",
     description:
-      "Manuscript rejected at FIT 2025; deconstructed reviewer criticism to identify fundamental methodological limitations.",
+      "Underwent peer review at FIT 2025; analyzed reviewer critique to identify and resolve methodological limitations.",
   },
   {
     step: 5,
     stageNumber: "05",
     period: "Methodological Revision",
-    title: "Systematic Methodological Revision",
+    title: "Systematic Revision & Expanded Experiments",
     tag: "Empirical Rigor",
     badgeVariant: "neutral",
     narrative:
-      "I systematically redesigned the investigation: transitioning from a naive sequential pipeline to a task-aware multi-stage framework, isolating restoration-classification trade-offs, expanding baseline comparisons, and measuring feature recovery before the final classification head.",
+      "I systematically redesigned the investigation: transitioning from a naive sequential pipeline to a task-aware multi-stage framework, isolating restoration-classification trade-offs, expanding baseline comparisons, and evaluating feature recovery prior to the final classification head.",
     bridge:
       "Revised experimental design produced substantially stronger quantitative evidence.",
     description:
@@ -230,12 +254,12 @@ export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
     step: 6,
     stageNumber: "06",
     period: "Empirical Maturation",
-    title: "Quantitative Validation & Continued Preparation",
+    title: "Quantitative Validation & Manuscript Preparation",
     tag: "Manuscript Revision",
     badgeVariant: "emerald",
     highlightMetric: "EfficientNet-B2: 68.02% → 87.34%",
     narrative:
-      "Under severe snow conditions, classification accuracy on EfficientNet-B2 improved from 68.02% to 87.34% through task-aware multi-stage processing. This experience solidified my dedication to empirical research and demonstrated the value of persevering through rigorous peer review. The manuscript is now in preparation for submission to MDPI Sensors.",
+      "Under severe snow conditions, classification accuracy on EfficientNet-B2 improved from 68.02% to 87.34% through task-aware multi-stage processing. This experience solidified my interest in empirical research and demonstrated the value of persevering through rigorous peer review. The manuscript is now in preparation for submission to MDPI Sensors.",
     bridge:
       "Investigating environmental corruption led naturally to studying another form of distribution shift.",
     description:
@@ -244,49 +268,63 @@ export const RESEARCH_JOURNEY_STEPS: ResearchJourneyStep[] = [
   {
     step: 7,
     stageNumber: "07",
-    period: "Distribution Shift Expansion",
-    title: "Generator Distribution Shift & Few-Shot Adaptation",
+    period: "Distribution Shift Exploration",
+    title: "AI-Generated Image Detection & Few-Shot Adaptation",
     tag: "Leave-Generator-Out",
     badgeVariant: "indigo",
     highlightMetric: "11,000 Images · 50 Experimental Runs",
     narrative:
-      "In synthetic media forensics, detectors trained on known image generators degrade sharply when encountering unseen architectures. I designed a controlled leave-generator-out evaluation across 11,000 images, auditing for leakage and evaluating few-shot adaptation strategies across 5 shot levels and 5 random seeds to investigate adaptation under generator shift.",
+      "In synthetic media forensics, detectors trained on known image generators often degrade when encountering unseen architectures. I designed a controlled leave-generator-out evaluation across 11,000 images, audited for data leakage, and evaluated few-shot adaptation strategies across 5 shot levels and 5 random seeds to investigate adaptation under generator shift.",
     bridge:
-      "The intellectual link: both domains examine predictive reliability when input evidence diverges from training distributions.",
+      "Alongside AI research, I also pursued research problems emerging from real-world software systems.",
     description:
       "Formulated few-shot adaptation study for AI-generated image detection under unseen generator distribution shift.",
   },
   {
     step: 8,
     stageNumber: "08",
-    period: "Broader Perspective",
-    title: "Reliable Reasoning Under Distribution Shift",
-    tag: "Research Trajectory",
+    period: "Algorithmic Systems",
+    title: "Job Fair Scheduling & Discrete Optimization",
+    tag: "Algorithms & Optimization",
+    badgeVariant: "neutral",
+    narrative:
+      "Operational challenges encountered while developing the CUI Wah Job Fair Portal motivated an algorithmic research inquiry. Together with co-authors, I investigated interview scheduling as a constrained two-sided allocation problem, evaluating greedy scheduling heuristics, fairness trade-offs, and database-level concurrency validation.",
+    bridge:
+      "These varied experiences shaped my broad interest in Computer Science research.",
+    description:
+      "Submitted manuscript to HITE 2026 on decentralized greedy scheduling for high-throughput interview allocation.",
+  },
+  {
+    step: 9,
+    stageNumber: "09",
+    period: "Next Step",
+    title: "Starting My Research Career",
+    tag: "Open to Opportunities",
     badgeVariant: "blue",
     narrative:
-      "Across both projects, a central intellectual question emerged: How can intelligent systems remain reliable when the evidence distribution changes? While environmental weather corruption (optical noise and occlusion) and generator distribution shift (unseen synthetic artifacts) involve distinct technical mechanisms, both expose the fragility of models when test distributions shift away from training distributions.",
+      "Having completed my BS in Computer Science with hands-on experience across software engineering, machine learning, computer vision, and algorithms, I am now looking to start my research career. I am eager to join a research group where I can learn from experienced researchers, contribute to ongoing work, and continue developing.",
     bridge:
-      "This perspective informs my graduate research trajectory in reliable computer vision and multimodal AI.",
+      "Open to graduate research and research assistantship opportunities across Computer Science.",
     description:
-      "Connected environmental domain shift and generator distribution shift into a coherent research trajectory on visual reliability.",
+      "Seeking opportunities to join an active research group and grow as a researcher.",
   },
 ];
 
 export const RESEARCH_JOURNEY_CLOSING = {
   quote:
-    "My research trajectory developed through experimentation, peer-review critique, methodological revision, and an increasing focus on how visual models behave when test distributions diverge from training conditions.",
+    "My interest in research developed through hands-on projects, peer-review feedback, methodological revision, and exploring how computational models behave when operational conditions change.",
   coreQuestion:
-    "How can visual AI systems maintain reliable predictions when operating under distribution shift, degraded evidence, or limited target-domain supervision?",
+    "How can computational and visual systems maintain reliability when operating under distribution shifts, degraded evidence, or constrained resources?",
   unifyingInsight:
-    "In traffic sign recognition, visual evidence is physically degraded by snow. In AI-generated image detection, visual artifacts shift due to unseen generative models. While technically distinct, both problems reveal how distribution shifts compromise model reliability and motivate robust adaptation mechanisms.",
+    "In traffic sign recognition, visual evidence is degraded by physical weather. In synthetic image detection, representations shift due to unseen generative models. In interview scheduling, allocation must handle constrained resources and concurrent requests. Together, these projects reflect my interest in addressing practical and theoretical challenges across Computer Science.",
   currentFocusAreas: [
-    "Robust Computer Vision",
-    "Environmental Domain Shift",
-    "Domain Adaptation",
-    "Few-Shot Learning",
-    "Visual Reliability",
-    "Uncertainty-Aware Reasoning",
-    "Multimodal AI",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Computer Vision",
+    "Data Science",
+    "Software Engineering",
+    "Algorithms & Optimization",
+    "Reliable / Trustworthy AI",
   ],
 };
 
