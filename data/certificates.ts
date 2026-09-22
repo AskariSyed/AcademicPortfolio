@@ -187,4 +187,26 @@ export const CERTIFICATES: Certificate[] = [
       aspect: "landscape",
     },
   },
+  {
+    id: "intro-to-computer-vision-coursera",
+    title: "Introduction to Computer Vision",
+    issuer: "University of Colorado Boulder / Coursera",
+    year: "2026",
+    category: "Professional Development",
+    file: "/data/certificates/preview/intro-to-computer-vision-coursera.webp",
+    thumbnail: "/data/certificates/thumbnails/intro-to-computer-vision-coursera.webp",
+    originalFile: "/data/certificates/intro-to-computer-vision-coursera.png",
+    pdfUrl: "/data/certificates/Coursera UNDM6U5KGC8S_Into_to_CV.pdf",
+    verificationUrl: "https://coursera.org/verify/UNDM6U5KGC8S",
+    type: "image",
+    description:
+      "Online course authorized by the University of Colorado Boulder and offered through Coursera, instructed by Assoc. Prof. Tom Yeh. Covers foundational computer vision methods, image processing workflows, feature extraction, visual recognition, and algorithmic implementations (Credential ID: UNDM6U5KGC8S).",
+    featured: true,
+    frameStyle: {
+      rotationDeg: 1.4,
+      frameColor: "academic-navy",
+      matting: "stone",
+      aspect: "landscape",
+    },
+  },
 ];
