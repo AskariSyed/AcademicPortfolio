@@ -83,6 +83,7 @@ export interface Project {
   | "Research"
   | "Algorithms & Optimization"
   | "Applied Systems"
+  | "Applied Computer Vision"
   | "Computer Vision · Robust Recognition";
   isResearch: boolean;
   status?: string;
@@ -101,6 +102,11 @@ export interface Project {
   githubUrl?: string;
   liveUrl?: string;
   featured: boolean;
+  results?: string;
+  limitations?: string;
+  image?: string;
+  imageCaption?: string;
+  researchRelevance?: string;
   schedulingCaseStudy?: SchedulingCaseStudy;
   trafficSignCaseStudy?: TrafficSignCaseStudy;
   researchCaseStudy?: {
@@ -753,5 +759,56 @@ export const PROJECTS: Project[] = [
     ],
     technologies: ["ASP.NET Core", ".NET 8", "PostgreSQL", "React", "TypeScript", "Vite", "Flutter"],
     featured: false,
+  },
+  {
+    slug: "laneguard-monocular-lane-perception",
+    title: "LaneGuard: Classical CV vs Learned Segmentation for Monocular Lane Perception",
+    shortTitle: "LaneGuard: Monocular Lane Perception",
+    subtitle: "Comparative Study of Algorithmic Vision vs Lightweight Learned Segmentation",
+    category: "Applied Computer Vision",
+    isResearch: false,
+    status: "Completed Study",
+    year: 2026,
+    date: "2025–2026",
+    tags: [
+      "Computer Vision",
+      "Lane Detection",
+      "OpenCV",
+      "YOLOv8",
+      "Segmentation",
+      "TuSimple",
+      "Applied ML",
+    ],
+    summary:
+      "An applied computer-vision study comparing a classical edge-and-geometry lane detection pipeline with lightweight YOLOv8n-seg segmentation on TuSimple highway imagery.",
+    description:
+      "LaneGuard is an applied computer-vision project comparing a deterministic lane-detection pipeline with a lightweight learned segmentation model for monocular highway imagery. The classical approach combines color filtering, Canny edges, Hough line detection, geometric filtering, and first-order lane fitting. The learned approach fine-tunes YOLOv8n-seg using segmentation targets derived from TuSimple lane annotations. The project focuses on understanding practical trade-offs and failure modes rather than presenting a production-ready autonomous-driving system.",
+    keyContributions: [
+      "Implemented a classical lane-detection pipeline using HLS filtering, Canny edges, ROI masking, Hough transforms, slope filtering, and first-order geometric fitting.",
+      "Converted sparse TuSimple lane annotations into custom segmentation targets for YOLOv8n-seg.",
+      "Compared deterministic geometric assumptions with learned spatial segmentation across representative highway scenes.",
+      "Analyzed failure cases involving road curvature, missing lane boundaries, and image/edge clutter.",
+    ],
+    technologies: [
+      "OpenCV",
+      "PyTorch",
+      "YOLOv8-Seg",
+      "Python",
+      "NumPy",
+      "TuSimple Benchmark",
+    ],
+    repositoryVisibility: "public",
+    repositoryUrl: "https://github.com/AskariSyed/Lane_Guard",
+    githubUrl: "https://github.com/AskariSyed/Lane_Guard",
+    featured: false,
+    image: "/images/laneguard-comparison.webp",
+    imageCaption:
+      "Qualitative side-by-side comparison across 6 TuSimple highway scenes: Classical CV (left) vs. YOLOv8-Seg (right).",
+    results:
+      "The YOLOv8n-seg experiment was trained for 15 epochs on 600 training frames with 150 validation frames. The current evaluation uses project-defined lane-line and derived corridor segmentation targets. Because the split is frame-level and may contain temporally related frames, the reported validation metrics should not be interpreted as leakage-free sequence-level generalization. The qualitative comparison highlights differences between first-order geometric fitting and learned segmentation, particularly on curved highway scenes.",
+    limitations:
+      "Current limitations include a frame-level dataset split, derived segmentation targets, limited training data/epochs, pixel-space lane-departure heuristics, and the absence of a common quantitative lane-center/polyline metric for both pipelines.",
+    researchRelevance:
+      "This project broadens my computer-vision experience from image classification to spatial perception and segmentation.",
   },
 ];

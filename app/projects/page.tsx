@@ -56,14 +56,14 @@ export default function ProjectsPage() {
         </div>
       </SectionContainer>
 
-      {/* Applied Software Engineering */}
+      {/* Applied Systems & Technical Implementations */}
       <SectionContainer
-        tag="Engineering &amp; Algorithms Foundation"
-        title="Software Systems &amp; Optimization"
-        subtitle="Full-stack and algorithmic systems demonstrating software architecture, database management, and concurrent scheduling."
+        tag="Engineering &amp; Applied Foundation"
+        title="Applied Systems &amp; Technical Projects"
+        subtitle="Full-stack software systems and applied computer-vision implementations demonstrating systems engineering, applied ML, and practical technical breadth."
         className="bg-slate-50/50"
       >
-        <div className="max-w-3xl">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {appliedProjects.map((project) => (
             <ProjectCard key={project.slug} project={project} />
           ))}

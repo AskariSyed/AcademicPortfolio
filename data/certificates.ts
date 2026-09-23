@@ -50,7 +50,7 @@ export const CERTIFICATES: Certificate[] = [
     pdfUrl: "/data/certificates/Merit Certificate.pdf",
     type: "image",
     description:
-      "Awarded to Muhammad Hassan Askari in recognition of securing Second Position with a perfect 4.00/4.00 SGPA in the Bachelor of Science in Computer Science Examination (Sr. No. CU/WAH/26/2823).",
+      "Awarded to Muhammad Hassan Askari in recognition of securing Second Position with a perfect 4.00/4.00 SGPA in the Bachelor of Science in Computer Science Examination (Sr. No. CUI/WAH/26/2823).",
     featured: true,
     frameStyle: {
       rotationDeg: -1.8,

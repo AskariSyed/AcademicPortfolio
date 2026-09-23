@@ -2,6 +2,7 @@ import React from "react";
 import type { Metadata } from "next";
 import { notFound, redirect } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { PROJECTS } from "@/data/projects";
 import FewShotAigdCaseStudy from "@/components/projects/FewShotAigdCaseStudy";
 import SchedulingResearchCaseStudy from "@/components/projects/SchedulingResearchCaseStudy";
@@ -15,6 +16,8 @@ import {
   ExternalLink,
   Code2,
   Lock,
+  AlertTriangle,
+  Info,
 } from "lucide-react";
 import { GithubIcon } from "@/components/ui/SocialIcons";
 
@@ -176,12 +179,35 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
             <div className="mt-10 space-y-6">
               <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs">
                 <h2 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-2">
-                  System &amp; Research Overview
+                  {project.isResearch ? "System & Research Overview" : "System & Technical Overview"}
                 </h2>
                 <p className="text-sm sm:text-base text-slate-700 leading-relaxed">
                   {project.description}
                 </p>
               </div>
+
+              {/* Qualitative Visual Comparison Image if present */}
+              {project.image && (
+                <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-3">
+                    Qualitative Comparison Visual
+                  </h3>
+                  <div className="rounded-lg overflow-hidden border border-slate-200 bg-slate-950">
+                    <Image
+                      src={project.image}
+                      alt={`${project.title} comparison visual`}
+                      width={1600}
+                      height={1200}
+                      className="w-full h-auto object-contain"
+                    />
+                  </div>
+                  {project.imageCaption && (
+                    <p className="mt-2.5 text-xs text-slate-500 italic">
+                      {project.imageCaption}
+                    </p>
+                  )}
+                </div>
+              )}
 
               {/* Key Contributions */}
               <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs">
@@ -197,6 +223,48 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
                   ))}
                 </ul>
               </div>
+
+              {/* Experimental Findings / Results if present */}
+              {project.results && (
+                <div className="p-6 rounded-xl bg-white border border-slate-200 shadow-2xs">
+                  <h3 className="text-sm font-bold uppercase tracking-wider text-slate-900 mb-2">
+                    Experimental Scope &amp; Qualitative Observations
+                  </h3>
+                  <p className="text-sm text-slate-700 leading-relaxed">
+                    {project.results}
+                  </p>
+                </div>
+              )}
+
+              {/* Limitations & Scope Disclosure if present */}
+              {project.limitations && (
+                <div className="p-6 rounded-xl bg-amber-50/60 border border-amber-200/80 shadow-2xs">
+                  <div className="flex items-center gap-2 mb-2 text-amber-900">
+                    <AlertTriangle className="w-4 h-4 text-amber-700 shrink-0" />
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-amber-950">
+                      Methodological Scope &amp; Limitations
+                    </h3>
+                  </div>
+                  <p className="text-sm text-amber-900/90 leading-relaxed">
+                    {project.limitations}
+                  </p>
+                </div>
+              )}
+
+              {/* Research / Experience Relevance if present */}
+              {project.researchRelevance && (
+                <div className="p-6 rounded-xl bg-blue-50/50 border border-blue-200/70 shadow-2xs">
+                  <div className="flex items-center gap-2 mb-2 text-blue-900">
+                    <Info className="w-4 h-4 text-blue-700 shrink-0" />
+                    <h3 className="text-sm font-bold uppercase tracking-wider text-blue-950">
+                      Portfolio Role &amp; Technical Scope
+                    </h3>
+                  </div>
+                  <p className="text-sm text-blue-900/90 leading-relaxed">
+                    {project.researchRelevance}
+                  </p>
+                </div>
+              )}
 
               {/* Technical Stack */}
               <div className="p-6 rounded-xl bg-slate-50 border border-slate-200/90">
