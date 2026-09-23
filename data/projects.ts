@@ -71,6 +71,75 @@ export interface TrafficSignCaseStudy {
   supervisorRelevance: string;
 }
 
+export interface LaneGuardBenchmarkRow {
+  metric: string;
+  yolov8: string;
+  yolo26: string;
+}
+
+export interface LaneGuardCaseStudy {
+  shortTitle: string;
+  statusStatement: string;
+  githubUrl: string;
+  overview: {
+    description: string;
+    classicalPipeline: string[];
+    learnedPipelines: string[];
+  };
+  keyStats: {
+    label: string;
+    value: string;
+    subtext: string;
+  }[];
+  dataset: {
+    name: string;
+    resolution: string;
+    totalAnnotatedFrames: number;
+    trainFrames: number;
+    valFrames: number;
+    heldOutTestFrames: number;
+    conditions: string;
+    derivedCorridorNote: string;
+    splitLimitationNote: string;
+  };
+  models: {
+    name: string;
+    fusedParams: string;
+    gflops: string;
+    inputResolution: string;
+    epochs: number;
+    batchSize: number;
+    hardware: string;
+    notes?: string;
+  }[];
+  modelEfficiencyNote: string;
+  benchmarkTable: LaneGuardBenchmarkRow[];
+  benchmarkProtocolNote: string;
+  methodology: {
+    scanlineY: number;
+    imageCenterX: number;
+    boundaryExtraction: string;
+    laneCenterCalculation: string;
+    fallbackRule: string;
+    compositeMetricNote: string;
+  };
+  qualitativeVisual: {
+    imagePath: string;
+    caption: string;
+    description: string;
+  };
+  failureModes: {
+    classical: string[];
+    learned: string[];
+  };
+  ldws: {
+    description: string;
+    threshold: string;
+    limitations: string[];
+  };
+  portfolioRole: string;
+}
+
 export interface Project {
   slug: string;
   title: string;
@@ -107,6 +176,7 @@ export interface Project {
   image?: string;
   imageCaption?: string;
   researchRelevance?: string;
+  laneGuardCaseStudy?: LaneGuardCaseStudy;
   schedulingCaseStudy?: SchedulingCaseStudy;
   trafficSignCaseStudy?: TrafficSignCaseStudy;
   researchCaseStudy?: {
@@ -767,35 +837,37 @@ export const PROJECTS: Project[] = [
     subtitle: "Comparative Study of Algorithmic Vision vs Lightweight Learned Segmentation",
     category: "Applied Computer Vision",
     isResearch: false,
-    status: "Completed Study",
+    status: "Completed Benchmark Study",
     year: 2026,
     date: "2025–2026",
     tags: [
       "Computer Vision",
       "Lane Detection",
+      "Segmentation",
       "OpenCV",
       "YOLOv8",
-      "Segmentation",
-      "TuSimple",
+      "YOLO26",
+      "TuSimple Benchmark",
       "Applied ML",
     ],
     summary:
-      "An applied computer-vision study comparing a classical edge-and-geometry lane detection pipeline with lightweight YOLOv8n-seg segmentation on TuSimple highway imagery.",
+      "An applied computer-vision benchmark comparing a deterministic classical lane-detection pipeline with lightweight YOLO-based segmentation models for monocular highway lane perception and heuristic lane-departure warning.",
     description:
-      "LaneGuard is an applied computer-vision project comparing a deterministic lane-detection pipeline with a lightweight learned segmentation model for monocular highway imagery. The classical approach combines color filtering, Canny edges, Hough line detection, geometric filtering, and first-order lane fitting. The learned approach fine-tunes YOLOv8n-seg using segmentation targets derived from TuSimple lane annotations. The project focuses on understanding practical trade-offs and failure modes rather than presenting a production-ready autonomous-driving system.",
+      "LaneGuard is an applied computer-vision benchmark comparing a deterministic classical lane-detection pipeline with lightweight learned segmentation models (YOLOv8n-seg and YOLO26n-seg) for monocular highway lane perception and heuristic lane-departure warning. The classical pipeline combines HLS color filtering, Gaussian smoothing, Canny edge detection, trapezoidal ROI masking, Probabilistic Hough transforms, slope filtering, median-based outlier rejection, first-order lane fitting, missing-boundary synthesis, and optional temporal smoothing. The learned pipeline benchmarks YOLOv8n-seg and YOLO26n-seg trained on custom lane-line and derived drivable-area corridor segmentation targets, evaluated under an identical standardized evaluation harness on 2,782 official held-out TuSimple frames.",
     keyContributions: [
-      "Implemented a classical lane-detection pipeline using HLS filtering, Canny edges, ROI masking, Hough transforms, slope filtering, and first-order geometric fitting.",
-      "Converted sparse TuSimple lane annotations into custom segmentation targets for YOLOv8n-seg.",
-      "Compared deterministic geometric assumptions with learned spatial segmentation across representative highway scenes.",
-      "Analyzed failure cases involving road curvature, missing lane boundaries, and image/edge clutter.",
+      "Implemented a complete deterministic lane-detection pipeline using HLS color filtering, Canny edges, ROI masking, Probabilistic Hough transforms, slope filtering, median outlier rejection, and first-order geometric fitting.",
+      "Evaluated lightweight learned segmentation models (YOLOv8n-seg baseline and YOLO26n-seg modern baseline) using custom lane-line and derived drivable-area corridor targets.",
+      "Conducted a standardized held-out quantitative benchmark across 2,782 official TuSimple test frames measuring boundary accuracy, lane-center estimation, boundary detection rates, and inference latency.",
+      "Empirically analyzed trade-offs and observed failure modes between hand-crafted geometric priors and learned spatial segmentation under highway conditions.",
     ],
     technologies: [
       "OpenCV",
-      "PyTorch",
-      "YOLOv8-Seg",
       "Python",
       "NumPy",
-      "TuSimple Benchmark",
+      "PyTorch",
+      "YOLOv8-Seg",
+      "YOLO26n-Seg",
+      "TuSimple",
     ],
     repositoryVisibility: "public",
     repositoryUrl: "https://github.com/AskariSyed/Lane_Guard",
@@ -803,12 +875,171 @@ export const PROJECTS: Project[] = [
     featured: false,
     image: "/images/laneguard-comparison.webp",
     imageCaption:
-      "Qualitative side-by-side comparison across 6 TuSimple highway scenes: Classical CV (left) vs. YOLOv8-Seg (right).",
+      "Qualitative comparison across representative TuSimple highway scenes, illustrating differences between the classical edge/geometry pipeline and learned segmentation.",
     results:
-      "The YOLOv8n-seg experiment was trained for 15 epochs on 600 training frames with 150 validation frames. The current evaluation uses project-defined lane-line and derived corridor segmentation targets. Because the split is frame-level and may contain temporally related frames, the reported validation metrics should not be interpreted as leakage-free sequence-level generalization. The qualitative comparison highlights differences between first-order geometric fitting and learned segmentation, particularly on curved highway scenes.",
+      "On the 2,782 held-out official TuSimple test frames evaluated on an NVIDIA Tesla T4 with synchronized CUDA timing, YOLOv8n-seg achieved a boundary MAE of 21.42 px, lane center MAE of 37.62 px, dual-boundary detection rate of 48.6%, and 91.4 FPS (10.95 ms mean latency). YOLO26n-seg achieved 22.44 px boundary MAE, 70.06 px lane center MAE, 16.4% dual-boundary rate, and 69.5 FPS (14.40 ms latency) with 17.5% fewer parameters and 19.5% lower GFLOPs. Differences in lane center error reflect segmentation coverage and single-boundary fallback behavior.",
     limitations:
-      "Current limitations include a frame-level dataset split, derived segmentation targets, limited training data/epochs, pixel-space lane-departure heuristics, and the absence of a common quantitative lane-center/polyline metric for both pipelines.",
+      "Current limitations include a frame-level training/validation split (which may contain temporally related frames and is not sequence-level leakage-free), derived corridor masks rather than official drivable-area ground truth, heuristic ±80 px image-space LDWS without metric scaling or CAN integration, and the sensitivity of classical CV to image clutter and learned models to missed boundary fallbacks.",
     researchRelevance:
-      "This project broadens my computer-vision experience from image classification to spatial perception and segmentation.",
+      "This project extends my computer-vision work from image classification toward spatial perception, segmentation, geometric vision, and empirical model comparison.",
+    laneGuardCaseStudy: {
+      shortTitle: "LaneGuard: Monocular Lane Perception",
+      statusStatement: "Applied Computer-Vision Benchmark",
+      githubUrl: "https://github.com/AskariSyed/Lane_Guard",
+      overview: {
+        description:
+          "LaneGuard is an applied computer-vision benchmark comparing a deterministic classical lane-detection pipeline with lightweight YOLO-based segmentation models for monocular highway lane perception and heuristic lane-departure warning. The project examines practical trade-offs between hand-crafted geometric assumptions and learned spatial segmentation under clear highway conditions.",
+        classicalPipeline: [
+          "HLS color filtering",
+          "Gaussian smoothing",
+          "Canny edge detection",
+          "Trapezoidal region of interest (ROI)",
+          "Probabilistic Hough transform",
+          "Slope filtering and median-based outlier rejection",
+          "First-order lane fitting",
+          "Missing-boundary synthesis",
+          "Optional temporal smoothing",
+        ],
+        learnedPipelines: [
+          "YOLOv8n-seg baseline",
+          "YOLO26n-seg modern baseline",
+          "Custom lane_line and derived drivable_area segmentation targets",
+          "Identical evaluation harness for the learned models",
+        ],
+      },
+      keyStats: [
+        {
+          label: "Held-Out Test Frames",
+          value: "2,782",
+          subtext: "Official TuSimple test_label.json benchmark",
+        },
+        {
+          label: "YOLOv8 Boundary MAE",
+          value: "21.42 px",
+          subtext: "Measured at y = 680 px scanline",
+        },
+        {
+          label: "YOLOv8 Mean Latency",
+          value: "10.95 ms",
+          subtext: "NVIDIA Tesla T4 (CUDA synchronized)",
+        },
+        {
+          label: "YOLOv8 Throughput",
+          value: "91.4 FPS",
+          subtext: "640 × 640 network input resolution",
+        },
+        {
+          label: "YOLO26 Parameter Reduction",
+          value: "17.5%",
+          subtext: "2.69M vs 3.26M fused parameters",
+        },
+        {
+          label: "YOLO26 Compute Reduction",
+          value: "19.5%",
+          subtext: "9.1 vs 11.3 GFLOPs theoretical complexity",
+        },
+      ],
+      dataset: {
+        name: "TuSimple Lane Detection Benchmark",
+        resolution: "1280 × 720 forward-facing highway imagery",
+        totalAnnotatedFrames: 3626,
+        trainFrames: 600,
+        valFrames: 150,
+        heldOutTestFrames: 2782,
+        conditions: "Clear/dry daytime highway driving conditions",
+        derivedCorridorNote:
+          "The drivable_area segmentation target is a DERIVED corridor mask constructed from TuSimple lane annotations, not official TuSimple drivable-area ground truth.",
+        splitLimitationNote:
+          "The 600/150 training/validation split is frame-level and can contain temporally related frames from the same sequences, so validation metrics should not be presented as sequence-level leakage-free generalization.",
+      },
+      models: [
+        {
+          name: "YOLOv8n-seg",
+          fusedParams: "3,258,454",
+          gflops: "11.3",
+          inputResolution: "640 × 640",
+          epochs: 15,
+          batchSize: 16,
+          hardware: "NVIDIA Tesla T4 evaluation",
+          notes: "Established baseline lightweight instance segmentation architecture.",
+        },
+        {
+          name: "YOLO26n-seg",
+          fusedParams: "2,689,274",
+          gflops: "9.1",
+          inputResolution: "640 × 640",
+          epochs: 15,
+          batchSize: 16,
+          hardware: "NVIDIA Tesla T4 evaluation",
+          notes: "Modern lightweight segmentation baseline with reduced parameter count and GFLOPs.",
+        },
+      ],
+      modelEfficiencyNote:
+        "YOLO26 has approximately 17.5% fewer parameters and 19.5% lower GFLOPs compared to YOLOv8. However, lower computational complexity does not automatically translate into superior task accuracy or empirical throughput under a specific runtime configuration.",
+      benchmarkTable: [
+        { metric: "Boundary MAE", yolov8: "21.42 px", yolo26: "22.44 px" },
+        { metric: "Boundary RMSE", yolov8: "23.39 px", yolo26: "23.59 px" },
+        { metric: "Boundary Median AE", yolov8: "21.00 px", yolo26: "22.50 px" },
+        { metric: "Lane Center MAE", yolov8: "37.62 px", yolo26: "70.06 px" },
+        { metric: "Lane Center RMSE", yolov8: "57.13 px", yolo26: "82.66 px" },
+        { metric: "Dual-Boundary Rate", yolov8: "48.6%", yolo26: "16.4%" },
+        { metric: "Single-Boundary Rate", yolov8: "44.9%", yolo26: "53.9%" },
+        { metric: "Failure Rate", yolov8: "6.58%", yolo26: "29.65%" },
+        { metric: "Mean Latency", yolov8: "10.95 ms", yolo26: "14.40 ms" },
+        { metric: "P95 Latency", yolov8: "11.93 ms", yolo26: "15.76 ms" },
+        { metric: "Throughput", yolov8: "91.4 FPS", yolo26: "69.5 FPS" },
+        { metric: "Parameters", yolov8: "3,258,454", yolo26: "2,689,274" },
+        { metric: "GFLOPs", yolov8: "11.3", yolo26: "9.1" },
+      ],
+      benchmarkProtocolNote:
+        "Learned-model runtime measurements were obtained on an NVIDIA Tesla T4 with synchronized CUDA timing. These results reflect the empirical outcome of this specific training setup, dataset construction, checkpoint configuration, and evaluation protocol, rather than a universal ranking of the underlying model families.",
+      methodology: {
+        scanlineY: 680,
+        imageCenterX: 640,
+        boundaryExtraction:
+          "Lane boundaries are extracted from predicted lane-line masks at the horizontal evaluation scanline y = 680 px in 1280 × 720 frames. Boundary localization errors are measured directly in image pixels against ground-truth annotations.",
+        laneCenterCalculation:
+          "The lane center is computed from the midpoint of the estimated left and right boundaries relative to the vehicle/image center (x = 640 px).",
+        fallbackRule:
+          "When only one boundary is detected at the scanline, the project employs a fixed ±420 px fallback offset to synthesize the opposing boundary.",
+        compositeMetricNote:
+          "Because of this fallback mechanism, lane-center error reflects the combined impact of segmentation quality, boundary extraction, and fallback behavior rather than functioning as an isolated segmentation metric.",
+      },
+      qualitativeVisual: {
+        imagePath: "/images/laneguard-comparison.webp",
+        caption:
+          "Qualitative comparison across representative TuSimple highway scenes, illustrating differences between the classical edge/geometry pipeline and learned segmentation.",
+        description:
+          "Qualitative comparison illustrating differences between the deterministic classical CV pipeline (with edge-based line fitting) and the learned segmentation masks across curved highway, straight highway, and varied daylight conditions.",
+      },
+      failureModes: {
+        classical: [
+          "Sensitivity to road curvature and non-linear geometry under a first-order fitting model",
+          "Susceptibility to edge clutter, shadow boundaries, and extraneous road markings",
+          "Difficulty detecting lanes when painted markings are worn, faded, or missing",
+          "Strong dependence on hand-crafted geometric thresholds and fixed ROI masks",
+        ],
+        learned: [
+          "Missed boundary segmentations on challenging frames or distant lane segments",
+          "High single-boundary occurrence triggering the fixed ±420 px fallback",
+          "Pronounced lane-center estimation errors when fallback assumptions diverge from actual lane width",
+          "Sensitivity to the constrained training regime (600 frames, 15 epochs)",
+        ],
+      },
+      ldws: {
+        description:
+          "The project estimates lateral image-space offset between the vehicle center (x = 640 px) and estimated lane center and triggers a warning using a project-specific ±80 px threshold.",
+        threshold: "±80 px lateral image-space offset",
+        limitations: [
+          "Image-space pixel heuristic, not calibrated metric lateral distance",
+          "Does not compute kinematic time-to-lane-crossing (TLC)",
+          "No integration with vehicle CAN bus, steering angle, or speed sensors",
+          "Does not claim ISO 17361 compliance",
+          "Not a safety-certified ADAS or production autonomous-driving system",
+        ],
+      },
+      portfolioRole:
+        "This project extends my computer-vision work from image classification toward spatial perception, segmentation, geometric vision, and empirical model comparison.",
+    },
   },
 ];

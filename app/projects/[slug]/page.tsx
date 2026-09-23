@@ -7,6 +7,7 @@ import { PROJECTS } from "@/data/projects";
 import FewShotAigdCaseStudy from "@/components/projects/FewShotAigdCaseStudy";
 import SchedulingResearchCaseStudy from "@/components/projects/SchedulingResearchCaseStudy";
 import TrafficSignResearchCaseStudy from "@/components/projects/TrafficSignResearchCaseStudy";
+import LaneGuardCaseStudy from "@/components/projects/LaneGuardCaseStudy";
 import {
   ArrowLeft,
   Calendar,
@@ -109,7 +110,9 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
         </div>
 
         {/* If this project has a specialized Research Case Study, render it */}
-        {project.trafficSignCaseStudy ? (
+        {project.laneGuardCaseStudy ? (
+          <LaneGuardCaseStudy project={project} />
+        ) : project.trafficSignCaseStudy ? (
           <TrafficSignResearchCaseStudy project={project} />
         ) : project.researchCaseStudy ? (
           <FewShotAigdCaseStudy project={project} />
