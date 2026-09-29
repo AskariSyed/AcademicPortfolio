@@ -1,11 +1,17 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, Compass, FileText, Layers, BookOpen, Mail, ArrowRight } from "lucide-react";
 
-export const metadata = {
+export const metadata: Metadata = {
   title: "404 - Archive Entry Not Found | Muhammad Hassan Askari",
   description: "The requested academic page, paper, or research case study could not be located in this repository.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
+
 
 const QUICK_LINKS = [
   { href: "/research", label: "Research Agenda & Trajectory", icon: Compass, desc: "Theoretical formulations & domain shift themes" },

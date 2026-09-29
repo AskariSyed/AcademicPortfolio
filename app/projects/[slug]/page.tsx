@@ -74,6 +74,7 @@ export async function generateMetadata({
       title: `${project.title} | Muhammad Hassan Askari`,
       description: project.summary,
       url: `https://research-with-askari.vercel.app/projects/${project.slug}`,
+      type: "article",
     },
   };
 }
@@ -95,8 +96,39 @@ export default async function ProjectDetailPage({ params }: ProjectPageProps) {
   const isPublicRepo = project.repositoryVisibility === "public" && project.repositoryUrl;
   const isPrivateRepo = project.repositoryVisibility === "private";
 
+  // Per-page JSON-LD structured data
+  const projectJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://research-with-askari.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Projects", "item": "https://research-with-askari.vercel.app/projects" },
+          { "@type": "ListItem", "position": 3, "name": project.title, "item": `https://research-with-askari.vercel.app/projects/${project.slug}` },
+        ],
+      },
+      {
+        "@type": "SoftwareSourceCode",
+        "name": project.title,
+        "description": project.summary,
+        "author": {
+          "@type": "Person",
+          "name": "Muhammad Hassan Askari",
+          "url": "https://research-with-askari.vercel.app/",
+        },
+        ...(project.repositoryUrl ? { "codeRepository": project.repositoryUrl } : {}),
+        "programmingLanguage": project.technologies,
+      },
+    ],
+  };
+
   return (
     <div className="py-10 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(projectJsonLd) }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumbs */}
         <div className="mb-8">

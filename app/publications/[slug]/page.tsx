@@ -64,8 +64,36 @@ export default async function PublicationDetailPage({
     notFound();
   }
 
+  // Per-page JSON-LD structured data
+  const publicationJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://research-with-askari.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Publications", "item": "https://research-with-askari.vercel.app/publications" },
+          { "@type": "ListItem", "position": 3, "name": paper.title, "item": `https://research-with-askari.vercel.app/publications/${paper.slug}` },
+        ],
+      },
+      {
+        "@type": "ScholarlyArticle",
+        "headline": paper.title,
+        "description": paper.description || paper.problem,
+        "author": paper.authors.map((name: string) => ({ "@type": "Person", "name": name })),
+        "datePublished": String(paper.year),
+        "url": `https://research-with-askari.vercel.app/publications/${paper.slug}`,
+        ...(paper.venue ? { "publisher": { "@type": "Organization", "name": paper.venue } } : {}),
+      },
+    ],
+  };
+
   return (
     <div className="py-10 md:py-16">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(publicationJsonLd) }}
+      />
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Breadcrumb / Back button */}
         <div className="mb-8">

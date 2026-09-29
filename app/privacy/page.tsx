@@ -11,6 +11,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://research-with-askari.vercel.app/privacy",
   },
+  robots: {
+    index: false,
+    follow: true,
+  },
   openGraph: {
     title: "Privacy Policy | Muhammad Hassan Askari",
     description:
@@ -18,6 +22,7 @@ export const metadata: Metadata = {
     url: "https://research-with-askari.vercel.app/privacy",
   },
 };
+
 
 export default function PrivacyPolicyPage() {
   const lastUpdated = "September 2026";

@@ -6,6 +6,7 @@ import Footer from "@/components/layout/Footer";
 import { RESEARCH_IDENTITY } from "@/data/research";
 import { PUBLICATIONS } from "@/data/publications";
 import { Analytics } from "@vercel/analytics/next";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 import CookieBanner from "@/components/ui/CookieBanner";
 import StickyMobileCTA from "@/components/ui/StickyMobileCTA";
@@ -53,6 +54,11 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: "Muhammad Hassan Askari", url: "https://research-with-askari.vercel.app/" }],
   creator: "Muhammad Hassan Askari",
+  publisher: "Muhammad Hassan Askari",
+  category: "technology",
+  verification: {
+    google: "61a6512cc0c7d6ba",
+  },
   icons: {
     icon: [
       { url: "/icon.svg", type: "image/svg+xml" },
@@ -130,9 +136,32 @@ export default function RootLayout({
         "@id": "https://research-with-askari.vercel.app/#website",
         "url": "https://research-with-askari.vercel.app/",
         "name": "Muhammad Hassan Askari Portfolio",
+        "description": "Academic portfolio of Muhammad Hassan Askari — CS graduate and aspiring researcher in AI/ML, computer vision, and distribution shift.",
+        "inLanguage": "en-US",
         "author": {
           "@id": "https://research-with-askari.vercel.app/#person",
         },
+        "potentialAction": {
+          "@type": "SearchAction",
+          "target": {
+            "@type": "EntryPoint",
+            "urlTemplate": "https://research-with-askari.vercel.app/projects?q={search_term_string}",
+          },
+          "query-input": "required name=search_term_string",
+        },
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://research-with-askari.vercel.app/" },
+          { "@type": "ListItem", "position": 2, "name": "Research", "item": "https://research-with-askari.vercel.app/research" },
+          { "@type": "ListItem", "position": 3, "name": "Publications", "item": "https://research-with-askari.vercel.app/publications" },
+          { "@type": "ListItem", "position": 4, "name": "Projects", "item": "https://research-with-askari.vercel.app/projects" },
+          { "@type": "ListItem", "position": 5, "name": "Experience", "item": "https://research-with-askari.vercel.app/experience" },
+          { "@type": "ListItem", "position": 6, "name": "About", "item": "https://research-with-askari.vercel.app/about" },
+          { "@type": "ListItem", "position": 7, "name": "CV", "item": "https://research-with-askari.vercel.app/cv" },
+          { "@type": "ListItem", "position": 8, "name": "Contact", "item": "https://research-with-askari.vercel.app/contact" },
+        ],
       },
       ...PUBLICATIONS.map((pub) => ({
         "@type": "ScholarlyArticle",
@@ -161,6 +190,7 @@ export default function RootLayout({
         <StickyMobileCTA />
         <CookieBanner />
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
