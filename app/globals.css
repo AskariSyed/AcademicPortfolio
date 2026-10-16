@@ -129,6 +129,7 @@
 .animate-flow-dash {
   stroke-dasharray: 6 6;
   animation: flowDash 1.4s linear infinite;
+  will-change: stroke-dashoffset;
 }
 
 @keyframes signalPulse {
@@ -167,6 +168,10 @@
   }
 
   .animate-signal-pulse {
+    animation: none !important;
+  }
+
+  .animate-subtle-pulse {
     animation: none !important;
   }
 }

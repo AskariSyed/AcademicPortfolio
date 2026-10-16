@@ -1,10 +1,8 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { GraduationCap, ArrowRight, School } from "lucide-react";
 import { TEACHING_EXPERIENCE, EDUCATION } from "@/data/academic";
-import { FadeIn, StaggerContainer, StaggerItem, HoverLift, AnimatedNumber } from "@/components/ui/motion";
+import { FadeInServer as FadeIn, StaggerContainerServer as StaggerContainer, StaggerItemServer as StaggerItem, HoverLiftServer as HoverLift } from "@/components/ui/motion-server";
 
 export default function TeachingHomePreview() {
   const cgpaNumber = parseFloat(EDUCATION.cgpa) || 3.65;
@@ -13,7 +11,7 @@ export default function TeachingHomePreview() {
   return (
     <section className="py-14 sm:py-18 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn direction="up" distance={20} className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-10">
+        <FadeIn className="flex flex-col md:flex-row items-start md:items-end justify-between gap-4 mb-10">
           <div className="max-w-2xl">
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-900 border border-blue-200/80 mb-3">
               <GraduationCap className="w-3.5 h-3.5 text-blue-800" />
@@ -38,7 +36,7 @@ export default function TeachingHomePreview() {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Degree Snapshot Card */}
-          <FadeIn direction="up" delay={0.1} distance={20} className="lg:col-span-4 p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 shadow-2xs hover:shadow-md transition-shadow">
+          <FadeIn delay={1} className="lg:col-span-4 p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4 shadow-2xs hover:shadow-md transition-shadow">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-lg bg-blue-900 text-white flex items-center justify-center shrink-0">
                 <School className="w-5 h-5" />
@@ -62,14 +60,14 @@ export default function TeachingHomePreview() {
               <div className="p-3 bg-white rounded-lg border border-slate-200/80 shadow-2xs">
                 <span className="text-slate-400 text-[11px] font-mono block">CGPA</span>
                 <span className="text-lg font-extrabold text-blue-900 font-mono">
-                  <AnimatedNumber value={cgpaNumber} decimals={2} />
+                  {cgpaNumber.toFixed(2)}
                 </span>
                 <span className="text-xs text-slate-500"> / {EDUCATION.totalCgpa}</span>
               </div>
               <div className="p-3 bg-white rounded-lg border border-slate-200/80 shadow-2xs">
                 <span className="text-slate-400 text-[11px] font-mono block">CREDITS</span>
                 <span className="text-lg font-extrabold text-slate-900 font-mono">
-                  <AnimatedNumber value={creditsNumber} />
+                  {creditsNumber.toLocaleString("en-US")}
                 </span>
                 <span className="text-xs text-slate-500"> Completed</span>
               </div>
@@ -83,14 +81,11 @@ export default function TeachingHomePreview() {
 
           {/* 4 Highlighted TA Courses */}
           <StaggerContainer
-            delayChildren={0.15}
-            staggerChildren={0.08}
             className="lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-4"
           >
-            {TEACHING_EXPERIENCE.map((ta) => (
-              <StaggerItem key={ta.course}>
+            {TEACHING_EXPERIENCE.map((ta, idx) => (
+              <StaggerItem key={ta.course} index={idx}>
                 <HoverLift
-                  lift={-3}
                   className="p-5 rounded-xl border border-slate-200 bg-white hover:border-slate-300 transition-all space-y-2 shadow-2xs hover:shadow-md h-full flex flex-col justify-between"
                 >
                   <div>

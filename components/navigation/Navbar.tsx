@@ -6,7 +6,6 @@ import { usePathname } from "next/navigation";
 import { Mail, Menu, X, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon } from "@/components/ui/SocialIcons";
 import { RESEARCH_IDENTITY } from "@/data/research";
-import { motion, AnimatePresence } from "framer-motion";
 
 const NAV_LINKS = [
   { href: "/research", label: "Research" },
@@ -28,7 +27,8 @@ export default function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20);
     };
-    window.addEventListener("scroll", handleScroll);
+    // Use passive listener to avoid blocking scroll
+    window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
@@ -74,17 +74,10 @@ export default function Navbar() {
                   href={link.href}
                   className={`relative px-3 py-1.5 rounded-md text-sm font-medium transition-colors ${
                     isActive
-                      ? "text-blue-900 font-semibold"
+                      ? "text-blue-900 font-semibold bg-blue-50/90 border border-blue-200/80 shadow-2xs"
                       : "text-slate-650 hover:text-slate-900 hover:bg-slate-100/70"
                   }`}
                 >
-                  {isActive && (
-                    <motion.span
-                      layoutId="navbar-active-pill"
-                      className="absolute inset-0 bg-blue-50/90 border border-blue-200/80 rounded-md -z-10 shadow-2xs"
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
-                    />
-                  )}
                   {link.label}
                 </Link>
               );
@@ -136,75 +129,70 @@ export default function Navbar() {
         </div>
       </div>
 
-      {/* Mobile Drawer with spring transition */}
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: [0.21, 0.47, 0.32, 0.98] }}
-            className="md:hidden border-b border-slate-200 bg-white px-4 pt-2 pb-6 space-y-2 shadow-lg overflow-hidden"
-          >
-            <nav className="flex flex-col space-y-1" aria-label="Mobile Navigation">
-              {NAV_LINKS.map((link) => {
-                const isActive =
-                  pathname === link.href ||
-                  (link.href !== "/" && pathname.startsWith(link.href));
-                return (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
-                      isActive
-                        ? "text-blue-900 bg-blue-50 font-semibold"
-                        : "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
-                    }`}
-                  >
-                    {link.label}
-                  </Link>
-                );
-              })}
-            </nav>
-            <div className="pt-3 border-t border-slate-200 flex items-center justify-between px-2">
-              <div className="flex items-center space-x-3">
-                <a
-                  href={RESEARCH_IDENTITY.github}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-650 hover:text-slate-900 transition-colors"
-                  aria-label="GitHub Profile"
-                >
-                  <GithubIcon className="w-5 h-5" />
-                </a>
-                <a
-                  href={RESEARCH_IDENTITY.linkedin}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="text-slate-650 hover:text-slate-900 transition-colors"
-                  aria-label="LinkedIn Profile"
-                >
-                  <LinkedinIcon className="w-5 h-5" />
-                </a>
-                <a
-                  href={`mailto:${RESEARCH_IDENTITY.email}`}
-                  className="text-slate-650 hover:text-slate-900 transition-colors"
-                  aria-label="Email"
-                >
-                  <Mail className="w-5 h-5" />
-                </a>
-              </div>
+      {/* Mobile Drawer — CSS transition, no framer-motion */}
+      <div
+        className={`md:hidden border-b border-slate-200 bg-white px-4 overflow-hidden transition-all duration-250 ease-in-out ${
+          mobileMenuOpen ? "max-h-[600px] opacity-100 pt-2 pb-6" : "max-h-0 opacity-0"
+        }`}
+        aria-hidden={!mobileMenuOpen}
+      >
+        <nav className="flex flex-col space-y-1" aria-label="Mobile Navigation">
+          {NAV_LINKS.map((link) => {
+            const isActive =
+              pathname === link.href ||
+              (link.href !== "/" && pathname.startsWith(link.href));
+            return (
               <Link
-                href="/cv"
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-blue-950 bg-blue-50 border border-blue-200 rounded-sm"
+                key={link.href}
+                href={link.href}
+                className={`px-3 py-2 rounded-md text-base font-medium transition-colors ${
+                  isActive
+                    ? "text-blue-900 bg-blue-50 font-semibold"
+                    : "text-slate-700 hover:text-slate-900 hover:bg-slate-100"
+                }`}
               >
-                <FileText className="w-3.5 h-3.5" />
-                <span>Academic CV</span>
+                {link.label}
               </Link>
-            </div>
-          </motion.div>
-        )}
-      </AnimatePresence>
+            );
+          })}
+        </nav>
+        <div className="pt-3 border-t border-slate-200 flex items-center justify-between px-2">
+          <div className="flex items-center space-x-3">
+            <a
+              href={RESEARCH_IDENTITY.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-650 hover:text-slate-900 transition-colors"
+              aria-label="GitHub Profile"
+            >
+              <GithubIcon className="w-5 h-5" />
+            </a>
+            <a
+              href={RESEARCH_IDENTITY.linkedin}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-slate-650 hover:text-slate-900 transition-colors"
+              aria-label="LinkedIn Profile"
+            >
+              <LinkedinIcon className="w-5 h-5" />
+            </a>
+            <a
+              href={`mailto:${RESEARCH_IDENTITY.email}`}
+              className="text-slate-650 hover:text-slate-900 transition-colors"
+              aria-label="Email"
+            >
+              <Mail className="w-5 h-5" />
+            </a>
+          </div>
+          <Link
+            href="/cv"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-semibold text-blue-950 bg-blue-50 border border-blue-200 rounded-sm"
+          >
+            <FileText className="w-3.5 h-3.5" />
+            <span>Academic CV</span>
+          </Link>
+        </div>
+      </div>
     </header>
   );
 }

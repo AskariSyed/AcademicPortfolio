@@ -5,7 +5,23 @@ import FlagshipResearch from "@/components/research/FlagshipResearch";
 import ResearchTrajectorySummary from "@/components/research/ResearchTrajectorySummary";
 import TeachingHomePreview from "@/components/about/TeachingHomePreview";
 import CredentialsBanner from "@/components/certificates/CredentialsBanner";
-import ContactSection from "@/components/contact/ContactSection";
+import dynamic from "next/dynamic";
+
+// ContactSection is a heavy client component (form with useState, fetch, router).
+// Lazy-load it so it doesn't contribute to the initial JS bundle.
+const ContactSection = dynamic(() => import("@/components/contact/ContactSection"), {
+  loading: () => (
+    <section className="py-16 md:py-24 bg-slate-50/50 border-b border-slate-200/70">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="animate-pulse space-y-4 max-w-3xl">
+          <div className="h-5 w-24 bg-slate-200 rounded-full" />
+          <div className="h-9 w-64 bg-slate-200 rounded-lg" />
+          <div className="h-5 w-full max-w-lg bg-slate-200 rounded" />
+        </div>
+      </div>
+    </section>
+  ),
+});
 
 export const metadata: Metadata = {
   title: "Muhammad Hassan Askari | Computer Science Graduate & Aspiring Researcher",
@@ -49,7 +65,7 @@ export default function HomePage() {
       {/* 5. Subdued Credentials Reference (Supporting credentials only) */}
       <CredentialsBanner />
 
-      {/* 6. Direct Academic Inquiries & Contact */}
+      {/* 6. Direct Academic Inquiries & Contact — lazy loaded */}
       <ContactSection />
     </>
   );

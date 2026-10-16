@@ -1,16 +1,14 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Clock, FileCheck2, ShieldCheck, Layers } from "lucide-react";
-import { FadeIn, AnimatedNumber, HoverLift } from "@/components/ui/motion";
+import { FadeInServer as FadeIn, HoverLiftServer as HoverLift } from "@/components/ui/motion-server";
 
 export default function FlagshipResearch() {
   return (
     <section id="flagship-research" className="py-14 sm:py-18 bg-white border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <FadeIn direction="up" distance={20} className="max-w-3xl mb-12">
+        <FadeIn className="max-w-3xl mb-12">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-900 border border-blue-200/80 mb-3">
             <Layers className="w-3.5 h-3.5 text-blue-800" />
             <span>Undergraduate &amp; Technical Research Projects</span>
@@ -26,7 +24,7 @@ export default function FlagshipResearch() {
         {/* Primary Computer Vision Trajectory (Projects 01 & 02) */}
         <div className="space-y-8">
           {/* Project 01: Environmental Domain Shift (Flagship CV) */}
-          <FadeIn direction="up" delay={0.1} distance={24}>
+          <FadeIn delay={1}>
             <div className="rounded-2xl border-2 border-slate-300/80 bg-white p-6 sm:p-8 lg:p-10 shadow-xs hover:shadow-lg hover:border-blue-900/60 transition-all duration-300">
               <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                 <div className="flex flex-wrap items-center gap-2.5">
@@ -87,8 +85,8 @@ export default function FlagshipResearch() {
                     </span>
                     <div className="flex items-baseline gap-2">
                       <span className="text-3xl sm:text-4xl font-black text-slate-900 tracking-tight font-mono">
-                        <AnimatedNumber value={68.02} decimals={2} suffix="%" /> →{" "}
-                        <AnimatedNumber value={87.34} decimals={2} suffix="%" className="text-blue-900" />
+                        68.02% →{" "}
+                        <span className="text-blue-900">87.34%</span>
                       </span>
                     </div>
                     <p className="text-xs text-slate-650 mt-1.5">
@@ -121,7 +119,7 @@ export default function FlagshipResearch() {
           </FadeIn>
 
           {/* Project 02: Generator Distribution Shift (Few-Shot AIGD) */}
-          <FadeIn direction="up" delay={0.15} distance={24}>
+          <FadeIn delay={2}>
             <div className="rounded-2xl border-2 border-slate-300/80 bg-white p-6 sm:p-8 lg:p-10 shadow-xs hover:shadow-lg hover:border-blue-900/60 transition-all duration-300">
               <div className="flex flex-wrap items-center justify-between gap-3 mb-5">
                 <div className="flex flex-wrap items-center gap-2.5">
@@ -196,18 +194,14 @@ export default function FlagshipResearch() {
                   </div>
 
                   <div className="grid grid-cols-2 gap-3 text-xs">
-                    <HoverLift lift={-2} className="p-3.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                    <HoverLift className="p-3.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
                       <span className="text-slate-400 font-mono block text-[11px]">DATASET AUDIT</span>
-                      <span className="font-bold text-slate-800 text-sm font-mono">
-                        <AnimatedNumber value={11000} suffix=" Images" />
-                      </span>
+                      <span className="font-bold text-slate-800 text-sm font-mono">11,000 Images</span>
                       <span className="text-slate-500 block text-[11px] mt-0.5">0 duplicate / 0 overlap</span>
                     </HoverLift>
-                    <HoverLift lift={-2} className="p-3.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
+                    <HoverLift className="p-3.5 rounded-lg bg-white border border-slate-200 shadow-2xs">
                       <span className="text-slate-400 font-mono block text-[11px]">CONDITIONS</span>
-                      <span className="font-bold text-slate-800 text-sm font-mono">
-                        <AnimatedNumber value={50} suffix=" Runs" />
-                      </span>
+                      <span className="font-bold text-slate-800 text-sm font-mono">50 Runs</span>
                       <span className="text-slate-500 block text-[11px] mt-0.5">5 shot levels × 5 seeds</span>
                     </HoverLift>
                   </div>
@@ -225,7 +219,7 @@ export default function FlagshipResearch() {
         </div>
 
         {/* Visual Separation for Algorithmic Systems / Optimization Project */}
-        <FadeIn direction="up" delay={0.2} distance={20} className="mt-14 pt-10 border-t-2 border-dashed border-slate-200">
+        <FadeIn delay={2} className="mt-14 pt-10 border-t-2 border-dashed border-slate-200">
           <div className="mb-6 flex flex-wrap items-center justify-between gap-2">
             <div>
               <span className="text-xs font-mono font-bold uppercase tracking-wider text-slate-500 block">

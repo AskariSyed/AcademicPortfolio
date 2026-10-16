@@ -209,4 +209,26 @@ export const CERTIFICATES: Certificate[] = [
       aspect: "landscape",
     },
   },
+  {
+    id: "computer-vision-specialization-coursera",
+    title: "Computer Vision Specialization (3 Courses)",
+    issuer: "University of Colorado Boulder / Coursera",
+    year: "2026",
+    category: "Professional Development",
+    file: "/data/certificates/preview/computer-vision-specialization-coursera.webp",
+    thumbnail: "/data/certificates/thumbnails/computer-vision-specialization-coursera.webp",
+    originalFile: "/data/certificates/computer-vision-specialization-coursera.png",
+    pdfUrl: "/data/certificates/Coursera_QB4QO1YVFJY4_Computer_Vision_Specialization.pdf",
+    verificationUrl: "https://coursera.org/verify/specialization/QB4QO1YVFJY4",
+    type: "image",
+    description:
+      "Online Specialization authorized by the University of Colorado Boulder and offered through Coursera, instructed by Assoc. Prof. Tom Yeh. Spans foundational techniques of computer vision, deep learning for visual recognition, and modern AI models for vision and multimodal understanding across 3 comprehensive courses (Credential ID: QB4QO1YVFJY4).",
+    featured: true,
+    frameStyle: {
+      rotationDeg: -1.6,
+      frameColor: "academic-navy",
+      matting: "cream",
+      aspect: "landscape",
+    },
+  },
 ];

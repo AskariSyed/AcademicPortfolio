@@ -1,10 +1,8 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { Award, ArrowRight, ShieldCheck } from "lucide-react";
 import { CERTIFICATES } from "@/data/certificates";
-import { FadeIn, HoverLift } from "@/components/ui/motion";
+import { FadeInServer as FadeIn, HoverLiftServer as HoverLift } from "@/components/ui/motion-server";
 
 export default function CredentialsBanner() {
   const verifiedCount = CERTIFICATES.length;
@@ -12,9 +10,8 @@ export default function CredentialsBanner() {
   return (
     <section className="py-10 bg-slate-50/70 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn direction="up" distance={16}>
+        <FadeIn>
           <HoverLift
-            lift={-3}
             className="rounded-xl border border-slate-200 bg-white p-6 sm:p-7 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 shadow-2xs hover:shadow-md transition-shadow"
           >
             <div className="flex items-center gap-3.5">

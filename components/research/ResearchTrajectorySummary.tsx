@@ -1,17 +1,14 @@
-"use client";
-
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Compass, ShieldAlert, GitMerge } from "lucide-react";
-import { motion } from "framer-motion";
 import { RESEARCH_IDENTITY } from "@/data/research";
-import { FadeIn, StaggerContainer, StaggerItem, HoverLift } from "@/components/ui/motion";
+import { FadeInServer as FadeIn, StaggerContainerServer as StaggerContainer, StaggerItemServer as StaggerItem, HoverLiftServer as HoverLift } from "@/components/ui/motion-server";
 
 export default function ResearchTrajectorySummary() {
   return (
     <section className="py-14 sm:py-18 bg-slate-50/60 border-b border-slate-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <FadeIn direction="up" distance={20} className="max-w-3xl mb-10">
+        <FadeIn className="max-w-3xl mb-10">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-blue-50 text-blue-900 border border-blue-200/80 mb-3">
             <Compass className="w-3.5 h-3.5 text-blue-800" />
             <span>Academic &amp; Research Development</span>
@@ -37,24 +34,14 @@ export default function ResearchTrajectorySummary() {
 
           {/* Animated Connecting Timeline Bar */}
           <div className="relative">
-            <motion.div
-              initial={{ scaleX: 0 }}
-              whileInView={{ scaleX: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.9, ease: [0.21, 0.47, 0.32, 0.98] }}
-              style={{ originX: 0 }}
-              className="hidden lg:block absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-900 via-blue-600 to-sky-400 -mt-2 z-0"
-            />
+            <div className="hidden lg:block absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r from-blue-900 via-blue-600 to-sky-400 -mt-2 z-0 animate-[grow-x_0.9s_ease-out_forwards] origin-left" />
 
             <StaggerContainer
-              delayChildren={0.1}
-              staggerChildren={0.06}
               className="grid grid-cols-2 sm:grid-cols-4 lg:grid-cols-8 gap-2.5 relative z-10"
             >
               {RESEARCH_IDENTITY.trajectory.map((stage, idx) => (
-                <StaggerItem key={stage}>
+                <StaggerItem key={stage} index={idx}>
                   <HoverLift
-                    lift={-3}
                     className="p-3 rounded-lg bg-slate-50 border border-slate-200/80 flex flex-col justify-between hover:bg-blue-50/50 hover:border-blue-300 hover:shadow-xs transition-all duration-200 h-full cursor-default"
                   >
                     <span className="text-[10px] font-mono font-bold text-blue-900 mb-1">
@@ -70,8 +57,8 @@ export default function ResearchTrajectorySummary() {
           </div>
 
           {/* Intellectual Bridge: Environmental Corruption vs Generator Distribution Shift */}
-          <FadeIn direction="up" delay={0.2} distance={16} className="mt-6 pt-6 border-t border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
-            <HoverLift lift={-2} className="p-5 rounded-xl bg-slate-50/70 border border-slate-200 space-y-2 hover:bg-white hover:border-slate-300 transition-all">
+          <FadeIn delay={2} className="mt-6 pt-6 border-t border-slate-100 grid grid-cols-1 md:grid-cols-2 gap-6 items-start">
+            <HoverLift className="p-5 rounded-xl bg-slate-50/70 border border-slate-200 space-y-2 hover:bg-white hover:border-slate-300 transition-all">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-700 uppercase">
                 <ShieldAlert className="w-4 h-4 text-blue-900" />
                 <span>Environmental Domain Shift</span>
@@ -81,7 +68,7 @@ export default function ResearchTrajectorySummary() {
               </p>
             </HoverLift>
 
-            <HoverLift lift={-2} className="p-5 rounded-xl bg-slate-50/70 border border-slate-200 space-y-2 hover:bg-white hover:border-slate-300 transition-all">
+            <HoverLift className="p-5 rounded-xl bg-slate-50/70 border border-slate-200 space-y-2 hover:bg-white hover:border-slate-300 transition-all">
               <div className="flex items-center gap-2 text-xs font-mono font-bold text-slate-700 uppercase">
                 <GitMerge className="w-4 h-4 text-blue-900" />
                 <span>Generator Distribution Shift</span>
@@ -93,7 +80,7 @@ export default function ResearchTrajectorySummary() {
           </FadeIn>
 
           {/* Unifying Question (Carefully worded, not forcing identical mechanisms) */}
-          <FadeIn direction="up" delay={0.25} distance={12} className="p-4 rounded-xl bg-blue-50/40 border border-blue-200/80 text-xs sm:text-sm text-slate-800 leading-relaxed">
+          <FadeIn delay={3} className="p-4 rounded-xl bg-blue-50/40 border border-blue-200/80 text-xs sm:text-sm text-slate-800 leading-relaxed">
             <p className="font-serif italic">
               &ldquo;Through undergraduate research and software systems projects, I explored how computational models perform when operational conditions diverge from training distributions or encounter resource constraints. These experiences have motivated me to pursue research further across Computer Science.&rdquo;
             </p>
