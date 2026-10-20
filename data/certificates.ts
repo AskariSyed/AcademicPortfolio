@@ -188,6 +188,27 @@ export const CERTIFICATES: Certificate[] = [
     },
   },
   {
+    id: "tedx-cui-wah-organizer",
+    title: "Certificate of Appreciation — TEDx CUI Wah Organizer",
+    issuer: "TEDx CUI Wah / COMSATS University Islamabad, Wah Campus",
+    year: "2026",
+    category: "Professional Development",
+    file: "/data/certificates/preview/tedx-cui-wah.webp",
+    thumbnail: "/data/certificates/thumbnails/tedx-cui-wah.webp",
+    originalFile: "/data/certificates/tedx-cui-wah.png",
+    pdfUrl: "/data/certificates/TEDx_CUI_Wah_Certificates-1.pdf.pdf",
+    type: "image",
+    description:
+      "Certificate of Appreciation presented to Muhammad Hassan Askari as Organizer of TEDx CUI Wah, in recognition of outstanding contribution, exceptional dedication, leadership, and tireless efforts that made the independently organized TED event a success (14 October 2026).",
+    featured: true,
+    frameStyle: {
+      rotationDeg: 2.5,
+      frameColor: "dark-oak",
+      matting: "white",
+      aspect: "landscape",
+    },
+  },
+  {
     id: "computer-vision-specialization-coursera",
     title: "Computer Vision Specialization (3 Courses)",
     issuer: "University of Colorado Boulder / Coursera",
