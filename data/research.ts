@@ -98,6 +98,7 @@ export const RESEARCH_IDENTITY = {
   degree: "BS Computer Science",
   period: "2022–2026",
   cgpa: "3.65 / 4.00",
+  rank: "12th / 133 Students (Top 9%)",
   credits: "133 Credits Completed",
   ielts: "7.0 Overall (CEFR C1)",
   currentObjective: "Looking to start my research career through graduate research opportunities (MRes / MPhil / PhD) or research positions across Computer Science.",

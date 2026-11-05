@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import Link from "next/link";
 import SectionContainer from "@/components/layout/SectionContainer";
 import {
   EDUCATION,
@@ -17,6 +18,8 @@ import {
   Layers,
   Compass,
   CheckCircle2,
+  Award,
+  ArrowRight,
 } from "lucide-react";
 
 export default function AcademicBackground() {
@@ -65,28 +68,54 @@ export default function AcademicBackground() {
                 {EDUCATION.institution} — {EDUCATION.campus}
               </div>
 
-              <div className="mt-6 pt-5 border-t border-slate-200 grid grid-cols-2 gap-4">
+              <div className="mt-6 pt-5 border-t border-slate-200 grid grid-cols-3 gap-3">
                 <div className="p-3 bg-white rounded-lg border border-slate-200/80">
-                  <span className="text-slate-400 text-xs font-mono block">
+                  <span className="text-slate-400 text-[11px] font-mono block">
                     CGPA
                   </span>
-                  <span className="text-xl font-extrabold text-blue-900">
+                  <span className="text-lg sm:text-xl font-extrabold text-blue-900">
                     {EDUCATION.cgpa}
                   </span>
-                  <span className="text-xs text-slate-500 ml-1">
+                  <span className="text-[11px] text-slate-500 ml-0.5">
                     / {EDUCATION.totalCgpa}
                   </span>
                 </div>
 
                 <div className="p-3 bg-white rounded-lg border border-slate-200/80">
-                  <span className="text-slate-400 text-xs font-mono block">
+                  <span className="text-slate-400 text-[11px] font-mono block">
+                    CLASS RANK
+                  </span>
+                  <span className="text-lg sm:text-xl font-extrabold text-amber-700">
+                    12th
+                  </span>
+                  <span className="text-[11px] text-slate-500 ml-0.5">
+                    / {EDUCATION.cohortSize || 133}
+                  </span>
+                </div>
+
+                <div className="p-3 bg-white rounded-lg border border-slate-200/80">
+                  <span className="text-slate-400 text-[11px] font-mono block">
                     COMPLETED
                   </span>
-                  <span className="text-xl font-extrabold text-slate-900">
+                  <span className="text-lg sm:text-xl font-extrabold text-slate-900">
                     {EDUCATION.credits}
                   </span>
-                  <span className="text-xs text-slate-500 ml-1">Credits</span>
+                  <span className="text-[11px] text-slate-500 ml-0.5">Credits</span>
                 </div>
+              </div>
+
+              <div className="mt-3.5 pt-3 border-t border-slate-200/70 flex items-center justify-between text-xs">
+                <span className="text-slate-650 flex items-center gap-1.5 font-medium">
+                  <Award className="w-3.5 h-3.5 text-amber-600 shrink-0" />
+                  <span>Top 9% Graduating Cohort</span>
+                </span>
+                <Link
+                  href="/certificates"
+                  className="font-mono text-blue-900 hover:underline font-semibold text-[11px] inline-flex items-center gap-1"
+                >
+                  <span>Rank Certificate</span>
+                  <ArrowRight className="w-3 h-3" />
+                </Link>
               </div>
 
               <p className="mt-4 text-xs text-slate-650 leading-relaxed">

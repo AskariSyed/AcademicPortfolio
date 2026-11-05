@@ -17,7 +17,7 @@ export default function Footer() {
               Computer Science Graduate · Exploring Research in AI &amp; Computing Systems
             </p>
             <p className="text-xs text-slate-400 mt-2 font-mono">
-              COMSATS University Islamabad (2022–2026) · CGPA 3.65 · IELTS 7.0
+              COMSATS University Islamabad (2022–2026) · CGPA 3.65 (Rank 12th/133) · IELTS 7.0
             </p>
           </div>
 

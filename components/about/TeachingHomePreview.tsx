@@ -56,26 +56,39 @@ export default function TeachingHomePreview() {
               </p>
             </div>
 
-            <div className="pt-3 border-t border-slate-200 grid grid-cols-2 gap-3">
-              <div className="p-3 bg-white rounded-lg border border-slate-200/80 shadow-2xs">
-                <span className="text-slate-400 text-[11px] font-mono block">CGPA</span>
-                <span className="text-lg font-extrabold text-blue-900 font-mono">
+            <div className="pt-3 border-t border-slate-200 grid grid-cols-3 gap-2">
+              <div className="p-2.5 bg-white rounded-lg border border-slate-200/80 shadow-2xs">
+                <span className="text-slate-400 text-[10px] font-mono block">CGPA</span>
+                <span className="text-base sm:text-lg font-extrabold text-blue-900 font-mono">
                   {cgpaNumber.toFixed(2)}
                 </span>
-                <span className="text-xs text-slate-500"> / {EDUCATION.totalCgpa}</span>
+                <span className="text-[10px] text-slate-500"> / {EDUCATION.totalCgpa}</span>
               </div>
-              <div className="p-3 bg-white rounded-lg border border-slate-200/80 shadow-2xs">
-                <span className="text-slate-400 text-[11px] font-mono block">CREDITS</span>
-                <span className="text-lg font-extrabold text-slate-900 font-mono">
-                  {creditsNumber.toLocaleString("en-US")}
+              <div className="p-2.5 bg-white rounded-lg border border-slate-200/80 shadow-2xs">
+                <span className="text-slate-400 text-[10px] font-mono block">CLASS RANK</span>
+                <span className="text-base sm:text-lg font-extrabold text-amber-700 font-mono">
+                  12th
                 </span>
-                <span className="text-xs text-slate-500"> Completed</span>
+                <span className="text-[10px] text-slate-500"> / {EDUCATION.cohortSize || 133}</span>
+              </div>
+              <div className="p-2.5 bg-white rounded-lg border border-slate-200/80 shadow-2xs">
+                <span className="text-slate-400 text-[10px] font-mono block">CREDITS</span>
+                <span className="text-base sm:text-lg font-extrabold text-slate-900 font-mono">
+                  {creditsNumber}
+                </span>
+                <span className="text-[10px] text-slate-500"> Cr</span>
               </div>
             </div>
 
-            <div className="pt-2 text-xs text-slate-600 flex items-center justify-between border-t border-slate-200/70">
-              <span className="font-semibold text-slate-700">Language:</span>
-              <span className="font-mono text-slate-900 font-semibold">IELTS 7.0 Overall (C1)</span>
+            <div className="pt-2 text-xs text-slate-600 space-y-1.5 border-t border-slate-200/70">
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-slate-600">Cohort Standing:</span>
+                <span className="font-mono text-blue-950 font-semibold">Top 9% (Rank 12 of 133)</span>
+              </div>
+              <div className="flex items-center justify-between">
+                <span className="font-medium text-slate-600">Language:</span>
+                <span className="font-mono text-slate-900 font-semibold">IELTS 7.0 Overall (C1)</span>
+              </div>
             </div>
           </FadeIn>
 

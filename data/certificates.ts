@@ -39,6 +39,27 @@ export const CERTIFICATE_CATEGORIES: CertificateCategory[] = [
 
 export const CERTIFICATES: Certificate[] = [
   {
+    id: "comsats-academic-rank-12th",
+    title: "Academic Ranking Certificate — 12th Position out of 133 Students",
+    issuer: "COMSATS University Islamabad, Wah Campus",
+    year: "2026",
+    category: "Academic",
+    file: "/data/certificates/preview/rank-certificate-12th.webp",
+    thumbnail: "/data/certificates/thumbnails/rank-certificate-12th.webp",
+    originalFile: "/data/certificates/rank-certificate-12th.png",
+    pdfUrl: "/data/certificates/RankCertificate12thoutof133.pdf",
+    type: "image",
+    description:
+      "Official certificate issued by the Examinations Office of COMSATS University Islamabad, Wah Campus (Ref. No. CUIW/EXAM/26/-2789) certifying that Muhammad Hassan Askari secured a CGPA of 3.65/4.00 and achieved 12th position out of 133 students (Top 9% of the graduating cohort) in the overall academic ranking for his final semester (Spring 2026) in the Bachelor of Science in Computer Science program.",
+    featured: true,
+    frameStyle: {
+      rotationDeg: 1.4,
+      frameColor: "dark-oak",
+      matting: "cream",
+      aspect: "portrait",
+    },
+  },
+  {
     id: "comsats-academic-merit",
     title: "Merit Certificate — Second Position (4.00/4.00 SGPA)",
     issuer: "COMSATS University Islamabad, Wah Campus",

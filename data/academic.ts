@@ -7,6 +7,9 @@ export interface EducationRecord {
   totalCgpa: string;
   credits: number;
   highlight: string;
+  rank?: string;
+  rankPercentile?: string;
+  cohortSize?: number;
 }
 
 export interface LanguageProficiency {
@@ -53,8 +56,11 @@ export const EDUCATION: EducationRecord = {
   cgpa: "3.65",
   totalCgpa: "4.00",
   credits: 133,
+  rank: "12th / 133",
+  rankPercentile: "Top 9%",
+  cohortSize: 133,
   highlight:
-    "Solid undergraduate foundation across computer science, software engineering, and algorithms, complemented by undergraduate research in computer vision and machine learning.",
+    "Solid undergraduate foundation across computer science, software engineering, and algorithms, graduating 12th out of 133 students (Top 9%) with a 3.65/4.00 CGPA across 133 completed credits, complemented by undergraduate research in computer vision and machine learning.",
 };
 
 export const IELTS_RECORD: LanguageProficiency = {

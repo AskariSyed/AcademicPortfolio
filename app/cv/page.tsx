@@ -99,15 +99,22 @@ export default function CVPage() {
                   <span className="text-xs text-slate-500 block">{EDUCATION.institution} (2022–2026)</span>
                 </div>
 
-                <div className="grid grid-cols-2 gap-2 pt-2 border-t border-slate-100">
+                <div className="grid grid-cols-3 gap-2 pt-2 border-t border-slate-100">
                   <div>
-                    <span className="text-xs text-slate-400 font-mono block">CGPA</span>
+                    <span className="text-[11px] text-slate-400 font-mono block">CGPA</span>
                     <span className="font-bold text-blue-900 text-base">{EDUCATION.cgpa} / 4.00</span>
                   </div>
                   <div>
-                    <span className="text-xs text-slate-400 font-mono block">IELTS</span>
+                    <span className="text-[11px] text-slate-400 font-mono block">CLASS RANK</span>
+                    <span className="font-bold text-amber-700 text-base">12th / 133</span>
+                  </div>
+                  <div>
+                    <span className="text-[11px] text-slate-400 font-mono block">IELTS</span>
                     <span className="font-bold text-slate-900 text-base">{IELTS_RECORD.overallScore} (C1)</span>
                   </div>
+                </div>
+                <div className="text-[11px] text-slate-500 font-mono">
+                  Official Academic Standing: <span className="font-semibold text-slate-700">Top 9% (Verified)</span>
                 </div>
 
                 <div className="pt-2 border-t border-slate-100">

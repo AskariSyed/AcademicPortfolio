@@ -61,6 +61,13 @@ export default function HeroSection() {
           </StaggerItem>
 
           <StaggerItem index={3}>
+            <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-amber-50/90 text-amber-900 border border-amber-200/80 hover:bg-amber-100/70 transition-colors">
+              <Award className="w-3.5 h-3.5 text-amber-600" />
+              <span>Rank: 12th / 133 (Top 9%)</span>
+            </div>
+          </StaggerItem>
+
+          <StaggerItem index={4}>
             <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-slate-100/90 text-slate-700 border border-slate-200 hover:bg-slate-200/70 transition-colors">
               <BookOpen className="w-3.5 h-3.5 text-blue-700" />
               <span>IELTS: 7.0 (C1)</span>
